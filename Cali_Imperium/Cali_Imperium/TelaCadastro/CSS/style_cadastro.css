@@ -1,0 +1,242 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0171bb;
+}
+
+div.Menu {
+    background-color: #fff;
+    border-bottom: #DCDCDC solid 0px;
+    width: 100%;
+    min-height: 8%;
+    position: fixed;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    float: right;
+}
+
+ul {
+    float: left;
+}
+
+li {
+    font-family: verdana;
+    color: gray;
+    list-style: none;
+    padding: 40px;
+    font-size: 20px;
+    transition: all 0.40s;
+}
+
+    li:hover {
+        color: #fff;
+        background: #0171bb;
+        transition: all 0.50s;
+    }
+
+div.fundo {
+    padding: 35px;
+    margin: auto;
+}
+
+div.area_formulario {
+    text-align: center;
+    z-index: 1;
+    background: #fff;
+    position: relative;
+    width: 600px;
+    min-height: 550px;
+    margin: 0 auto 0px;
+    border-radius: 15px;
+    padding: 70px 50px 50px;
+    display: block;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+form {
+    position: relative;
+    width: 400px;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -50px;
+}
+
+
+input[class=usuario] {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+    background-image: url(../Logos/usuario.jpg);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+input[class=data] {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+    background-image: url(../Logos/data.png);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+input[class=telefone] {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+    background-image: url(../Logos/telefonee.png);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+input[class=email] {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+    background-image: url(../Logos/emaill.png);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+input[class=senha] {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+    background-image: url(../Logos/senha.jpg);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+div.img {
+    background-image: url(../Logos/Logo.png);
+    background-size: 100% 100%;
+    width: 200px;
+    height: 190px;
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: 40px;
+    top: -75px;
+    border-radius: 10%;
+}
+
+select {
+    background-image: url(../Logos/estado.png);
+    background-size: 10% 80%;
+    background-repeat: no-repeat;
+    background-position: 5px;
+    outline: none;
+}
+
+button.voltar {
+    width: 160px;
+    height: 35px;
+    background-color: #d20;
+    color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #000000;
+    border-width: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+}
+
+button.cadastrar {
+    width: 160px;
+    height: 35px;
+    background-color: #2d2;
+    color: #fff;
+    margin-right: 15px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #000000;
+    border-width: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+}
+
+button.voltar:hover {
+    transition: 0.3s;
+    background-color: #b00;
+}
+
+button.cadastrar:hover {
+    transition: 0.3s;
+    background-color: #0b0;
+}
+
+select {
+    position: relative;
+    width: 85%;
+    height: 37px;
+    margin-bottom: 20px;
+    padding: 8px;
+    padding-left: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-color: #FF4000;
+    border-width: 1px;
+}
+
+a.btn {
+    position: relative;
+    padding: 10px 63px;
+    color: #fff;
+    text-decoration: none;
+}
