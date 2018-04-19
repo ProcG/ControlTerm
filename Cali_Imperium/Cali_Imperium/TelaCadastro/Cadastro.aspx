@@ -14,7 +14,7 @@
 		<div class="Menu"> 
 			<ul>
 				<a href="../TelaLogin/Login.aspx"><li>Login</li></a>
-				<a href="../TelaSistema/index.aspx"><li>Pagina Inicial</li></a>		
+				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
 			</ul>
 		</div>
 	</header>

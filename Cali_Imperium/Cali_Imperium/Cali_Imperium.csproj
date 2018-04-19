@@ -83,6 +83,21 @@
     <Content Include="CSS\index.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Logos\github.png" />
+    <Content Include="Logos\linkedin.png" />
+    <Content Include="Logos\Logo.png" />
+    <Content Include="Logos\Logo2.png" />
+    <Content Include="Logos\Logo_Cali.png" />
+    <Content Include="Logos\Logo_da_empresa.png" />
+    <Content Include="Logos\Logo_da_empresa2.png" />
+    <Content Include="Logos\Logo_da_empresa3.png" />
+    <Content Include="Logos\mateus.jpg" />
+    <Content Include="Logos\missão.png" />
+    <Content Include="Logos\pablo.jpg" />
+    <Content Include="Logos\rosto.jpg" />
+    <Content Include="Logos\Valores.png" />
+    <Content Include="Logos\Visão.png" />
+    <Content Include="parallaxT2.png" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -129,6 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\gabrielproc - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\gabrielproc - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,7 +156,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Logos\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
