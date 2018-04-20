@@ -21,10 +21,10 @@
 	<div class="fundo">
 		<div class="area_formulario" > 
 			<div class="img"></div>
-			<form action="../TelaLogin/Login.aspx">
-				<input type="text" class="usuario" placeholder="Digite seu nome">
-				<input type="date" class="data" placeholder="Data de nascimento">
-				<input type="text" class="telefone" placeholder="Telefone">
+			<form id="form1" runat="server">
+                <asp:TextBox runat="server" CssClass="usuario" placeholder="Digite seu nome" ID="TxtUsuario"/>
+                <asp:TextBox runat="server" CssClass="data" placeholder="Data de Nascimento" ID="TxtData"/>
+                <asp:TextBox runat="server" CssClass="telefone" placeholder="Telefone" ID="TxtTelefone"/>				
 				<div>
 					<!-- <div position="relative"><img src="estado.png";
 						width="10%"; height="80%"></div> -->
@@ -59,9 +59,9 @@
 					<option value="TO">Tocantins</option>
 				</select>
 				</div>
-				<input type="email" class="email" placeholder="Digite seu Email">
-				<input type="password" class="senha" placeholder="Senha">
-				<input type="password" class="senha" placeholder="Confirma Senha">
+                    <asp:TextBox runat="server" CssClass="email" placeholder="Digite seu Email" ID="TxtEmail"/>
+                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Senha" ID="TextSenha"/>
+                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Confirmar Senha" ID="TextConfSenha"/>
 				<!--  -->
 				<button class="voltar" type="reset">Cancelar</button>
 				<button class="cadastrar" type="submit" onclick="alert('O seu cadastro foi efetuado com sucesso!')" >
