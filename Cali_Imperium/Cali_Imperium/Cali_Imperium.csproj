@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CSS\index.css" />
+    <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Logos\github.png" />

@@ -5,9 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="icon" href="Logos/Logo_da_empresa2.png" type="image/gif" sizes="100x100">
-	<title>Cali Imperium | O coltrole que você merece!</title>
-	<link rel="stylesheet" type="text/css" href="CSS/index.css">
+	<meta name="viewport" content="width:divece-width">
+	<title>
+		Control Term | O coltrole que você merece!
+	</title>
+	<link rel="icon" href="Logos/Logo_da_empresa2.png" type="image/gif" sizes="100x100">
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="CSS/medium.css">
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1350px)" href="CSS/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway|Roboto+Slab|Slabo+27px|Tajawal" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script>
@@ -15,7 +19,7 @@
             jQuery(document).ready(function ($) {
                 $(".scroll").click(function (event) {
                     event.preventDefault();
-                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top - 90 }, 900);
                 });
             });
         }());
@@ -38,21 +42,19 @@
 	</script>
 </head>
 <body>
-            <!--MENU-->
-		<header>  
+<!--MENU-->
 			<div id ="menu" class="Menu1"> 
 				<img src="Logos/Logo_da_empresa2.png"/>
 				<ul>
-					<a  href="../TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
-					<a href="../TelaLogin/Login.aspx"><li>Login</li></a>
+					<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
+					<a href="TelaLogin/Login.aspx"><li>Login</li></a>
 					<a class="scroll" href="#colaboradores"><li>Colaboradores</li></a>
+					<a class="scroll" href="#mvv"><li>M.V.V</li></a>
 					<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
-					<a class="scroll" href="#greetings"><li>Início</li></a>
-						
+					<a class="scroll" href="#greetings"><li>Início</li></a>						
 				</ul>
 			</div>
-		</header>
-
+		
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
 				<h1>Bem vindo a Control Term!</h1>
@@ -60,18 +62,18 @@
 			</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
-		$('.parallax').each(function(){
-			var $obj = $(this);
-			$obj.css('background-position', '50% 0');
-			$obj.css('background-attachment', 'fixed');
-			$obj.css('background-size', '100%');
-				$(window).scroll(function(){
-					var offset = $obj.offset();
-					var yPos = -($(window).scrollTop() - offset.top) / 10;
-					var bgpos = '50% ' + yPos + 'px';
-					$obj.css('background-position', bgpos);
-				});
-		});
+        $('.parallax').each(function () {
+            var $obj = $(this);
+            $obj.css('background-position', '50% 0');
+            $obj.css('background-attachment', 'fixed');
+            $obj.css('background-size', '100%');
+            $(window).scroll(function () {
+                var offset = $obj.offset();
+                var yPos = -($(window).scrollTop() - offset.top) / 10;
+                var bgpos = '50% ' + yPos + 'px';
+                $obj.css('background-position', bgpos);
+            });
+        });
 	</script>
 
 <!--Institucional-->
@@ -87,12 +89,11 @@
 					Pessoas distintas com conhecimentos diferentes, mas que se completavam. <i>“Almejávamos coisas parecidas, crescer, 
 					estudar e conquistar, então tudo se iniciou”</i>.</p>
 			</div>			
-			<div class="control">
-				<img class="Term" src="Logos/Logo_da_empresa.png" width="290px" height="200px" style="margin-top: 10%;"/>
-			</div>
-			<div class="cali">
+
+				<img class="Term" src="Logos/Logo_da_empresa.png" width="290px" height="200px"/>
+
 				<img class="Cali" src="Logos/Logo.png" width="200px" height="200px"/>
-			</div>
+
 		</div>
 		
 <!--MISSÃO, VISÃO E VALORES-->
@@ -173,12 +174,17 @@
 		
 <!--RODAPÉ-->
 		<footer> 
-			<div class="faleConosco">
-				<p>Fale conosco: controlterm@hotmail.com</p>
-			</div>			
-			<div class="direitos">
-				<p>Todos os direitos reservados.</p>
-				<img src="Logos/Logo_da_empresa2.png"/>
+			<div class="atendimento">
+				<h3>Fale Conosco</h3>
+				<p>controlterm@hotmail.com</p>
+			</div>		
+			<div class="adress">
+				<h3>Endereço</h3>
+				<p> Control Term | O controle que você merece!<br>
+					Rua Haddock Lobo, 595 - Cerqueira César, São Paulo - SP, 01310-300
+					<p class="fim">Todos os direitos reservados.</p>
+				</p>
+				<!--<img src="Logos/Logo_da_empresa2.png"/>-->
 			</div>
 		</footer>
 
