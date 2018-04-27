@@ -80,12 +80,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Logos\gabriel.jpg" />
     <Content Include="Logos\github.png" />
+    <Content Include="Logos\juvencio.jpg" />
     <Content Include="Logos\linkedin.png" />
     <Content Include="Logos\Logo.png" />
     <Content Include="Logos\Logo2.png" />
