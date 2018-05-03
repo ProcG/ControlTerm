@@ -110,8 +110,9 @@ body {
         font-size: 70px;
         position: absolute;
         top: 40%;
-        left: 15%;
-        right: 15%;
+        left: 5%;
+        right: 5%;
+
     }
 
     #greetings > h2 {
@@ -125,17 +126,22 @@ body {
 
 #mvv {
     width: 100%;
-    height: 100%;
+
+    height: 800px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    border: 1px solid;
+    margin-bottom: 20px;
+
 }
 
 div.missão {
     width: 245px;
     height: 360px;
     margin: 0 auto;
-    margin-top: 13%;
+
+    margin-top: -150px;
     text-align: center;
     font-family: Arial;
     margin-bottom: 20%;
@@ -154,7 +160,7 @@ div.missão {
     width: 245px;
     height: 360px;
     margin: 0 auto;
-    margin-top: 13%;
+    margin-top: -150px;
     text-align: center;
     font-family: Arial;
     margin-bottom: 20%;
@@ -174,7 +180,7 @@ div.missão {
     width: 245px;
     height: 360px;
     margin: 0 auto;
-    margin-top: 13%;
+    margin-top: -150px;
     text-align: center;
     font-family: Arial;
     margin-bottom: 20%;
@@ -197,6 +203,8 @@ div.missão {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    border: 1px solid;
+    margin-bottom: 20px;
 }
 
 .historia {
@@ -204,7 +212,6 @@ div.missão {
     height: 300px;
     text-align: center-left;
     margin-left: 100px;
-    margin-bottom:;
 }
 
     .historia > h1 {
@@ -216,7 +223,7 @@ div.missão {
     .historia > p {
         font-family: 'Tajawal', sans-serif;
         color: #5d6f8c;
-        font-size: 12 0%;
+        font-size: 17px;
     }
 
 .Term {
@@ -236,7 +243,7 @@ div.missão {
 #colaboradores {
     background: #082e6d;
     width: 100%;
-    height: 50%;
+    height: 350px;
     display: flex;
     justify-content: space-around;
     align-items: center;

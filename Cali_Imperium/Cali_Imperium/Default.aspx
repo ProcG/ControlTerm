@@ -10,7 +10,8 @@
 		Control Term | O coltrole que você merece!
 	</title>
 	<link rel="icon" href="Logos/Logo_da_empresa2.png" type="image/gif" sizes="100x100">
-	<link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="CSS/medium.css">
+    <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="CSS/device.css">
+	<link rel="stylesheet" type="text/css" media="screen and (min-width: 829px)" href="CSS/medium.css">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1350px)" href="CSS/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway|Roboto+Slab|Slabo+27px|Tajawal" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -57,7 +58,7 @@
 		
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
-				<h1>Bem vindo a Control Term!</h1>
+				<h1>Bem vindo a Control Term!</h1><br>
 				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores. Oferecendo serviços de qualidade e preço justo para nossos clientes, buscando alcançar mais supects, assim crescendo em varios apectos.</h2>
 			</div>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -126,7 +127,7 @@
 <!--COLABORADORES-->
 		<div id="colaboradores">
 			<div class="j">
-				<img src="Logos/rosto.jpg"/>
+				<img src="Logos/juvencio.jpg"/>
 				<p>Full Stack</p>
 				<h1>Juvencio</h1>
 				<div class="contatos">
@@ -135,7 +136,7 @@
 				</div>
 			</div>
 			<div class="p">
-				<img src="Logos/pablo.jpg"/>
+				<img src="Logos/predo.jpg"/>
 				<p>Full Stack ( ͡° ͜ʖ ͡°)</p>
 				<h1>Pedro</h1>
 				<div class="contatos">
@@ -144,7 +145,7 @@
 				</div>
 			</div>
 			<div class="g">
-				<img src="Logos/rosto.jpg"/>
+				<img src="Logos/gabriel.jpg" width="200px" height="199px"/>
 				<p>Full Stack</p>
 				<h1>Gabriel</h1>
 				<div class="contatos">
