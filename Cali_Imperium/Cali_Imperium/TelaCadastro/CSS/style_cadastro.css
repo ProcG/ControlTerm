@@ -180,7 +180,7 @@ select {
     outline: none;
 }
 
-button.voltar {
+input.voltar {
     width: 160px;
     height: 35px;
     background-color: #d20;
@@ -195,8 +195,7 @@ button.voltar {
     transition: 0.3s;
     outline: none;
 }
-
-button.cadastrar {
+input.cadastrar {
     width: 160px;
     height: 35px;
     background-color: #2d2;
