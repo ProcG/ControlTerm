@@ -39,6 +39,7 @@ namespace Cali_Imperium.TelaCadastro
 
 
                         Response.Write("<script>Alert('Cadastrado com Sucesso')</script>");
+                        Response.Redirect("../TelaLogin/Login.aspx");
                     }
                 }
             }

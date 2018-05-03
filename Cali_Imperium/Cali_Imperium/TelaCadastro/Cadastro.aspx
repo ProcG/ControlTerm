@@ -22,9 +22,9 @@
 		<div class="area_formulario" > 
 			<div class="img"></div>
 			<form id="form1" runat="server">
-                <asp:TextBox runat="server" CssClass="usuario" placeholder="Digite seu nome" ID="TxtUsuario"/>
-                <asp:TextBox runat="server" CssClass="data" placeholder="Data de Nascimento" ID="TxtData" TextMode="Date"/>
-                <asp:TextBox runat="server" CssClass="telefone" placeholder="Telefone" ID="TxtTelefone" value='' onkeypress='return SomenteNumero(event)' maxlength="15" />				
+                <asp:TextBox runat="server" CssClass="usuario" placeholder="Digite seu nome" ID="TxtUsuario" REQUIRED/>
+                <asp:TextBox runat="server" CssClass="data" placeholder="Data de Nascimento" ID="TxtData" TextMode="Date" REQUIRED/>
+                <asp:TextBox runat="server" CssClass="telefone" placeholder="Telefone" ID="TxtTelefone" value='' onkeypress='return SomenteNumero(event)' maxlength="15" REQUIRED/>				
 				<div>
 					<!-- <div position="relative"><img src="estado.png";
 						width="10%"; height="80%"></div> -->
@@ -61,9 +61,9 @@
 
 				</asp:dropdownlist>     
 				</div>                      
-                    <asp:TextBox runat="server" CssClass="email" placeholder="Digite seu Email" ID="TxtEmail"/>
-                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Senha" ID="TextSenha"/>
-                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Confirmar Senha" ID="TextConfSenha"/>
+                    <asp:TextBox runat="server" CssClass="email" TextMode="Email" placeholder="Digite seu Email" ID="TxtEmail" REQUIRED/>
+                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Senha" ID="TextSenha" REQUIRED/>
+                    <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Confirmar Senha" ID="TextConfSenha" REQUIRED/>
 				<!--  -->
                 <asp:Button Text="Voltar" runat="server" class="voltar" />
                 <asp:Button Text="Cadastrar" ID="btnCadastrar" runat="server" OnClick="btnCadastrar_Click" class="cadastrar" />
