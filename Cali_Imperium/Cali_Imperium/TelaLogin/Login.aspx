@@ -4,15 +4,6 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta charset="utf-8">
-	<title>Login | Cali Imperium</title>
-	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55">
-	<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
-</head>
-<body>
-    <!DOCTYPE html>
-<html>
-<head>
 	<meta charset="utf-8">
 	<title>Login | Cali Imperium</title>
 	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55">
@@ -45,7 +36,7 @@
 				<form id="form1" class="login-form" runat="server">
                     <asp:TextBox runat="server" placeholder="E-mail" TextMode="Email" ID="txtEmail"/>
                     <asp:TextBox runat="server" placeholder="Senha" TextMode="Password" ID="txtSenha"/>
-                    <asp:Button Text="Login" runat="server" ID="btnEnviar"/>
+                    <asp:Button Text="Login" runat="server" ID="btnEnviar" OnClick="btnEnviar_Click"/>
 					<p class="mensagem">Não é registrado ? <a href="../TelaCadastro/cadastro.aspx">Crie sua Conta.</a><br>
 					<a href="#bg">Recuperação de senha</a></p>
 
@@ -55,7 +46,5 @@
 			
 		</div>
 
-</body>
-</html>
 </body>
 </html>

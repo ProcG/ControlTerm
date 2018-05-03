@@ -49,6 +49,15 @@ namespace Cali_Imperium.TelaCadastro {
         protected global::System.Web.UI.WebControls.TextBox TxtTelefone;
         
         /// <summary>
+        /// Controle TextEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList TextEstado;
+        
+        /// <summary>
         /// Controle TxtEmail.
         /// </summary>
         /// <remarks>
@@ -74,5 +83,14 @@ namespace Cali_Imperium.TelaCadastro {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextConfSenha;
+        
+        /// <summary>
+        /// Controle btnCadastrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCadastrar;
     }
 }

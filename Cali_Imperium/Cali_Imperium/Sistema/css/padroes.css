@@ -1,0 +1,284 @@
+/*MENU-------------------------------------MENU*/
+
+div.menu {
+    position: fixed;
+    width: 15px;
+    height: 100%;
+    background: blue;
+    transition: all 0.3s;
+    left: 0px;
+    top: 0px;
+    z-index: 3;
+    overflow: hidden;
+}
+div.menu:hover{
+    width: 450px;
+    transition: all 0.3s;
+    background: #4332d4;
+}
+div.menu > div.confs_usuario {
+    opacity: 0;
+    transition: 0.3s;
+}
+div.menu:hover > div.confs_usuario {
+    opacity: 1;
+    transition: 0.3s;
+    background: #3f3fff
+}
+
+div.confs_usuario {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-bottom-style: solid;
+    border-width: 3px;
+    border-color: #fff;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    
+}
+
+img.foto_usuario{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+div.menu > div.sub_menus {
+    opacity: 0;
+    transition: 0.3s;
+}
+div.sub_menus{
+    display: none;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;   
+    margin-top: 50px;
+}
+ul {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+li {
+    width: 0px;
+    position: relative;
+    list-style-type: none;
+    height: 59px;
+    background: #0092ff;
+    border-left-style: solid;
+    border-color: #fff;
+    border-width: 0px;
+}
+
+li:hover{
+    border-width: 8px;
+    width: 100%;
+    transition: all 0.5s;
+}
+ul.sair_site {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 59px;
+    bottom: 140px;
+}
+div.menu:hover > div.sub_menus {
+    opacity: 1;
+    transition: 0.3s;
+}
+/*MENU-------------------------------------MENU*/
+p.nome_usuario {
+    font-family: "Century Gothic";
+    font-size: 15px;
+    color: #fff;
+    padding: 5px;
+    min-width: 300px;
+}
+p.funcao_usuario {
+    font-family: "Century Gothic";
+    font-size: 13px;
+    color: #fff;
+    padding: 5px;
+    
+}
+a.links {
+    position: absolute;
+    display: block;
+    font-family: "Century Gothic";
+    font-size: 15px;
+    color: #fff;
+    padding: 20px;
+    width: 337px;
+    text-decoration: none;
+    
+}
+
+
+
+div.fundo_modal_off{
+    display: none;
+}
+
+div.fundo_modal_on{
+    transition: all 4.3s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(102,85,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5 !important;
+}
+
+div.fundo_addArduino_off{
+    display: none;
+}
+
+div.fundo_addArduino_on{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(102,85,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7 !important;
+}
+
+div#tela_confs{
+    position: fixed;
+    width: 600px;
+    height: 500px;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+p.titulo{
+    font-family: "Calibri Light";
+    font-size: 30px;
+    color: #222;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+a.confs_opc{
+    position: relative;
+    font-family: "Century Gothic";
+    font-size: 15px;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    height: 60px;
+    margin: 5px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #65f;
+     display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+a.fechar{
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    background-color: #d33;
+    border-radius: 100%;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+div#conf_arduino{
+    position: fixed;
+    width: 700px;
+    min-height: 450px;
+    background-color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /*border: solid 2px #000;*/
+    /*z-index: 9 !important; */
+
+}
+
+input[class=input_padrao]{
+    width: 100%;
+    margin: 5px;
+    height: 60px;
+    padding: 10px;
+    font-family: "Calibri Light";
+    outline: none;
+    font-size: 17px;
+    text-align: center;
+}
+
+input[class=term_input]{
+    width: 308px;
+    margin: 5px;
+    height: 60px;
+    padding: 10px;
+    font-family: "Calibri Light";
+    outline: none;
+    font-size: 17px;
+    text-align: center;
+}
+
+div#conf_arduino > select{
+    width: 100%;
+    margin: 5px;
+    height: 60px;
+    padding: 10px;
+    font-family: "Calibri Light";
+    outline: none;
+    font-size: 17px;
+}
+
+button{
+    position: relative;
+    width: calc(50% - 10px);
+    font-family: "Calibri Light";
+    border: none;
+    outline: none;
+    height: 52px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s; 
+    margin: 5px;
+}
+
+button.adc{
+    background-color: #2f2;
+}
+button.adc:hover{
+    transition: all 0.3s;
+    background-color: #0d0;
+}
+
+button.cnl{
+    background-color: #f22;
+    }
+button.cnl:hover{
+    transition: all 0.3s;
+    background-color: #f00;
+}
