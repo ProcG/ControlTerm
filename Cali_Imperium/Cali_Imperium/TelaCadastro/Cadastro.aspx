@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <title>Cadastre - se | Cali Imperium</title>
-	<meta charset="utf-8">
-	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55">
-	<link rel="stylesheet" type="text/css" href="CSS/style_cadastro.css">
+	<meta charset="utf-8"/>
+	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55"/>
+	<link rel="stylesheet" type="text/css" href="CSS/style_cadastro.css"/>
 </head>
 <body>
     <header>
