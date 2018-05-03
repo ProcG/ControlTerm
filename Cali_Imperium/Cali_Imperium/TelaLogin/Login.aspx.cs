@@ -13,14 +13,17 @@ namespace Cali_Imperium.TelaLogin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Response.Redirect("../Sistema");
+            }
         }
 
         protected void btnEnviar_Click(object sender, EventArgs e)
         {
-            Usuario u = new Usuario();
-            u.Email = txtEmail.Text;
-            u.Senha = txtSenha.Text;
+            Usuario user = new Usuario();
+            user.Email = txtEmail.Text;
+            user.Senha = txtSenha.Text;
 
             using (SqlConnection conn = new SqlConnection("Server=tcp:servigabriel.database.windows.net,1433;Initial Catalog=bd;Persist Security Info=False;User ID=gabriel;Password=559428Asdf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
 
@@ -31,13 +34,20 @@ namespace Cali_Imperium.TelaLogin
                 using (SqlCommand cmd = new SqlCommand("SELECT *  FROM Teste WHERE Email= @email and senha = @senha ", conn))
                 {
                     // Esse valor poderia vir de qualquer outro lugar, como uma TextBox...
-                    cmd.Parameters.AddWithValue("@email", u.Email);
-                    cmd.Parameters.AddWithValue("@senha", u.Senha);
+                    cmd.Parameters.AddWithValue("@email", user.Email);
+                    cmd.Parameters.AddWithValue("@senha", user.Senha);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         //Obtém os registros, um por vez
                         if (reader.Read() == true)
                         {
+
+                            user.Nome = reader["nome"].ToString();
+                            user.Estado = reader["estado"].ToString();
+                            user.Nascimento = reader["data_nasc"].ToString();
+                            user.Telefone = reader["telefone"].ToString();
+                            Session["Usuario"] = user;
+                            
                             Response.Redirect("../Sistema/Default.aspx");
                         }
                         else

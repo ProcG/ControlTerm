@@ -13,7 +13,10 @@ namespace Cali_Imperium.TelaCadastro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Response.Redirect("../Sistema");
+            }
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)

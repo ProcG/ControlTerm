@@ -30,7 +30,9 @@
                 <div class="confs_usuario">
                     <img src="img/usuario.png" class="foto_usuario" />
                     <div>
-                        <p class="nome_usuario">João Silva</p>
+                        <p class="nome_usuario">
+                            <asp:Label Text="" runat="server" ID="NomeUsuario" />
+                        </p>
                         <p class="funcao_usuario">Usuário</p>
                     </div>
                 </div>
