@@ -1,5 +1,8 @@
 /*ATENÇÃO, VOCÊ NÃO ENTENDERA NADA DO QUE ESTÁ AQUI, POIS ATÉ EU QUE CRIEI NÃO SEI O PQ DE FUNCIONAR :C*/
 var temperatura_atual = 0, nova_temperatura = 0; // cria as variaveis que faram as "animações" com os numeros da temperatura
+var temperatura_minima = 0;
+var temperatura_maxima = 0;
+
 
 var vetorTemperaturas = new Array();
 
@@ -160,7 +163,7 @@ function atualiza_fundo_termometro(grau) {// função COM parametro para atualizar
 }
 
 function alerta(grau) { // função com parametro para gerar um alerta sonoro
-    if (grau <= 10 || grau >= 30) { // faz a comparação para saber se a temperatura está em na faixa
+    if (grau <= temperatura_minima || grau >= temperatura_maxima) { // faz a comparação para saber se a temperatura está em na faixa
         document.getElementById("alerta").play();// busca o tag <audio> no html que possua um id "alerta" -> <audio id="alerta"> e da um play nele
         document.getElementById("ar").className = "area armado";
     } else { // se nao estiver nesse periodo
@@ -220,89 +223,4 @@ function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
     var div_fundo = document.getElementById("fundo_addArduino");
     div_fundo.className = "";
     div_fundo.className = "fundo_addArduino_off";
-}
-
-function infos_temperatura(temperatura) {//função que adiciona os textos sobre as temperaturas, COM parametro
-
-    vetor_menor_dez = new Array(4); //declara um VETOR de 4 posições
-    vetor_menor_dez[0] = "FRIO FRIO FRIO";// na posição 0 recebe esse texto
-    vetor_menor_dez[1] = "TEMPERATURA INFERIOR A 10";// na posição 1 recebe esse texto
-    vetor_menor_dez[2] = "FRIO FRIO FRIO";//etc
-    vetor_menor_dez[3] = "TEMPERATURA INFERIOR A 10";// etc
-
-
-
-    vetor_onze_vinte = new Array(4);// msm coisa
-    vetor_onze_vinte[0] = "MENOS FRIO MENO FRIO";// etc
-    vetor_onze_vinte[1] = "TEMPERATURA DE 11 A 20";// etc
-    vetor_onze_vinte[2] = "MENOS FRIO MENO FRIO";
-    vetor_onze_vinte[3] = "TEMPERATURA DE 11 A 20";
-
-    vetor_vinte1_trinta = new Array(4);// etc
-    vetor_vinte1_trinta[0] = "NEM FRIO NEM QUENTE";// etc
-    vetor_vinte1_trinta[1] = "TEMPERATURA DE 21 A 30";
-    vetor_vinte1_trinta[2] = "NEM FRIO NEM QUENTE";
-    vetor_vinte1_trinta[3] = "TEMPERATURA DE 21 A 30";
-
-    vetor_trinta1_quarenta = new Array(4);// etc
-    vetor_trinta1_quarenta[0] = "TA ESQUENTANDO TA ESQUENTANDO";// etc
-    vetor_trinta1_quarenta[1] = "TEMPERATURA DE 31 A 40";
-    vetor_trinta1_quarenta[2] = "TA ESQUENTANDO TA ESQUENTANDO";
-    vetor_trinta1_quarenta[3] = "TEMPERATURA DE 31 A 40";
-
-    vetor_quarenta1 = new Array(4);// etc
-    vetor_quarenta1[0] = "CHURASQUINHO TA R$ 2 CHURASQUINHO TA R$ 2";// etc
-    vetor_quarenta1[1] = "TEMPERATURA SUPERIOR A 41";
-    vetor_quarenta1[2] = "CHURASQUINHO TA R$ 2 CHURASQUINHO TA R$ 2";
-    vetor_quarenta1[3] = "TEMPERATURA SUPERIOR A 41";
-
-    if (temperatura <= 10) {//se a temperatura estiver menor igual que 10
-        for (var i = 0; i < getSizeP(); i++) {// cria um laço de retição que será responsavel por apagar todos os textos existentes (aqui usa aquela gambiarra)
-            remove_infos();//apaga todos os <p>, toda vez que entrar no laço, ex -> getSizeP retorna 5, então o laço repetira 5 vezes, e a função remove_infos() será executada 5 vezes, por isso eu utilizei o 'p[0]' pois se eu usasse por exemplo 1,2,3 daria erro 'NullException' pois esses numeros correspondente já seriao excluidos, com a posição sempre no 0 é "impossivel" nao existir EU SEI FICOU MTO CONFUSO
-        }//fim for
-
-        for (var i = 0; i < vetor_menor_dez.length; i = i + 1) {// cria um laço para CRIAR os <p> com os textos dos VETORES que criamos acima
-            var txt = document.getElementById("textos");//acho q tu já entendeu oq faz aqui, se não entendeu sobe um pouco q la ta explicando
-            txt.innerHTML += "<p id='desc_temp'>" + vetor_menor_dez[i] + "</p>";// aqui usamos novamento o innerHTML, nele criamos os <p> que recebem o conteudo dos vetores, -> [i] representa a posição dele, ao inves de usar o nomeDoVetor[0] usamos o i pois ele esta se alto incrementando de 1 em 1
-
-        }// fim for
-
-    } else if (temperatura <= 20) {// faz a mesma coisa, so q aqui é um else if :p
-        for (var i = 0; i < getSizeP(); i++) {
-            remove_infos();
-        }
-        for (var i = 0; i < vetor_onze_vinte.length; i++) {
-            var txt = document.getElementById("textos");
-            txt.innerHTML += "<p id='desc_temp'>" + vetor_onze_vinte[i] + "</p>";
-
-        }
-    } else if (temperatura <= 30) {
-        for (var i = 0; i < getSizeP(); i++) {
-            remove_infos();
-        }
-        for (var i = 0; i < vetor_vinte1_trinta.length; i++) {
-            var txt = document.getElementById("textos");
-            txt.innerHTML += "<p id='desc_temp'>" + vetor_vinte1_trinta[i] + "</p>";
-
-        }
-    } else if (temperatura <= 40) {
-        for (var i = 0; i < getSizeP(); i++) {
-            remove_infos();
-        }
-        for (var i = 0; i < vetor_trinta1_quarenta.length; i++) {
-            var txt = document.getElementById("textos");
-            txt.innerHTML += "<p id='desc_temp'>" + vetor_trinta1_quarenta[i] + "</p>";
-
-        }
-    } else {
-        for (var i = 0; i < getSizeP(); i++) {
-            remove_infos();
-        }
-        for (var i = 0; i < vetor_quarenta1.length; i++) {
-            var txt = document.getElementById("textos");
-            txt.innerHTML += "<p id='desc_temp'>" + vetor_quarenta1[i] + "</p>";
-        }
-    }
-
-
 }

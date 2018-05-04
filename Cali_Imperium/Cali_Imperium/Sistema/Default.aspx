@@ -77,35 +77,41 @@
             <div id="tela_confs">
                 <p class="titulo">Configurações</p>
                 <%-- <a href="#" class="confs_opc" onclick="getViewAddArduino()">Adicionar Termometro</a> --%>
-                <a href="#" class="confs_opc">Editar suas Informações</a>
+                <a href="#" class="confs_opc" onclick="getViewAddArduino()">Editar Termometro</a>
                 <a href="#" class="confs_opc">Suporte</a>
                 <a href="#" class="confs_opc">Ajuda</a>
                 <a href="#" class="fechar" onclick="removerViewConfiguracoes()">x</a>
             </div>
 
-            <%--<div id='fundo_addArduino' class="fundo_addArduino_off">
-				<div id='conf_arduino'>
-					<p class='titulo'>Adicionar novo Termometro</p>
-					<input type='text' name='' class='input_padrao' placeholder='Código do termometro'>
-					<input type='text' name='' class='input_padrao' placeholder='Nome de Exibição do Termometro'>
-					<input type='text' name='' class='term_input' placeholder='Temperatura Minima'>
-					<input type='text' name='' class='term_input' placeholder='Temperatura Maxima'>
-					<select>
-						<option value="null">Selecione o periodo de atualização</option>
-						<option value="10s">10 Segundos</option>
-						<option value="30s">30 Segundos</option>
-						<option value="1m">1 Minuto</option>
-						<option value="3m">3 Minuto</option>
-						<option value="5m">5 Minuto</option>
-					</select>
-					<button class='cnl'>Cancelar</button>
-					<button class='adc'>Adicionar</button>
-					<a href= '#' class='fechar' onclick='removerViewAddArduino()'>x</a>
-				</div>
-			</div> --%>
+            <div id='fundo_addArduino' class="fundo_addArduino_off">
+                <div id='conf_arduino'>
+                    <p class='titulo'>Editar Termometro</p>
+                    <%--<input type='text' name='' class='input_padrao' placeholder='Código do termometro'>
+                    <input type='text' name='' class='input_padrao' placeholder='Nome de Exibição do Termometro'>--%>
+                    <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2"></asp:TextBox>
+                    <asp:Button Text="Cancelar" CssClass="cnl" ID="Button1" runat="server" />
+                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnAdicionarArduino" runat="server" />
+                    <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
+                </div>
+            </div>
         </div>
 
-</form>
+    </form>
 </body>
 </html>
 <script type="text/javascript" src="js/eventos.js" charset="ISO-8859-1"></script>
+<script>
+    function att() {
+
+        var xhttp = new XMLHttpRequest();        
+        xhttp.open("GET", "getTemperatura.aspx", false);
+        xhttp.send();
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText),);
+        
+    }
+
+    setInterval(() => {
+        att();
+    }, 1000);
+</script>
