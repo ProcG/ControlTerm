@@ -19,9 +19,13 @@ var myChart = null;
 //voce pasara um 'numero' que será responsavel por fazer algo no codgio
 
 
-function atualiza_numeros(antes, agora) {// declara uma função com o nome de 'atualiza_numeros' COM parametros* com a temperatura que está 
+function atualiza_numeros(antes, agora, minima, maxima) {// declara uma função com o nome de 'atualiza_numeros' COM parametros* com a temperatura que está 
     temperatura_atual = antes;           // marcando agora na página representada pelo parametro(variavel) 'antes',
     nova_temperatura = agora;            // e a nova temperatura representado pelo 'agora'
+
+    temperatura_minima = minima;
+    temperatura_maxima = maxima;
+
     atualiza_termometro();
 
 

@@ -91,7 +91,7 @@
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2"></asp:TextBox>
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2"></asp:TextBox>
                     <asp:Button Text="Cancelar" CssClass="cnl" ID="Button1" runat="server" />
-                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnAdicionarArduino" runat="server" />
+                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnAdicionarArduino" runat="server" OnClick="btnAdicionarArduino_Click" />
                     <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
                 </div>
             </div>
@@ -107,7 +107,7 @@
         var xhttp = new XMLHttpRequest();        
         xhttp.open("GET", "getTemperatura.aspx", false);
         xhttp.send();
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText),);
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
         
     }
 
