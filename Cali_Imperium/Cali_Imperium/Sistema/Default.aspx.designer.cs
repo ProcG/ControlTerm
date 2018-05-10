@@ -31,6 +31,15 @@ namespace Cali_Imperium.Sistema {
         protected global::System.Web.UI.WebControls.Label NomeUsuario;
         
         /// <summary>
+        /// Controle btnSair.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink btnSair;
+        
+        /// <summary>
         /// Controle txtTempMinima.
         /// </summary>
         /// <remarks>
