@@ -13,7 +13,10 @@ namespace Cali_Imperium.TelaCadastro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuario"] != null)
+            {
+                Response.Redirect("../Sistema");
+            }
         }
 
         protected void btnCadastrar_Click(object sender, EventArgs e)
@@ -39,6 +42,7 @@ namespace Cali_Imperium.TelaCadastro
 
 
                         Response.Write("<script>Alert('Cadastrado com Sucesso')</script>");
+                        Response.Redirect("../TelaLogin/Login.aspx");
                     }
                 }
             }

@@ -79,7 +79,7 @@ div.form > img {
     font-size: 14px;
 }
 
-.form button {
+input[type=submit] {
     font-family: sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -203,7 +203,7 @@ input.cxemail {
     font-size: 14px;
 }
 
-button.enviar {
+input.enviar {
     width: 230px;
     border-radius: 10px;
     font-family: sans-serif;
