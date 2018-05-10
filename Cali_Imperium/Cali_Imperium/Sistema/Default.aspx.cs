@@ -32,5 +32,6 @@ namespace Cali_Imperium.Sistema
                 Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text));
            
         }
+        
     }
 }

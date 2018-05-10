@@ -21,6 +21,7 @@
             -ms-user-select: none;
         }
     </style>
+
 </head>
 
 <body>
@@ -43,19 +44,20 @@
                         <li>
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Temperaturas Ideais"></asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Configurações" onclick="getViewConfiguracoes()"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Configurações" onclick="getViewConfiguracoes()"></asp:HyperLink>
+                        </li>
                     </ul>
                     <ul class="sair_site">
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Sair"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="Logout.aspx" runat="server" CssClass="links" Text="Sair" ID="btnSair" ></asp:HyperLink></li>
                     </ul>
                 </div>
             </div>
 
             <div class="pos_area_termo">
                 <div id="area_termometro">
-                    <div id="circ" class="termometro" onclick="atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(Math.random() * 50))">
-                        <p class="temperatura" id="txt_temperatura"></p>
+                    <div id="circ" class="termometro" onclick="att()">
+                        <p class="temperatura" id="txt_temperatura">10°c</p>
                         <p class="ultima_att" id="ult_att"></p>
                     </div>
                     <div id="textos">
@@ -100,7 +102,7 @@
     </form>
 </body>
 </html>
-<script type="text/javascript" src="js/eventos.js" charset="ISO-8859-1"></script>
+<script type="text/javascript" src="js/eventos.js"></script>
 <script>
     function att() {
 
@@ -112,6 +114,6 @@
     }
 
     setInterval(() => {
-        att();
-    }, 1000);
+       att();
+    }, 5000);
 </script>
