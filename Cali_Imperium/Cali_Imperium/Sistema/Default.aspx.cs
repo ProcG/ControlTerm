@@ -26,5 +26,11 @@ namespace Cali_Imperium.Sistema
                 NomeUsuario.Text = user.Nome;
             }
         }
+
+        protected void btnAdicionarArduino_Click(object sender, EventArgs e)
+        {
+                Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text));
+           
+        }
     }
 }

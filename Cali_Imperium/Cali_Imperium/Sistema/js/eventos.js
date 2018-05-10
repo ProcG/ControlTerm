@@ -1,4 +1,3 @@
-/*ATENÇÃO, VOCÊ NÃO ENTENDERA NADA DO QUE ESTÁ AQUI*/
 var temperatura_atual = 0, nova_temperatura = 0; // cria as variaveis que faram as "animações" com os numeros da temperatura
 var temperatura_minima = 0;
 var temperatura_maxima = 0;
@@ -19,9 +18,14 @@ var myChart = null;
 //voce pasara um 'numero' que será responsavel por fazer algo no codgio
 
 
-function atualiza_numeros(antes, agora) {// declara uma função com o nome de 'atualiza_numeros' COM parametros* com a temperatura que está 
-    temperatura_atual = antes;           // marcando agora na página representada pelo parametro(variavel) 'antes',
+function atualiza_numeros(antes, agora, minima, maxima) {// declara uma fun��o com o nome de 'atualiza_numeros' COM parametros* com a temperatura que est� 
+    temperatura_atual = antes;           // marcando agora na p�gina representada pelo parametro(variavel) 'antes',
+
     nova_temperatura = agora;            // e a nova temperatura representado pelo 'agora'
+
+    temperatura_minima = minima;
+    temperatura_maxima = maxima;
+
     atualiza_termometro();
 
 
@@ -164,8 +168,8 @@ function atualiza_fundo_termometro(grau) {// função COM parametro para atualiz
 
 }
 
-function alerta(grau) { // função com parametro para gerar um alerta sonoro
-    if (grau <= temperatura_minima || grau >= temperatura_maxima) { // faz a comparação para saber se a temperatura está em na faixa
+function alerta(grau) { // fun��o com parametro para gerar um alerta sonoro
+    if (grau <= temperatura_minima || grau >= temperatura_maxima) { // faz a compara��o para saber se a temperatura est� em na faixa
         document.getElementById("alerta").play();// busca o tag <audio> no html que possua um id "alerta" -> <audio id="alerta"> e da um play nele
         document.getElementById("ar").className = "area armado";
     } else { // se nao estiver nesse periodo
@@ -225,4 +229,3 @@ function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
     var div_fundo = document.getElementById("fundo_addArduino");
     div_fundo.className = "";
     div_fundo.className = "fundo_addArduino_off";
-}
