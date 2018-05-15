@@ -14,6 +14,9 @@ function contadorMinima() {
     if (antes_minima != depois_minima) {
         setTimeout(contadorMinima, 100);
     }
+    else {
+        return;
+    }
 
     document.getElementById("txtMinima").innerHTML = antes_minima;
 
@@ -42,6 +45,9 @@ function contador2Q() {
     if (antes_2Q != depois_2Q) {
         setTimeout(contador2Q, 100);
     }
+    else {
+        return;
+    }
 
     document.getElementById("txt2Q").innerHTML = antes_2Q;
 
@@ -69,6 +75,9 @@ function contadorMediana() {
 
     if (antes_Mediana != depois_Mediana) {
         setTimeout(contadorMediana, 100);
+    }
+    else {
+        return;
     }
 
     document.getElementById("txtMediana").innerHTML = antes_Mediana;
@@ -99,6 +108,9 @@ function contador3Q() {
     if (antes_3Q != depois_3Q) {
         setTimeout(contador3Q, 100);
     }
+    else {
+        return;
+    }
 
     document.getElementById("txt3Q").innerHTML = antes_3Q;
 
@@ -127,6 +139,9 @@ function contadorMaxima() {
     if (antes_Maxima != depois_Maxima) {
         setTimeout(contadorMaxima, 100);
     }
+    else {
+        return;
+    }
 
     document.getElementById("txtMaxima").innerHTML = antes_Maxima;
 
@@ -138,3 +153,13 @@ function contadorMaxima() {
     }
 
 }
+
+
+function Analytics(minima, n2q, mediana, n3q, maxima) {
+    att_minima(minima);
+    att_2Q(n2q);
+    att_Mediana(mediana);
+    att_3Q(n3q);
+    att_Maxima(maxima);
+}
+

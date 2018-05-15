@@ -72,23 +72,23 @@
 
             <div class="analytics">
                 <div class="medias">
-                    <p class="temperatura_medias"  id="txtMinima" onclick="att_minima(100)">10</p>
+                    <p class="temperatura_medias"  id="txtMinima">10</p>
                     <p class="desc_temp">Minima</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txt2Q" onclick="att_2Q(100)">10</p>
+                    <p class="temperatura_medias" id="txt2Q">10</p>
                     <p class="desc_temp">2º Quartil</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias"id="txtMediana" onclick="att_Mediana(100)">10</p>
+                    <p class="temperatura_medias"id="txtMediana">10</p>
                     <p class="desc_temp">Mediana</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txt3Q" onclick="att_3Q(100)">10</p>
+                    <p class="temperatura_medias" id="txt3Q">10</p>
                     <p class="desc_temp">3º Quartil</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txtMaxima" onclick="att_Maxima(100)">10</p>
+                    <p class="temperatura_medias" id="txtMaxima">10</p>
                     <p class="desc_temp">Maxima</p>
                 </div>
             </div>     
@@ -135,7 +135,7 @@
         xhttp.open("GET", "getTemperatura.aspx", false);
         xhttp.send();
         atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
-        
+        Analytics(Math.random() * 50, Math.random() * 50, Math.random() * 50, Math.random() * 50, Math.random() * 50);
     }
 
     setInterval(() => {
