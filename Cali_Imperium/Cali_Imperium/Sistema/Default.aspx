@@ -69,6 +69,30 @@
                     </div>
                 </div>
             </div>
+
+            <div class="analytics">
+                <div class="medias">
+                    <p class="temperatura_medias"  id="txtMinima">10</p>
+                    <p class="desc_temp">Minima</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt2Q">10</p>
+                    <p class="desc_temp">2º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias"id="txtMediana">10</p>
+                    <p class="desc_temp">Mediana</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt3Q">10</p>
+                    <p class="desc_temp">3º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMaxima">10</p>
+                    <p class="desc_temp">Maxima</p>
+                </div>
+            </div>     
+
         </div>
 
         <audio id="alerta" loop>
@@ -103,14 +127,18 @@
 </body>
 </html>
 <script type="text/javascript" src="js/eventos.js"></script>
+<script type="text/javascript" src="js/atualizar.js"></script>
 <script>
     function att() {
 
         var xhttp = new XMLHttpRequest();        
         xhttp.open("GET", "getTemperatura.aspx", false);
         xhttp.send();
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
+
+        var numeros = xhttp.responseText.split("-");
         
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
+        Analytics(numeros[1],numeros[2],numeros[3],numeros[4],numeros[5]);
     }
 
     setInterval(() => {

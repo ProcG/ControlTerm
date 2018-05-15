@@ -108,6 +108,7 @@
     <Content Include="Sistema\Default.aspx" />
     <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\usuario.png" />
+    <Content Include="Sistema\js\atualizar.js" />
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
