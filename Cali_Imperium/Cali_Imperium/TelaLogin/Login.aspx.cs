@@ -60,5 +60,10 @@ namespace Cali_Imperium.TelaLogin
 
 
         }
+
+        protected void btnRecuperar_Click(object sender, EventArgs e)
+        {
+            Ultilitarios.EnviarEmail("Funciona :D", "aeeeeee", "mateus.covos@hotmail.com");
+        }
     }
 }

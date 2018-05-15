@@ -126,6 +126,7 @@
     <Content Include="TelaLogin\Login.aspx" />
     <Content Include="TelaLogin\Logos\Logo2.png" />
     <Content Include="TelaLogin\Logos\Logo_Cali1.png" />
+    <Content Include="TelaLogin\Recuperar.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +178,15 @@
     <Compile Include="TelaLogin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TelaLogin\Recuperar.aspx.cs">
+      <DependentUpon>Recuperar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TelaLogin\Recuperar.aspx.designer.cs">
+      <DependentUpon>Recuperar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="Ultilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
