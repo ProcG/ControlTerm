@@ -72,24 +72,24 @@
 
             <div class="analytics">
                 <div class="medias">
-                    <p class="temperatura_medias">10</p>
-                    <p id="desc_temp">Minima</p>
+                    <p class="temperatura_medias"  id="txtMinima" onclick="att_minima(100)">10</p>
+                    <p class="desc_temp">Minima</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias">10</p>
-                    <p id="desc_temp">2º Quartil</p>
+                    <p class="temperatura_medias" id="txt2Q" onclick="att_2Q(100)">10</p>
+                    <p class="desc_temp">2º Quartil</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias">10</p>
-                    <p id="desc_temp">Mediana</p>
+                    <p class="temperatura_medias"id="txtMediana" onclick="att_Mediana(100)">10</p>
+                    <p class="desc_temp">Mediana</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias">10</p>
-                    <p id="desc_temp">3º Quartil</p>
+                    <p class="temperatura_medias" id="txt3Q" onclick="att_3Q(100)">10</p>
+                    <p class="desc_temp">3º Quartil</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias">10</p>
-                    <p id="desc_temp">Maxima</p>
+                    <p class="temperatura_medias" id="txtMaxima" onclick="att_Maxima(100)">10</p>
+                    <p class="desc_temp">Maxima</p>
                 </div>
             </div>     
 
@@ -127,6 +127,7 @@
 </body>
 </html>
 <script type="text/javascript" src="js/eventos.js"></script>
+<script type="text/javascript" src="js/atualizar.js"></script>
 <script>
     function att() {
 

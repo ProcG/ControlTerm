@@ -105,7 +105,7 @@ p.ultima_att {
     font-size: 22px;
     color: #fff;
 }
-p#desc_temp {
+.desc_temp {
     width: 100%;
     font-family: "Calibri";
     font-size: 20px;
