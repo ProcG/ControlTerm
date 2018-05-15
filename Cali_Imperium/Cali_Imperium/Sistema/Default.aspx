@@ -69,6 +69,30 @@
                     </div>
                 </div>
             </div>
+
+            <div class="analytics">
+                <div class="medias">
+                    <p class="temperatura_medias">10</p>
+                    <p id="desc_temp">Minima</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias">10</p>
+                    <p id="desc_temp">2º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias">10</p>
+                    <p id="desc_temp">Mediana</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias">10</p>
+                    <p id="desc_temp">3º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias">10</p>
+                    <p id="desc_temp">Maxima</p>
+                </div>
+            </div>     
+
         </div>
 
         <audio id="alerta" loop>
