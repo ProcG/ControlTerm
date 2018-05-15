@@ -106,9 +106,11 @@
     <Content Include="Sistema\css\inicio.css" />
     <Content Include="Sistema\css\padroes.css" />
     <Content Include="Sistema\Default.aspx" />
+    <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\usuario.png" />
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
+    <Content Include="Sistema\Logout.aspx" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -145,6 +147,21 @@
     <Compile Include="Sistema\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\getTemperatura.aspx.cs">
+      <DependentUpon>getTemperatura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\getTemperatura.aspx.designer.cs">
+      <DependentUpon>getTemperatura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Temperatura.cs" />
     <Compile Include="TelaCadastro\Cadastro.aspx.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

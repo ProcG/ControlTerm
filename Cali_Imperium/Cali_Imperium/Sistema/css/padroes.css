@@ -253,7 +253,7 @@ div#conf_arduino > select{
     font-size: 17px;
 }
 
-button{
+input.adc, input.cnl{
     position: relative;
     width: calc(50% - 10px);
     font-family: "Calibri Light";
@@ -267,18 +267,18 @@ button{
     margin: 5px;
 }
 
-button.adc{
+input.adc{
     background-color: #2f2;
 }
-button.adc:hover{
+input.adc:hover{
     transition: all 0.3s;
     background-color: #0d0;
 }
 
-button.cnl{
+input.cnl{
     background-color: #f22;
     }
-button.cnl:hover{
+input.cnl:hover{
     transition: all 0.3s;
     background-color: #f00;
 }

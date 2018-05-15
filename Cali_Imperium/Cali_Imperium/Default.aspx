@@ -131,7 +131,7 @@
 				<p>Full Stack</p>
 				<h1>Juvencio</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -140,7 +140,7 @@
 				<p>Full Stack ( ͡° ͜ʖ ͡°)</p>
 				<h1>Pedro</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -149,7 +149,7 @@
 				<p>Full Stack</p>
 				<h1>Gabriel</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/ProcG/"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -158,7 +158,7 @@
 				<p>Full Stack</p>
 				<h1>Mito</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/mateuscovos"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -167,7 +167,7 @@
 				<p>Full Stack</p>
 				<h1>Eu</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/NatalNW"><img src="Logos/github.png" width="40px" height="40px"/></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
