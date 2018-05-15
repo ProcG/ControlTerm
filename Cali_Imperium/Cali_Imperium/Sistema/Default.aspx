@@ -134,9 +134,11 @@
         var xhttp = new XMLHttpRequest();        
         xhttp.open("GET", "getTemperatura.aspx", false);
         xhttp.send();
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
-        Analytics(Math.floor(Math.random() * 50), Math.floor(Math.random() * 50), Math.floor(Math.random() * 50),
-            Math.floor(Math.random() * 50), Math.floor(Math.random() * 50));
+
+        var numeros = xhttp.responseText.split("-");
+        
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
+        Analytics(numeros[1],numeros[2],numeros[3],numeros[4],numeros[5]);
     }
 
     setInterval(() => {
