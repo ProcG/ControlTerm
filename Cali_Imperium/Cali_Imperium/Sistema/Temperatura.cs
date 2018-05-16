@@ -9,15 +9,15 @@ namespace Caliimperium
 {
     public class Temperatura//isso é uma classe
     {
-        public int PegarTemperatura()//isso é um metodo que retornar INT
+        public int PegarTemperatura(int codUsuario)//isso é um metodo que retornar INT
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FROM Temp WHERE codTemp = (SELECT MAX(codTemp) FROM Temp)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FR OM Temperatura WHERE codTemperatura = (SELECT MAX(codTemperatura) FROM Temperatura) AND codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = " + codUsuario + ")", conn))
                 {
-
+                    
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
@@ -26,7 +26,7 @@ namespace Caliimperium
                         }
                         else
                         {
-                            return 0; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return codUsuario; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 

@@ -25,13 +25,13 @@ namespace Cali_Imperium.TelaLogin
             user.Email = txtEmail.Text;
             user.Senha = txtSenha.Text;
 
-            using (SqlConnection conn = new SqlConnection("Server=tcp:servigabriel.database.windows.net,1433;Initial Catalog=bd;Persist Security Info=False;User ID=gabriel;Password=559428Asdf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
 
             {
                 conn.Open();
 
                 // Cria um comando para selecionar registros da tabela, trazendo todas as pessoas que nasceram depois de 1/1/1900
-                using (SqlCommand cmd = new SqlCommand("SELECT *  FROM Teste WHERE Email= @email and senha = @senha ", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Usuario WHERE email = @email and senha = @senha ", conn))
                 {
                     // Esse valor poderia vir de qualquer outro lugar, como uma TextBox...
                     cmd.Parameters.AddWithValue("@email", user.Email);
@@ -42,6 +42,7 @@ namespace Cali_Imperium.TelaLogin
                         if (reader.Read() == true)
                         {
 
+                            user.ID = int.Parse(reader["codUsuario"].ToString());
                             user.Nome = reader["nome"].ToString();
                             user.Estado = reader["estado"].ToString();
                             user.Nascimento = reader["data_nasc"].ToString();

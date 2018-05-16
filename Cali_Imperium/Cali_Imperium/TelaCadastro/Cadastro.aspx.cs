@@ -23,12 +23,12 @@ namespace Cali_Imperium.TelaCadastro
         {
             if (TextSenha.Text == TextConfSenha.Text && TextSenha.Text !="" && TextConfSenha.Text != "")
             {
-                using (SqlConnection conn = new SqlConnection("Server=tcp:servigabriel.database.windows.net,1433;Initial Catalog=bd;Persist Security Info=False;User ID=gabriel;Password=559428Asdf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                using (SqlConnection conn = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; "))
                 {
                     conn.Open();
 
                     // Cria um comando para inserir um novo registro à tabela
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Teste (nome, telefone, email, data_nasc, senha,estado) VALUES (@nome, @telefone, @email, @data_nasc, @senha,@estado)", conn))
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Temperatura (nome, telefone, email, data_nasc, senha,estado) VALUES (@nome, @telefone, @email, @data_nasc, @senha,@estado)", conn))
                     {
                         // Esses valores poderiam vir de qualquer outro lugar, como uma TextBox...
                         cmd.Parameters.AddWithValue("@nome", TxtUsuario.Text);
