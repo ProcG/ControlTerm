@@ -85,6 +85,7 @@
     <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Logos\eu.jpg" />
     <Content Include="Logos\gabriel.jpg" />
     <Content Include="Logos\github.png" />
     <Content Include="Logos\juvencio.jpg" />
