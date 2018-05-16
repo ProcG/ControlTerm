@@ -23,7 +23,7 @@ namespace Cali_Imperium
             mail.Priority = MailPriority.High; //Prioridade do E-Mail
 
             SmtpClient client = new SmtpClient();  //Adicionando as credenciais do seu e-mail e senha:
-            client.Credentials = new System.Net.NetworkCredential(email,"Imperium");
+            client.Credentials = new System.Net.NetworkCredential(email,"SENHAAQUI");
 
             client.Port = 587; // Esta porta é a utilizada pelo Gmail para envio
             client.Host = "smtp.gmail.com"; //Definindo o provedor que irá disparar o e-mail
