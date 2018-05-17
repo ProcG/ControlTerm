@@ -42,6 +42,9 @@ class ArduinoDataRead {
                 
 				var a = data.split("-");
 				
+				a[0]=91.23
+				a[1]=123
+				
 				this.listData.push(parseFloat(a[0]));
 				
 				console.log("Estou Aqui "+this.listData.push(parseFloat(a[0])));

@@ -28,7 +28,7 @@ namespace Cali_Imperium.TelaCadastro
                     conn.Open();
 
                     // Cria um comando para inserir um novo registro à tabela
-                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Temperatura (nome, telefone, email, data_nasc, senha,estado) VALUES (@nome, @telefone, @email, @data_nasc, @senha,@estado)", conn))
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Usuario (nome, telefone, email, data_nasc, senha,estado) VALUES (@nome, @telefone, @email, @data_nasc, @senha,@estado)", conn))
                     {
                         // Esses valores poderiam vir de qualquer outro lugar, como uma TextBox...
                         cmd.Parameters.AddWithValue("@nome", TxtUsuario.Text);
