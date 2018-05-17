@@ -17,14 +17,7 @@
 			</ul>
 		</div>
 	</header>
-	<div id="bg"></div>
-					<form class="box">
-						<p class="txtsenha"><img src="../TelaCadastro/Logos/senha.jpg">Esqueci minha senha</p>
-						<p class="txt">Digite seu E-mail</p></span>
-						<input class="cxemail" type="text" id="recsenha" placeholder="E-mail"/>
-						<input type="submit" class="enviar" value="Enviar" onclick="recsenha()"/>
-						<a href="Login.aspx" id="close">X</a>
-					</form>
+					
 
         <script>
             function recsenha() {
@@ -45,11 +38,22 @@
 				</form>
 				<form id="form1" class="login-form" runat="server">
 
+
                     <asp:TextBox runat="server" placeholder="E-mail" TextMode="Email" ID="txtEmail"/>
                     <asp:TextBox runat="server" placeholder="Senha" TextMode="Password" ID="txtSenha"/>
-                    <asp:Button Text="Login" runat="server" ID="btnEnviar" OnClick="btnEnviar_Click"/>
+                    <asp:Button Text="Login" runat="server" ID="btnEnviar" OnClick="btnEnviar_Click" />
 					<p class="mensagem">Não é registrado ? <a href="../TelaCadastro/cadastro.aspx">Crie sua Conta.</a><br>
 					<a href="#bg">Recuperação de senha</a></p>
+
+                    <div id="bg"></div>
+	
+                    <div class="box">
+						<p class="txtsenha"><img src="../TelaCadastro/Logos/senha.jpg">Esqueci minha senha</p>
+						<p class="txt">Digite seu E-mail</p></span>
+						<asp:TextBox runat="server" TextMode="Email" CssClass="cxemail" placeholder="E-mail" ID="txtEmailRec"/>
+                        <asp:Button Text="Enviar" CssClass="enviar" runat="server" ID="btnRecuperarSenha" OnClick="btnRecuperarSenha_Click"/>
+						<a href="Login.aspx" id="close">X</a>
+					</div>
 
 				</form>
 
