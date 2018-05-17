@@ -182,6 +182,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\controlterm - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\controlterm - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

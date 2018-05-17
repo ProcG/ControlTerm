@@ -16,7 +16,7 @@ namespace Caliimperium
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino codArduino, codUsuario, minima, maxima VALUES(@cod,@id,@min,@max)", conn))
+                using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino (codArduino, codUsuario, minima, maxima) VALUES(@cod,@id,@min,@max)", conn))
                 {
                     cmd.Parameters.AddWithValue("@cod",codigo);
                     cmd.Parameters.AddWithValue("@id", idUsuario);
@@ -57,9 +57,9 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FROM Temperatura WHERE codTemperatura = (SELECT MAX(codTemperatura) FROM Temperatura) AND codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = " + codUsuario + ")", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FROM Temperatura WHERE codTemperatura = (SELECT MAX(codTemperatura) FROM Temperatura) AND codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conn))
                 {
-                    
+                    cmd.Parameters.AddWithValue("@id", codUsuario);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
@@ -68,7 +68,7 @@ namespace Caliimperium
                         }
                         else
                         {
-                            return codUsuario; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return -100; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 

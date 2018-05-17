@@ -57,12 +57,13 @@
                 </div>
             </div>
 
-              <% Caliimperium.Temperatura t = new Caliimperium.Temperatura();
-                Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
+              <%
+                  Caliimperium.Temperatura t = new Caliimperium.Temperatura();
+                  Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
 
 
-                if (t.UsuarioTemArduino(u.ID) == true)
-                {
+                  if (t.UsuarioTemArduino(u.ID) == true)
+                  {
             %>
 
             <div class="pos_area_termo">
@@ -183,8 +184,12 @@
         xhttp.send();
 
         var numeros = xhttp.responseText.split("-");
-        
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
+
+        if (numeros[0] == -100) {
+            return;
+        } 
+
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), 10,30);
         Analytics(numeros[1],numeros[2],numeros[3],numeros[4],numeros[5]);
     }
 
