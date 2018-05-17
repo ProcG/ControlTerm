@@ -76,15 +76,15 @@ namespace Caliimperium
             }
         }
 
-        public int PegarTempMinima()
+        public int PegarTempMinima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Controle WHERE codControle = (SELECT MAX(codControle) FROM Controle)", conn))
+                using (SqlCommand cmd = new SqlCommand("select min(temperatura) as 'minima' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
@@ -101,20 +101,20 @@ namespace Caliimperium
             }
         }
 
-        public int Pegar2Quartil()
+        public int Pegar2Quartil(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Controle WHERE codControle = (SELECT MAX(codControle) FROM Controle)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.25) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '2q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return int.Parse(dr["minima"].ToString()); // retorna a temperatura que esta no banco
+                            return int.Parse(dr["2q"].ToString()); // retorna a temperatura que esta no banco
                         }
                         else
                         {
@@ -132,14 +132,14 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Arduino WHERE codUsuario = @id", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.5) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as 'mediana' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id",id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return int.Parse(dr["minima"].ToString()); // retorna a temperatura que esta no banco
+                            return int.Parse(dr["mediana"].ToString()); // retorna a temperatura que esta no banco
                         }
                         else
                         {
@@ -151,20 +151,20 @@ namespace Caliimperium
             }
         }
 
-        public int Pegar3Quartil()
+        public int Pegar3Quartil(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Controle WHERE codControle = (SELECT MAX(codControle) FROM Controle)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.75) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '3q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return int.Parse(dr["minima"].ToString()); // retorna a temperatura que esta no banco
+                            return int.Parse(dr["3q"].ToString()); // retorna a temperatura que esta no banco
                         }
                         else
                         {
@@ -176,20 +176,20 @@ namespace Caliimperium
             }
         }
 
-        public int PegarTempMaxima()
+        public int PegarTempMaxima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Controle WHERE codControle = (SELECT MAX(codControle) FROM Controle)", conn))
+                using (SqlCommand cmd = new SqlCommand("select max(temperatura) as 'maxima' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return int.Parse(dr["minima"].ToString()); // retorna a temperatura que esta no banco
+                            return int.Parse(dr["maxima"].ToString()); // retorna a temperatura que esta no banco
                         }
                         else
                         {

@@ -3,9 +3,9 @@
 <% Cali_Imperium.Usuario a = (Cali_Imperium.Usuario)Session["Usuario"]; if (a == null) { Response.Redirect("../TelaLogin/Login.aspx"); } %>
 
 <%=new Caliimperium.Temperatura().PegarTemperatura(a.ID)+"-"%>
-0-<%//=new Caliimperium.Temperatura().PegarTempMinima()+"-"%>
-0-<%//=new Caliimperium.Temperatura().Pegar2Quartil()+"-"%>
-0-<%//=new Caliimperium.Temperatura().PegarMediana(a.ID)+"-"%>
-0-<%//=new Caliimperium.Temperatura().Pegar3Quartil()+"-"%>
-0-<%//=new Caliimperium.Temperatura().PegarTempMaxima()+"-"%>
+<%=new Caliimperium.Temperatura().PegarTempMinima(a.ID)+"-"%>
+<%=new Caliimperium.Temperatura().Pegar2Quartil(a.ID)+"-"%>
+<%=new Caliimperium.Temperatura().PegarMediana(a.ID)+"-"%>
+<%=new Caliimperium.Temperatura().Pegar3Quartil(a.ID)+"-"%>
+<%=new Caliimperium.Temperatura().PegarTempMaxima(a.ID)+"-"%>
 
