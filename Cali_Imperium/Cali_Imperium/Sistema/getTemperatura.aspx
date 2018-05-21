@@ -10,5 +10,5 @@
 <%=new Caliimperium.Temperatura().PegarTempMaxima(a.ID)+"-"%>
 <%=Caliimperium.Temperatura.PegarMinima(a.ID)+"-"%>
 <%=Caliimperium.Temperatura.PegarMaxima(a.ID)+"-"%>
-<% }catch{ Response.Write("0-0-0-0-0-0-0-0-"); } %>
+<% }catch{ Response.Write("0-0-0-0-0-0-100-"); } %>
 
