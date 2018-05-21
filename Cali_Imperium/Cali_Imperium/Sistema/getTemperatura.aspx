@@ -8,4 +8,6 @@
 <%=new Caliimperium.Temperatura().PegarMediana(a.ID)+"-"%>
 <%=new Caliimperium.Temperatura().Pegar3Quartil(a.ID)+"-"%>
 <%=new Caliimperium.Temperatura().PegarTempMaxima(a.ID)+"-"%>
+<%=Caliimperium.Temperatura.PegarMinima(a.ID)+"-"%>
+<%=Caliimperium.Temperatura.PegarMaxima(a.ID)+"-"%>
 
