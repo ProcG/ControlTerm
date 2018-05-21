@@ -45,7 +45,7 @@ class ArduinoDataRead {
 				this.listData.push(parseFloat(a[0]));
 				
 				console.log("Estou Aqui "+this.listData.push(parseFloat(a[0])));
-				
+				console.log(a[0])
 				//var temperatura[] = parseFloat(data).slipt(" ");
 				
 				console.log(a);
@@ -86,7 +86,7 @@ module.exports.ArduinoData = {List: serial.List}
 			if(err){
 				console.log("err: "+err);				
 			}else{
-				console.log("con");
+				console.log("conectado");
 			}
 			
 			// If no error, then good to proceed.  
