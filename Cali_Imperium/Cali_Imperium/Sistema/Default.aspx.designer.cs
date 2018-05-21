@@ -31,6 +31,15 @@ namespace Cali_Imperium.Sistema {
         protected global::System.Web.UI.WebControls.Label NomeUsuario;
         
         /// <summary>
+        /// Controle btnAtualizarPerfil.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAtualizarPerfil;
+        
+        /// <summary>
         /// Controle btnSair.
         /// </summary>
         /// <remarks>
@@ -76,13 +85,13 @@ namespace Cali_Imperium.Sistema {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Controle btnEditarArduino.
+        /// Controle btnEditArduino.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEditarArduino;
+        protected global::System.Web.UI.WebControls.Button btnEditArduino;
         
         /// <summary>
         /// Controle txtNomeArduino.

@@ -207,7 +207,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Arduini WHERE codUsuario = @id", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT minima FROM Arduino WHERE codUsuario = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -258,7 +258,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("UPDATE Arduino set minama = @min, maxima = @max WHERE codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("UPDATE Arduino set minima = @min, maxima = @max WHERE codUsuario = @id", conn))
                 {
                     cmd.Parameters.AddWithValue("@min", minima);
                     cmd.Parameters.AddWithValue("@max", maxima);

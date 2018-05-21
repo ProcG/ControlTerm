@@ -1,5 +1,20 @@
 /*MENU-------------------------------------MENU*/
 
+input.atualizar_perfil {
+    position: relative;
+    right: -30px;
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/engre.png);
+    background-size: 100% 100%;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: transparent;
+}
+
 div.menu {
     position: fixed;
     width: 15px;
