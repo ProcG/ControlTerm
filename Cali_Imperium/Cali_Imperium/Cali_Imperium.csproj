@@ -111,6 +111,7 @@
     <Content Include="Sistema\Default.aspx" />
     <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\usuario.png" />
+    <Content Include="Sistema\js\atualizar.js" />
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
@@ -187,9 +188,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="Ultilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\controlterm - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\controlterm - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

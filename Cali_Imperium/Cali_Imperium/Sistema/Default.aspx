@@ -25,6 +25,9 @@
 </head>
 
 <body>
+
+  
+
     <form id="form1" runat="server">
         <div class="area" id="ar">
             <div class="menu">
@@ -54,6 +57,15 @@
                 </div>
             </div>
 
+              <%
+                  Caliimperium.Temperatura t = new Caliimperium.Temperatura();
+                  Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
+
+
+                  if (t.UsuarioTemArduino(u.ID) == true)
+                  {
+            %>
+
             <div class="pos_area_termo">
                 <div id="area_termometro">
                     <div id="circ" class="termometro" onclick="att()">
@@ -62,13 +74,43 @@
                     </div>
                     <div id="textos">
                         <canvas id="chart"></canvas>
-                        <%--<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>--%>
+                        
                     </div>
                 </div>
             </div>
+
+            <div class="analytics">
+                <div class="medias">
+                    <p class="temperatura_medias"  id="txtMinima">10</p>
+                    <p class="desc_temp">Minima</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt2Q">10</p>
+                    <p class="desc_temp">2º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias"id="txtMediana">10</p>
+                    <p class="desc_temp">Mediana</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt3Q">10</p>
+                    <p class="desc_temp">3º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMaxima">10</p>
+                    <p class="desc_temp">Maxima</p>
+                </div>
+            </div>     
+            <% }// FIM ID
+                else
+                {
+                    %>
+                        <div class="sem_termometro">
+                            <asp:Label runat="server"  class="txtNaoTem" ID="txtMsgNaoTem"></asp:Label>
+                        </div>
+                    <%
+                }
+              %>
         </div>
 
         <audio id="alerta" loop>
@@ -78,14 +120,29 @@
         <div id="fundo_modal" class="fundo_modal_off">
             <div id="tela_confs">
                 <p class="titulo">Configurações</p>
-                <%-- <a href="#" class="confs_opc" onclick="getViewAddArduino()">Adicionar Termometro</a> --%>
+              <% 
+                  if (t.UsuarioTemArduino(u.ID) == true)
+                    {
+            %>
                 <a href="#" class="confs_opc" onclick="getViewAddArduino()">Editar Termometro</a>
+              <%}
+                else
+                { %>
+
+                <a href="#" class="confs_opc" onclick="getViewAddArduino()">Adicionar Termometro</a>
+                
+                <%} %>
                 <a href="#" class="confs_opc">Suporte</a>
                 <a href="#" class="confs_opc">Ajuda</a>
                 <a href="#" class="fechar" onclick="removerViewConfiguracoes()">x</a>
             </div>
 
             <div id='fundo_addArduino' class="fundo_addArduino_off">
+                
+                 <% 
+                if (t.UsuarioTemArduino(u.ID) == true)
+                {
+                %>
                 <div id='conf_arduino'>
                     <p class='titulo'>Editar Termometro</p>
                     <%--<input type='text' name='' class='input_padrao' placeholder='Código do termometro'>
@@ -93,27 +150,49 @@
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2"></asp:TextBox>
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2"></asp:TextBox>
                     <asp:Button Text="Cancelar" CssClass="cnl" ID="Button1" runat="server" />
-                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnAdicionarArduino" runat="server" OnClick="btnAdicionarArduino_Click" />
+                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnEditarArduino" runat="server" OnClick="btnEditarArduino_Click" />
                     <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
                 </div>
+                <% } else{ %>
+                    <div id='conf_arduino'>
+                    <p class='titulo'>Adicionar Termometro</p>
+                    <asp:TextBox runat="server" CssClass='input_padrao' placeholder='Código do termometro' ID="txtNomeArduino"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtMinimaC" MaxLength="2"></asp:TextBox>
+                    <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtMaximaC" MaxLength="2"></asp:TextBox>
+                    <asp:Button Text="Cancelar" CssClass="cnl" ID="Button2" runat="server" />
+                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnAddArduino" runat="server" OnClick="btnAddArduino_Click" />
+                    <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
+                </div>
+                <%} %>
             </div>
         </div>
 
     </form>
+    
 </body>
 </html>
 <script type="text/javascript" src="js/eventos.js"></script>
+<script type="text/javascript" src="js/atualizar.js"></script>
 <script>
     function att() {
 
         var xhttp = new XMLHttpRequest();        
         xhttp.open("GET", "getTemperatura.aspx", false);
         xhttp.send();
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(xhttp.responseText), <% Response.Write(Caliimperium.Temperatura.PegarMinima()+ "") ; %> , <% Response.Write(Caliimperium.Temperatura.PegarMaxima()+ "") ; %>);
-        
+
+        var numeros = xhttp.responseText.split("-");
+
+        if (numeros[0] == -100) {
+            return;
+        } 
+
+        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), 10,30);
+        Analytics(numeros[1],numeros[2],numeros[3],numeros[4],numeros[5]);
     }
 
     setInterval(() => {
-       att();
+        try{
+            att();
+        }catch(err){}
     }, 5000);
 </script>

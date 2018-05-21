@@ -40,6 +40,15 @@ namespace Cali_Imperium.Sistema {
         protected global::System.Web.UI.WebControls.HyperLink btnSair;
         
         /// <summary>
+        /// Controle txtMsgNaoTem.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtMsgNaoTem;
+        
+        /// <summary>
         /// Controle txtTempMinima.
         /// </summary>
         /// <remarks>
@@ -67,12 +76,57 @@ namespace Cali_Imperium.Sistema {
         protected global::System.Web.UI.WebControls.Button Button1;
         
         /// <summary>
-        /// Controle btnAdicionarArduino.
+        /// Controle btnEditarArduino.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdicionarArduino;
+        protected global::System.Web.UI.WebControls.Button btnEditarArduino;
+        
+        /// <summary>
+        /// Controle txtNomeArduino.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNomeArduino;
+        
+        /// <summary>
+        /// Controle txtMinimaC.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMinimaC;
+        
+        /// <summary>
+        /// Controle txtMaximaC.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMaximaC;
+        
+        /// <summary>
+        /// Controle Button2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// Controle btnAddArduino.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAddArduino;
     }
 }
