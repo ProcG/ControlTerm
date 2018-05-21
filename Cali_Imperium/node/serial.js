@@ -42,12 +42,6 @@ class ArduinoDataRead {
                 
 				var a = data.split("-");
 				
-				this.listData.push(parseFloat(a[0]));
-				
-				console.log("Estou Aqui "+this.listData.push(parseFloat(a[0])));
-				console.log(a[0])
-				//var temperatura[] = parseFloat(data).slipt(" ");
-				
 				console.log(a);
 				
 				setTemperatura(a[0], a[1]);
@@ -68,8 +62,6 @@ class ArduinoDataRead {
 }
 const serial = new ArduinoDataRead();
 serial.SetConnection();
-
-module.exports.ArduinoData = {List: serial.List} 
 
 
 		var Connection = require('tedious').Connection;  
