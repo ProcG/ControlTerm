@@ -39,6 +39,7 @@
                         </p>
                         <p class="funcao_usuario">Usuário</p>
                     </div>
+                    <asp:Button Text="Editar" runat="server" ID="btnAtualizarPerfil" OnClick="btnAtualizarPerfil_Click" CssClass="atualizar_perfil"></asp:button>
                 </div>
                 <div class="sub_menus">
                     <ul>

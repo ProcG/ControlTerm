@@ -49,5 +49,10 @@ namespace Cali_Imperium.Sistema
         {
             Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
         }
+
+        protected void btnAtualizarPerfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Perfil/Default.aspx");
+        }
     }
 }
