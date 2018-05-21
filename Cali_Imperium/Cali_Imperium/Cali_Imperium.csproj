@@ -80,6 +80,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sistema\Perfil\css\atualizar.css" />
+    <Content Include="Sistema\Perfil\Atualizar perfil.aspx" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
@@ -131,6 +133,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Sistema\Perfil\Atualizar perfil.aspx.cs">
+      <DependentUpon>Atualizar perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Perfil\Atualizar perfil.aspx.designer.cs">
+      <DependentUpon>Atualizar perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
