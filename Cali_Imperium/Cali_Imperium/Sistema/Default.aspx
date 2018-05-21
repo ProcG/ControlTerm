@@ -66,7 +66,7 @@
                   {
             %>
 
-            <div class="pos_area_termo">
+            <div class="pos_area_termo" id="pisca">
                 <div id="area_termometro">
                     <div id="circ" class="termometro" onclick="att()">
                         <p class="temperatura" id="txt_temperatura">10°c</p>

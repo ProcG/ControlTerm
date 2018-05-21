@@ -154,10 +154,10 @@ function atualiza_fundo_termometro(grau) {// função COM parametro para atualiz
 function alerta(grau) { // função com parametro para gerar um alerta sonoro
     if (grau <= temperatura_minima || grau >= temperatura_maxima) { // faz a comparação para saber se a temperatura está em na faixa
         document.getElementById("alerta").play();// busca o tag <audio> no html que possua um id "alerta" -> <audio id="alerta"> e da um play nele
-        document.getElementById("ar").className = "area armado";
+        document.getElementById("pisca").className = "pos_area_termo armado";
     } else { // se nao estiver nesse periodo
         document.getElementById("alerta").pause(); // busca a tag <audio> que possua o id "alerta" e da um pause
-        document.getElementById("ar").className = "area";
+        document.getElementById("pisca").className = "pos_area_termo";
     }
 }
 
