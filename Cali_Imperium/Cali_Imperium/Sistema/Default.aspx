@@ -74,10 +74,7 @@
                     </div>
                     <div id="textos">
                         <canvas id="chart"></canvas>
-                        <%--<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>
-						<p id="desc_temp">Temperatura ideial para pegar câncer de pele</p>--%>
+                        
                     </div>
                 </div>
             </div>
