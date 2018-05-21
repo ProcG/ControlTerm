@@ -150,7 +150,7 @@
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2"></asp:TextBox>
                     <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2"></asp:TextBox>
                     <asp:Button Text="Cancelar" CssClass="cnl" ID="Button1" runat="server" />
-                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnEditarArduino" runat="server" OnClick="btnEditarArduino_Click" />
+                    <asp:Button Text="Adicionar" CssClass="adc" ID="btnEditArduino" runat="server" OnClick="btnEditArduino_Click" />
                     <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
                 </div>
                 <% } else{ %>
@@ -174,25 +174,41 @@
 <script type="text/javascript" src="js/eventos.js"></script>
 <script type="text/javascript" src="js/atualizar.js"></script>
 <script>
+    var numeros = new Array();
     function att() {
 
         var xhttp = new XMLHttpRequest();        
-        xhttp.open("GET", "getTemperatura.aspx", false);
+       
+        xhttp.open("GET", "getTemperatura.aspx", true);
+        xhttp.onreadystatechange = function () {
+            if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
+                numeros = xhttp.responseText.split("-");
+
+
+                if (numeros[0] == -100) {
+                    return;
+                }
+
+                atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
+                Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
+
+            } 
+        }
+
         xhttp.send();
+         
 
-        var numeros = xhttp.responseText.split("-");
-
-        if (numeros[0] == -100) {
-            return;
-        } 
-
-        atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), 10,30);
-        Analytics(numeros[1],numeros[2],numeros[3],numeros[4],numeros[5]);
+        
     }
+
+    att();
+    
 
     setInterval(() => {
         try{
             att();
-        }catch(err){}
+        } catch (err) { console.log(err);}
     }, 5000);
+
+
 </script>

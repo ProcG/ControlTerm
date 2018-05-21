@@ -33,13 +33,6 @@ namespace Cali_Imperium.Sistema
             }
         }
 
-
-        protected void btnEditarArduino_Click(object sender, EventArgs e)
-        {
-            Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text),user.ID);
-
-        }
-
         protected void btnAddArduino_Click(object sender, EventArgs e)
         {
             string nome = txtNomeArduino.Text;
@@ -50,6 +43,11 @@ namespace Cali_Imperium.Sistema
             Response.Redirect("Default.aspx");
 
 
+        }
+
+        protected void btnEditArduino_Click(object sender, EventArgs e)
+        {
+            Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
         }
     }
 }
