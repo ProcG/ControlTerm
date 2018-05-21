@@ -9,9 +9,22 @@ namespace Cali_Imperium.Sistema.Perfil
 {
     public partial class Default : System.Web.UI.Page
     {
-        Usuario user = null;
+        Usuario user = new Usuario();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["Usuario"] == null)
+            {
+                Response.Redirect("../../TelaLogin/Login.aspx");
+            }
+            else
+            {
+
+                user = (Usuario)Session["Usuario"];
+
+            }
         }
+
     }
 }

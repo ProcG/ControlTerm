@@ -1,15 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Sistema.Perfil.Default" %>
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Atualização de Cadastro</title>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Atualizar usuário</title>
     <link rel="stylesheet" href="css/atualizar.css">
 </head>
 <body>
-        <form name="meuForm" method="post" id="formulario">
+    <form id="form1" runat="server" name="meuForm" method="post" >
                 <div class="logar"> 
                     <h1>Alteração de Cadastro</h1>
                     <div class="pp">
@@ -52,6 +52,6 @@
                     <button class="btnCancelar" type="reset">Cancelar</button>
 				    <button class="btnAlterar" type="submit">Alterar Cadastrar</button>
                 </div>
-        </form>
+    </form>
 </body>
 </html>
