@@ -188,7 +188,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <Compile Include="Ultilitarios.cs" />
+    <Compile Include="Utilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
