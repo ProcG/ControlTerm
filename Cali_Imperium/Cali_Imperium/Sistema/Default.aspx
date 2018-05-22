@@ -185,6 +185,7 @@
             if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
                 numeros = xhttp.responseText.split("-");
 
+               
 
                 if (numeros[0] == -100) {
                     return;
