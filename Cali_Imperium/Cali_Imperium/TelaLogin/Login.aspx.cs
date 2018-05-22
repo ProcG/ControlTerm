@@ -78,7 +78,7 @@ namespace Cali_Imperium.TelaLogin
                         if(dr.Read())
                         {
                             string senha = dr["senha"].ToString();
-                            if (Ultilitarios.EnviarEmail($"Sua senha do Caliimperium é essa: {senha}", "Recuperação de senha do Caliiperium", email) == true)
+                            if (Utilitarios.EnviarEmail($"Sua senha do Caliimperium é essa: {senha}", "Recuperação de senha do Caliiperium", email) == true)
                             {
                                 Response.Write("<script>alert('Sua senha foi enviada para seu Email!')</script>");
                                 return;
