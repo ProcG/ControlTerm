@@ -7,7 +7,7 @@ using System.Net.Mail;
 
 namespace Cali_Imperium
 {
-    public class Ultilitarios
+    public class Utilitarios
     {
         public static bool EnviarEmail(string texto, string assunto, string email_destinatario)
         {
