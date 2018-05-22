@@ -1,6 +1,7 @@
 int pinoSensor = 1;
 int valorLido = 0;
 float temperatura = 0;
+
 int CODIGO = 00000; // coloca aqui  o código do arduino
 
 void setup() {

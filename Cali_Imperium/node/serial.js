@@ -40,11 +40,11 @@ class ArduinoDataRead {
             
             parser.on('data', (data) => {
                 
-				var a = data.split("-");
+				var a = data.split("-");//separa o dado que o arduino manda e coloca em um vetor
 				
 				console.log(a);
 				
-				setTemperatura(a[0], a[1]);
+				setTemperatura(a[0], a[1]);//manda a temperatura e o codigo do arduino
 				
 				
 				
@@ -63,7 +63,7 @@ class ArduinoDataRead {
 const serial = new ArduinoDataRead();
 serial.SetConnection();
 
-
+		//conecta no banco
 		var Connection = require('tedious').Connection;  
 		var config = {  
         userName: 'Control',  
@@ -88,6 +88,8 @@ serial.SetConnection();
 		var Request = require('tedious').Request  
 		var TYPES = require('tedious').TYPES;  
 
+		
+		//função para cadastrar a temperatura e codigo do arduino no banco
 		function setTemperatura(temp, codigo) {  
 			request = new Request("INSERT Into Temperatura (temperatura, codArduino) VALUES (@temp,@cod);", function(err) {  
 			 if (err) {  
