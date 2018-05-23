@@ -128,46 +128,46 @@
 		<div id="colaboradores">
 			<div class="j">
 				<img src="Logos/juvencio.jpg"/>
-				<p>Full Stack</p>
+				<p>Product Owner</p>
 				<h1>Juvencio</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="p">
 				<img src="Logos/predo.jpg"/>
-				<p>Full Stack ( ͡° ͜ʖ ͡°)</p>
+				<p>Developer Full Stack</p>
 				<h1>Pedro</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="g">
 				<img src="Logos/gabriel.jpg" width="200px" height="199px"/>
-				<p>Full Stack</p>
+				<p>Developer Full Stack</p>
 				<h1>Gabriel</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/ProcG/"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="m">
 				<img src="Logos/mateus.jpg"/>
-				<p>Full Stack</p>
-				<h1>Mito</h1>
+				<p>Scrum Master</p>
+				<h1>Mateus</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/mateuscovos"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="eu">
-				<img src="Logos/rosto.jpg"/>
-				<p>Full Stack</p>
-				<h1>Eu</h1>
+				<img src="Logos/eu.jpg"/>
+				<p>Developer Full Stack</p>
+				<h1>Natanael</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/NatalNW"><img src="Logos/github.png" width="40px" height="40px"/></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
