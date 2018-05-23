@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 using System.Data.SqlClient;
 using System.Data;
 
@@ -18,29 +17,21 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil
 
         protected void BtnAtualizar_Click(object sender, EventArgs e)
         {
-            //using (SqlConnection conectar = new SqlConnection("Server=tcp:servigabriel.database.windows.net,1433;Initial Catalog=bd;Persist Security Info=False;User ID=gabriel;Password=559428Asdf;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
-            //{
-            //    conectar.Open();
+            using(SqlConnection cnx = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; "))
+            {
+                cnx.Open();
 
-            //    // Cria um comando para inserir um novo registro à tabela
-            //    using (SqlCommand cmd = new SqlCommand("INSERT INTO Teste (nome, telefone, email, data_nasc, senha,estado) VALUES (@nome, @telefone, @email, @data_nasc, @senha,@estado)", conn))
-            //    {
-            //        // Esses valores poderiam vir de qualquer outro lugar, como uma TextBox...
-            //        cmd.Parameters.AddWithValue("@nome", TxtUsuario.Text);
-            //        cmd.Parameters.AddWithValue("@data_nasc", TxtData.Text);
-            //        cmd.Parameters.AddWithValue("@email", TxtEmail.Text);
-            //        cmd.Parameters.AddWithValue("@telefone", TxtTelefone.Text);
-            //        cmd.Parameters.AddWithValue("@estado", TextEstado.Text);
-            //        cmd.Parameters.AddWithValue("@senha", TextSenha.Text);
+                using (SqlCommand cmd = new SqlCommand("UPDATE Usuario SET nome = @nome, telefone = @telefone, email = @email, data_nasc = @data_nasc, senha = @senha, estado = @estado", cnx))
+                {
+                    cmd.Parameters.AddWithValue("@nome", TxtUsuario.Text);
+                    cmd.Parameters.AddWithValue("@email", TxtAtualizarEmail.Text);
+                    cmd.Parameters.AddWithValue("@telefone", TxtTelefone.Text);
+                    cmd.Parameters.AddWithValue("@estado", DdlEstado.Text);
+                    cmd.Parameters.AddWithValue("@senha", TxtAtualizarSenha.Text);
 
-            //        cmd.ExecuteNonQuery();
-
-
-            //        Response.Write("<script>Alert('Cadastrado com Sucesso')</script>");
-            //        Response.Redirect("../TelaLogin/Login.aspx");
-            //    }
-            //}
-
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
