@@ -1,0 +1,176 @@
+﻿*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html, body
+{
+    width: 100%;
+    height: 100%;
+}
+
+div.area{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    flex-wrap: wrap;     
+}
+
+div.pos_area_termo {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+}
+div#area_termometro {
+    position: relative;
+    width: 80%;
+    min-width: 400px;
+    min-height: 600px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 20px;
+}
+
+div.gelado {
+    background: #115fff;
+}
+div.frio {
+    background: #069af0;    
+}
+div.fresco{
+    background: #8ae33d;
+}
+div.ameno {
+    background: #fbcc00;
+}
+div.calor_moderado {
+    background: #fe8f01;
+}
+div.calor_forte {
+    background: #f95203;
+}
+div.escaldante {
+    background: #fe0000;
+}
+
+div.termometro {
+    position: relative;
+    min-width: 300px;
+    max-width: 300px;
+    height: 300px;
+    border: solid;
+    border-width: 5px;
+    border-radius: 100%;
+    border-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+div#textos {
+    position: relative;
+    width: 550px;    
+    /*border: solid;
+    border-color: #e21212;
+    border-width: 3px;*/
+    padding: 30px;   
+}
+
+
+
+p.temperatura {
+    width: 100%;
+    font-family: "Century Gothic";
+    font-size: 75px;
+    color: #fff;
+}
+p.ultima_att {
+    width: 100%;
+    font-family: "Century Gothic";
+    font-size: 22px;
+    color: #fff;
+}
+.desc_temp {
+    width: 100%;
+    font-family: "Calibri";
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.sub_titulos {
+    font-family: "Century Gothic";
+    font-size: 15px;
+    padding: 20px;
+    padding-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.temperatura_medias {
+    width: 100%;
+    font-family: "Century Gothic";
+    font-size: 70px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+p#titulo_medias {
+    width: 100%;
+    font-family: "Century Gothic";
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+.armado{
+    animation: alarmetemp .5s infinite alternate;
+}
+@keyframes alarmetemp {
+    from {background-color: red;}
+    to {background-color: white;}
+}
+
+
+div.analytics {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1c91d2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+div.medias{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-style: solid;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px;
+    overflow: hidden;
+    margin: 5px;
+}
