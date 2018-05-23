@@ -9,12 +9,9 @@ namespace Cali_Imperium.Sistema
 {
     public partial class Default : System.Web.UI.Page
     {
-
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (Session["Usuario"] == null)
             {
                 Response.Redirect("../TelaLogin/Login.aspx");
