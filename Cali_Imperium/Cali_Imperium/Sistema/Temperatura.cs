@@ -7,28 +7,63 @@ using System.Data.SqlClient;
 
 namespace Caliimperium
 {
-    
+
     public class Temperatura//isso é uma classe
     {
-
-        public void CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
+        public bool verifica_CodArduino(string codigo)
         {
-            using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection verifica = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino (codArduino, codUsuario, minima, maxima) VALUES(@cod,@id,@min,@max)", conn))
+                verifica.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT disponivel FROM arduinoDisponivel WHERE codArduino = @cod",verifica))
                 {
-                    cmd.Parameters.AddWithValue("@cod",codigo);
-                    cmd.Parameters.AddWithValue("@id", idUsuario);
-                    cmd.Parameters.AddWithValue("@min", tempMinima);
-                    cmd.Parameters.AddWithValue("@max", tempMaxima);
-                    
-                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@cod", codigo);
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+
+                            if (int.Parse(dr["disponivel"].ToString()) == 1)
+                            {
+                                return true;
+
+                            }
+
+                           
+                        }
+                            
+                    }
                     
                 }
+                return false;
+
             }
         }
 
+
+        public void CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
+        {
+            if (verifica_CodArduino(codigo) == true)
+            {
+
+
+                using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino (codArduino, codUsuario, minima, maxima) VALUES(@cod,@id,@min,@max)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@cod", codigo);
+                        cmd.Parameters.AddWithValue("@id", idUsuario);
+                        cmd.Parameters.AddWithValue("@min", tempMinima);
+                        cmd.Parameters.AddWithValue("@max", tempMaxima);
+
+                        cmd.ExecuteNonQuery();
+
+                    }
+                }
+            }
+            
+        }
         public bool UsuarioTemArduino(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -47,7 +82,7 @@ namespace Caliimperium
                     }
                 }
             }
-            return false;        
+            return false;
         }
 
 
@@ -134,7 +169,7 @@ namespace Caliimperium
 
                 using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.5) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as 'mediana' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id",id);
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
