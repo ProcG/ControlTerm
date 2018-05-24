@@ -2,19 +2,10 @@ const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 var temp = 0;
 
+var temperaturas = new Array();
 
 class ArduinoDataRead {
 
-    constructor(){
-        this.listData = [];
-    }
-
-    get List() {
-        return this.listData;
-
-    }
-
-	
     SetConnection(){
 
         SerialPort.list().then(listSerialDevices => {
@@ -40,12 +31,36 @@ class ArduinoDataRead {
             
             parser.on('data', (data) => {
                 
+				
 				var a = data.split("-");
 				
-				console.log(a);
+				temperaturas.push(a[0]);
+				console.log(temperaturas.length);
 				
-				setTemperatura(a[0], a[1]);
+				if(temperaturas.length == 60){
+					
+					var temp_total_soma = 0;
+					for(var i = 0; i < 60; i++){
+						temp_total_soma += parseInt(temperaturas[i]);
+						
+						//console.log(temp_total_soma+" - media");
+						
+					}
+					
+					
+					var media = temp_total_soma / 60; 
+					
+					setTemperatura(media, a[1]);
 				
+					temperaturas = new Array();
+					
+					console.log(media+" - "+a[1]);
+					console.clear();
+				
+					
+				}
+				
+
 				
 				
 				//setTemperatura(parseFloat(data));
