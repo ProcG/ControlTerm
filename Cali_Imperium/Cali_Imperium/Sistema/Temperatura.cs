@@ -68,7 +68,7 @@ namespace Caliimperium
                         }
                         else
                         {
-                            return 0; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return 1000; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 
