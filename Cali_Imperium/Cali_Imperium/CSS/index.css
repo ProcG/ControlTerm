@@ -21,6 +21,8 @@ body {
     position: relative;
     transition: all 1.1s;
     overflow: hidden;
+    display: block;
+    z-index: 9 !important;
 }
 
     .Menu1 > img {
