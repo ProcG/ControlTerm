@@ -16,24 +16,27 @@
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway|Roboto+Slab|Slabo+27px|Tajawal" rel="stylesheet">
 </head>
 <body>
+
 <!--MENU-->
-			<div id ="menu" class="Menu1"> 
-				<img src="Logos/Logo_da_empresa2.png"/>
-				<ul>
-					<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
-					<a href="TelaLogin/Login.aspx"><li>Login</li></a>
-					<a class="scroll" href="#colaboradores"><li>Colaboradores</li></a>
-					<a class="scroll" href="#mvv"><li>M.V.V</li></a>
-					<a class="scroll" href="#sobre"><li>Institucional</li></a>
-					<a class="scroll" href="#greetings"><li>Início</li></a>						
-				</ul>
-			</div>
-		
+
+    <header id ="menu" class="Menu1">
+	       <img src="Logos/Logo_da_empresa2.png"/>
+	       <ul>
+	       	<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
+	       	<a href="TelaLogin/Login.aspx"><li>Login</li></a>
+	       	<a class="scroll" href="#colaboradores"><li>Colaboradores</li></a>
+	       	<a class="scroll" href="#mvv"><li>M.V.V</li></a>
+	       	<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
+	       	<a class="scroll" href="#greetings"><li>Início</li></a>						
+	       </ul>
+    </header>
+	
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
 				<h1>Bem vindo a Control Term!</h1><br>
-				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores.
-            </div>
+
+				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores.</h2> 
+             </div>
 
 <!--Institucional-->
 		<div id="sobre">			
@@ -49,9 +52,9 @@
 					estudar e conquistar, então tudo se iniciou”</i>.</p>
 			</div>			
 
-				<img class="Term" src="Logos/Logo_da_empresa.png" width="290px" height="200px"/>
+				<img class="Term" src="Logos/Logo_da_empresa.png" />
 
-				<img class="Cali" src="Logos/Logo.png" width="200px" height="200px"/>
+				<img class="Cali" src="Logos/Logo.png" />
 
 		</div>
 		
@@ -146,8 +149,6 @@
 				<!--<img src="Logos/Logo_da_empresa2.png"/>-->
 			</div>
 		</footer>
-
-      
 </body>
 </html>
 
@@ -170,17 +171,19 @@
         };
         function scroll() {
             var div = document.getElementById("menu");
-            if (document.body.scrollTop > 50 && flag) {
+          
+            if (document.body.scrollTop < 50 && flag) {
                 div.className = "Menu2";
                 flag = !flag;
-            } else if (document.body.scrollTop < 50 && !flag) {
+            } else if (document.body.scrollTop > 50 && !flag) {
                 div.className = "Menu1";
                 flag = !flag;
             }
         }
 	</script>
 
-	<script type="text/javascript">
+
+<script type="text/javascript">
         $('.parallax').each(function () {
             var $obj = $(this);
             $obj.css('background-position', '50% 0');
