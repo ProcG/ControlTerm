@@ -18,6 +18,7 @@
 <body>
 
 <!--MENU-->
+
     <header id ="menu" class="Menu1">
 	       <img src="Logos/Logo_da_empresa2.png"/>
 	       <ul>
@@ -29,10 +30,11 @@
 	       	<a class="scroll" href="#greetings"><li>Início</li></a>						
 	       </ul>
     </header>
-		
+	
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
 				<h1>Bem vindo a Control Term!</h1><br>
+
 				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores.</h2> 
              </div>
 
@@ -169,6 +171,7 @@
         };
         function scroll() {
             var div = document.getElementById("menu");
+          
             if (document.body.scrollTop < 50 && flag) {
                 div.className = "Menu2";
                 flag = !flag;
@@ -178,6 +181,7 @@
             }
         }
 	</script>
+
 
 <script type="text/javascript">
         $('.parallax').each(function () {
