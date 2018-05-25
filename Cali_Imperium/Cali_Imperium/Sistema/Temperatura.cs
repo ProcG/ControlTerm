@@ -26,17 +26,11 @@ namespace Caliimperium
                             if (int.Parse(dr["disponivel"].ToString()) == 1)
                             {
                                 return true;
-
                             }
-
-                           
-                        }
-                            
-                    }
-                    
+                        }    
+                    }  
                 }
                 return false;
-
             }
         }
 
