@@ -27,7 +27,7 @@ namespace Cali_Imperium.Sistema
 
                 if (new Caliimperium.Temperatura().UsuarioTemArduino(user.ID) == false)
                 {
-                    txtMsgNaoTem.Text = $"O prezado usuario lendo essa mensagem o sr.(a) {user.Nome} não tem Arduino";
+                    txtMsgNaoTem.Text = $"Prezado Sr(a).{user.Nome}, por favor cadastre seu arduino.";
                 }
 
             }
@@ -39,8 +39,14 @@ namespace Cali_Imperium.Sistema
             string min = txtMinimaC.Text;
             string max = txtMaximaC.Text;
 
-            new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID);
-            Response.Redirect("Default.aspx");
+            if(new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID) == true)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Código invalido!')</script>");
+            }
 
 
         }
@@ -48,6 +54,11 @@ namespace Cali_Imperium.Sistema
         protected void btnEditArduino_Click(object sender, EventArgs e)
         {
             Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
+        }
+
+        protected void btnAtualizarPerfil_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Perfil/Default.aspx");
         }
     }
 }

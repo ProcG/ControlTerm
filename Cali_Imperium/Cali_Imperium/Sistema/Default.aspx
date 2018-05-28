@@ -39,6 +39,7 @@
                         </p>
                         <p class="funcao_usuario">Usuário</p>
                     </div>
+                    <asp:Button Text="Editar" runat="server" ID="btnAtualizarPerfil" OnClick="btnAtualizarPerfil_Click" CssClass="atualizar_perfil"></asp:button>
                 </div>
                 <div class="sub_menus">
                     <ul>
@@ -188,8 +189,9 @@
         xhttp.open("GET", "getTemperatura.aspx", true);
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
-                numeros = xhttp.responseText.split("+");
-                
+               
+              numeros = xhttp.responseText.split("+");
+               
                 
                 atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
                 Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
