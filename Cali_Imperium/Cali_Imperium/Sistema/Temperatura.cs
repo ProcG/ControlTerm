@@ -34,8 +34,23 @@ namespace Caliimperium
             }
         }
 
+        public bool atualiza_disponivel(string codigo)
+        {
+            using (SqlConnection verifica = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                verifica.Open();
+                using (SqlCommand cmd = new SqlCommand("UPDATE arduinoDisponivel set disponivel = 0 WHERE codArduino = @cod", verifica))
+                {
+                    cmd.Parameters.AddWithValue("@cod", codigo);
 
-        public void CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
+                    if (cmd.ExecuteNonQuery() > 0) { return true; }
+
+                }
+                return false;
+            }
+        }
+
+        public bool CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
         {
             if (verifica_CodArduino(codigo) == true)
             {
@@ -51,11 +66,16 @@ namespace Caliimperium
                         cmd.Parameters.AddWithValue("@min", tempMinima);
                         cmd.Parameters.AddWithValue("@max", tempMaxima);
 
-                        cmd.ExecuteNonQuery();
+                        if(cmd.ExecuteNonQuery()>0)//retornar um INT
+                        {
+                            if(atualiza_disponivel(codigo) == true) { return true;  }
+                        }                        
 
                     }
                 }
             }
+            return false;
+            
             
         }
         public bool UsuarioTemArduino(int id)

@@ -39,8 +39,14 @@ namespace Cali_Imperium.Sistema
             string min = txtMinimaC.Text;
             string max = txtMaximaC.Text;
 
-            new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID);
-            Response.Redirect("Default.aspx");
+            if(new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID) == true)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Código invalido!')</script>");
+            }
 
 
         }
