@@ -74,10 +74,10 @@ namespace Caliimperium
                     }
                 }
             }
-            return false;
-            
+            return false;            
             
         }
+
         public bool UsuarioTemArduino(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
