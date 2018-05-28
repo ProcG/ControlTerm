@@ -135,11 +135,11 @@ a.links {
 
 
 
-div.fundo_modal_off{
+div.fundo_modal_arduino_off {
     display: none;
 }
 
-div.fundo_modal_on{
+div.fundo_modal_arduino_on{
     transition: all 4.3s;
     position: fixed;
     width: 100%;

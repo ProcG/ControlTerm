@@ -47,11 +47,36 @@
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
                         <li>
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Temperaturas Ideais"></asp:HyperLink></li>
-                        <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Configurações" onclick="getViewConfiguracoes()"></asp:HyperLink>
-                        </li>
-                    </ul>
-                    <ul class="sair_site">
+                                    <% 
+
+                         Caliimperium.Temperatura t = new Caliimperium.Temperatura();
+                          Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
+
+
+                              if (t.UsuarioTemArduino(u.ID) == true)
+                                {
+                        %>
+                            <li>
+                                <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" onclick="getViewAddArduino()" Text="Editar Termometro"></asp:HyperLink>
+                            </li>
+                       <%}
+                            else
+                        { %>
+
+                            <li>
+                                <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" onclick="getViewAddArduino()" Text="Adicionar Termometro"></asp:HyperLink>
+                            </li>
+                            
+                       <%} %>
+                            
+                            <li>
+                                <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Suporte"></asp:HyperLink>
+                            </li>
+                            <li>
+                                    <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Ajuda"></asp:HyperLink>
+                            </li>
+                                </ul>
+                                <ul class="sair_site">
                         <li>
                             <asp:HyperLink NavigateUrl="Logout.aspx" runat="server" CssClass="links" Text="Sair" ID="btnSair" ></asp:HyperLink></li>
                     </ul>
@@ -59,9 +84,7 @@
             </div>
 
               <%
-                  Caliimperium.Temperatura t = new Caliimperium.Temperatura();
-                  Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
-
+                 
 
                   if (t.UsuarioTemArduino(u.ID) == true)
                   {
@@ -87,7 +110,7 @@
                 </div>
                 <div class="medias">
                     <p class="temperatura_medias" id="txt2Q">10</p>
-                    <p class="desc_temp">2º Quartil</p>
+                    <p class="desc_temp">1º Quartil</p>
                 </div>
                 <div class="medias">
                     <p class="temperatura_medias"id="txtMediana">10</p>
@@ -118,28 +141,9 @@
             <source src="js/bythesword.mp3" type="audio/mp3" />
         </audio>
 
-        <div id="fundo_modal" class="fundo_modal_off">
-            <div id="tela_confs">
-                <p class="titulo">Configurações</p>
-              <% 
-                  if (t.UsuarioTemArduino(u.ID) == true)
-                    {
-            %>
-                <a href="#" class="confs_opc" onclick="getViewAddArduino()">Editar Termometro</a>
-              <%}
-                else
-                { %>
-
-                <a href="#" class="confs_opc" onclick="getViewAddArduino()">Adicionar Termometro</a>
-                
-                <%} %>
-                <a href="#" class="confs_opc">Suporte</a>
-                <a href="#" class="confs_opc">Ajuda</a>
-                <a href="#" class="fechar" onclick="removerViewConfiguracoes()">x</a>
-            </div>
-
-            <div id='fundo_addArduino' class="fundo_addArduino_off">
-                
+        
+            <div id="fundo_modal_arduino" class="fundo_modal_arduino_off">
+                            
                  <% 
                 if (t.UsuarioTemArduino(u.ID) == true)
                 {
@@ -166,7 +170,7 @@
                 </div>
                 <%} %>
             </div>
-        </div>
+        
 
     </form>
     
@@ -176,6 +180,8 @@
 <script type="text/javascript" src="js/atualizar.js"></script>
 <script>
     var numeros = new Array();
+    var min = null;
+    var max = null;
     function att() {
 
         var xhttp = new XMLHttpRequest();        
@@ -183,14 +189,10 @@
         xhttp.open("GET", "getTemperatura.aspx", true);
         xhttp.onreadystatechange = function () {
             if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
-                numeros = xhttp.responseText.split("-");
-
                
-
-                if (numeros[0] == -100) {
-                    return;
-                }
-
+              numeros = xhttp.responseText.split("+");
+               
+                
                 atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
                 Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
 
