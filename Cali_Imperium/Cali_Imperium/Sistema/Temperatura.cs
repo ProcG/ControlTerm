@@ -57,7 +57,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FROM Temperatura WHERE codTemperatura = (SELECT MAX(codTemperatura) FROM Temperatura) AND codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("select top 1 temperatura from temperatura where codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id) order by codTemperatura desc", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", codUsuario);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -118,7 +118,7 @@ namespace Caliimperium
                         }
                         else
                         {
-                            return 0; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return 0; ; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 
@@ -201,7 +201,7 @@ namespace Caliimperium
             }
         }
 
-        public static int PegarMinima(int id)
+        public int PegarMinima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
@@ -227,7 +227,7 @@ namespace Caliimperium
         }
 
 
-        public static int PegarMaxima(int id)
+        public int PegarMaxima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
@@ -267,6 +267,22 @@ namespace Caliimperium
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public static string GetNumeros(int cod)
+        {
+            string text = "";
+
+            text += new Caliimperium.Temperatura().PegarTemperatura(cod)+"+";
+            text += new Caliimperium.Temperatura().PegarTempMinima(cod) + "+";
+            text += new Caliimperium.Temperatura().Pegar2Quartil(cod) + "+";
+            text += new Caliimperium.Temperatura().PegarMediana(cod) + "+";
+            text += new Caliimperium.Temperatura().Pegar3Quartil(cod) + "+";
+            text += new Caliimperium.Temperatura().PegarTempMaxima(cod) + "+";
+            text += new Temperatura().PegarMinima(cod) + "+";
+            text += new Temperatura().PegarMaxima(cod);
+
+            return text;
         }
 
 
