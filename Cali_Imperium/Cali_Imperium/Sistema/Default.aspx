@@ -70,7 +70,7 @@
                        <%} %>
                             
                             <li>
-                                <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Suporte"></asp:HyperLink>
+                                <asp:HyperLink NavigateUrl="https://desk.zoho.com/portal/controlterm/home" runat="server" CssClass="links" Text="Suporte" Target="_blank"></asp:HyperLink>
                             </li>
                             <li>
                                     <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Ajuda"></asp:HyperLink>
