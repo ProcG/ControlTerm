@@ -33,17 +33,19 @@
                 <div class="sub_menus">
                     <ul>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="../Default.aspx" runat="server" CssClass="links" Text="Início"></asp:HyperLink></li>
+                        <li>
+                            <asp:HyperLink NavigateUrl="Default.aspx" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
                         <li>
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Temperaturas Ideais"></asp:HyperLink></li>
                                     <% 
 
-                         Caliimperium.Temperatura t = new Caliimperium.Temperatura();
-                          Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
+                                        Caliimperium.Temperatura t = new Caliimperium.Temperatura();
+                                        Cali_Imperium.Usuario u = (Cali_Imperium.Usuario)Session["Usuario"];
 
 
-                              if (t.UsuarioTemArduino(u.ID) == true)
-                                {
+                        if (t.UsuarioTemArduino(u.ID) == false)
+                        {
                         %>
                             <li>
                                 <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" onclick="getViewAddArduino()" Text="Editar Termometro"></asp:HyperLink>
@@ -73,7 +75,7 @@
             </div>
 
               <%
-                 
+
 
                   if (t.UsuarioTemArduino(u.ID) == true)
                   {
@@ -83,9 +85,15 @@
                     <div class="relatorios">
                         <div class="opcoes_relatorios">
                             <a href="" class="opc_relat">Por data</a>
+                            <a href="" class="opc_relat">Media por data</a>
+                            <a href="" class="opc_relat">Maxima por data</a>
+                            <a href="" class="opc_relat">Minima por data</a>
                         </div>
 
-
+                        
+                        <asp:Calendar ID="data_minima" runat="server" CssClass="calendario" CellPadding="5"></asp:Calendar>
+                        <asp:Calendar ID="data_maxima" runat="server" CssClass="calendario"></asp:Calendar>
+                        <asp:Button Text="Gerar" runat="server" ID="btnGerarPorData" OnClick="btnGerarPorData_Click" CssClass="btn"/>
 
                     </div>
                 </div>
@@ -110,8 +118,8 @@
             <div id="fundo_modal_arduino" class="fundo_modal_arduino_off">
                             
                  <% 
-                if (t.UsuarioTemArduino(u.ID) == true)
-                {
+                     if (t.UsuarioTemArduino(u.ID) == true)
+                     {
                 %>
                 <div id='conf_arduino'>
                     <p class='titulo'>Editar Termometro</p>

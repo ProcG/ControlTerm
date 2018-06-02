@@ -49,6 +49,33 @@ namespace Cali_Imperium.Sistema.Relatorio {
         protected global::System.Web.UI.WebControls.HyperLink btnSair;
         
         /// <summary>
+        /// Controle data_minima.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar data_minima;
+        
+        /// <summary>
+        /// Controle data_maxima.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar data_maxima;
+        
+        /// <summary>
+        /// Controle btnGerarPorData.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGerarPorData;
+        
+        /// <summary>
         /// Controle txtMsgNaoTem.
         /// </summary>
         /// <remarks>

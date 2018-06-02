@@ -44,7 +44,9 @@
                 <div class="sub_menus">
                     <ul>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="Default.aspx" runat="server" CssClass="links" Text="Início"></asp:HyperLink></li>
+                         <li>
+                            <asp:HyperLink NavigateUrl="Relatorio/Default.aspx" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
                         <li>
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Temperaturas Ideais"></asp:HyperLink></li>
                                     <% 
