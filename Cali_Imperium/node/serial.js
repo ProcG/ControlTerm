@@ -32,9 +32,12 @@ class ArduinoDataRead {
             parser.on('data', (data) => {
                 
 				
-				var a = data.split("-");
+				var leitura_do_arduino = data.split("-");
+				//leitura do arduino segue o padrão [(temperatura)-(codigo do arduino)]
+				//leitura_do_arduino[0] = temperatura
+				//leitura_do_arduino[1] = codigo do arduino
 				
-				temperaturas.push(a[0]);
+				temperaturas.push(leitura_do_arduino[0]);
 				console.log(temperaturas.length);
 				
 				if(temperaturas.length == 60){
@@ -42,16 +45,16 @@ class ArduinoDataRead {
 					var temp_total_soma = 0;
 					for(var i = 0; i < 60; i++){
 						temp_total_soma += parseInt(temperaturas[i]);
-						
-						//console.log(temp_total_soma+" - media");
-						
+						//console.log(temp_total_soma+" - media");						
 					}
 					
 					
 					var media = temp_total_soma / 60; 
 					
-					setTemperatura(media, a[1]);
-				
+					setTemperatura(media, leitura_do_arduino[1]);
+					
+				//	notificacao(media, leitura_do_arduino[1]);
+					
 					temperaturas = new Array();
 					
 					console.log(media+" - "+a[1]);
@@ -75,6 +78,20 @@ class ArduinoDataRead {
 
 	
 }
+
+function notificacao(temperatura, codArduino){
+	
+	var url = "https://notificacao-controlterm.azurewebsites.net/Default.aspx?cod="+codArduino+"&temperatura="+temperatura;
+						
+	var request = require('request');
+	request(url, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+		return body;//retorna a mensagem do site (da url);
+	  }
+	});
+}
+
+
 const serial = new ArduinoDataRead();
 serial.SetConnection();
 
