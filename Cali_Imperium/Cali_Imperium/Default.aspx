@@ -123,8 +123,8 @@
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
-			<div class="eu">
-				<img src="Logos/eu.jpg"/>
+			<div class="n">
+				<img src="Logos/natanael.jpg"/>
 				<p>Developer Full Stack</p>
 				<h1>Natanael</h1>
 				<div class="contatos">

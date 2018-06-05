@@ -80,13 +80,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sistema\img\ar_condicionado.jpg" />
+    <Content Include="Sistema\img\corpo.jpg" />
     <Content Include="Sistema\Perfil\css\atualizar.css" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Logos\eu.jpg" />
+    <Content Include="Logos\natanael.jpg" />
     <Content Include="Logos\gabriel.jpg" />
     <Content Include="Logos\github.png" />
     <Content Include="Logos\juvencio.jpg" />
@@ -99,9 +101,7 @@
     <Content Include="Logos\Logo_da_empresa3.png" />
     <Content Include="Logos\mateus.jpg" />
     <Content Include="Logos\missão.png" />
-    <Content Include="Logos\pablo.jpg" />
     <Content Include="Logos\predo.jpg" />
-    <Content Include="Logos\rosto.jpg" />
     <Content Include="Logos\Valores.png" />
     <Content Include="Logos\Visão.png" />
     <Content Include="parallaxT2.png" />

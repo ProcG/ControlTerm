@@ -46,7 +46,7 @@
                         <li>
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Temperaturas Ideais"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" onclick="abrirmodal()" Text="Temperaturas Ideais"></asp:HyperLink></li>
                                     <% 
 
                          Caliimperium.Temperatura t = new Caliimperium.Temperatura();
@@ -171,6 +171,21 @@
                 <%} %>
             </div>
         
+            <div id="modal" class="modal_off">
+	            <div class="fundo">
+		            <a class="btn_fechar" onclick="fecharmodal()">x</a>
+			            <div id="tela_ideais">
+				            <p class="title">Temperaturas ideais</p>
+				            <p class="sub"> Corpo Humano </p>
+				            <img src="img/corpo.jpg" class="img_temperatura_ideal">
+				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>
+				
+				            <p class="sub"> Ar Condicionado </p>
+				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal">
+				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
+                        </div>		
+	             </div>
+            </div>
 
     </form>
     

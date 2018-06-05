@@ -314,3 +314,98 @@ div.sem_termometro{
     font-size: 34px;
     color: #fff;
 }
+
+/*inicio CSS tela de temperaturas ideais*/
+
+body {
+    background-color: purple;
+}
+
+div.modal_off {
+    display: none;
+}
+
+div.modal_on {
+    transition: all 4.3s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(102,85,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5 !important;
+}
+
+div#tela_ideais {
+    position: fixed;
+    width: 75%;
+    height: 80%;
+    background-color: #fff;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.fundo {
+    position: absolute;
+    background-color: white;
+    width: 76.5%;
+    height: 85.8%;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    border-radius: 20px;
+}
+
+.btn_fechar {
+    position: absolute;
+    top: -15px;
+    right: -13px;
+    width: 30px;
+    height: 30px;
+    background-color: #d33;
+    border-radius: 100%;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.title {
+    font-style: normal;
+    font-size: 45px;
+    font-family: georgia;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+.text {
+    font-size: 25px;
+    font-family: times new roman;
+    padding: 10px;
+    height: 270px;
+}
+
+.sub {
+    font-size: 30px;
+    font-family: arial;
+}
+
+.img_temperatura_ideal {
+    width: 250px;
+    height: 250px;
+    float: left;
+    margin: 10px;
+}
+
+
+/*fim CSS tela de temperaturas ideais*/

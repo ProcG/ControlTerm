@@ -213,3 +213,17 @@ function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
     div_fundo.className = "";
     div_fundo.className = "fundo_modal_arduino_off";
 }
+
+/* abrir e fechar janela modal temperatura modal */
+function abrirmodal() {
+    var div_fundo = document.getElementById("modal");
+    div_fundo.className = "";
+    div_fundo.className = "modal_on";
+}
+
+function fecharmodal() {
+    var div_fundo = document.getElementById("modal");
+    div_fundo.className = "";
+    div_fundo.className = "modal_off";
+}
+/* fim janela modal temperaturA */
