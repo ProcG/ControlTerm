@@ -80,11 +80,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Sistema\img\ar_condicionado.jpg" />
+    <Content Include="Sistema\img\corpo.jpg" />
+    <Content Include="Sistema\Perfil\css\atualizar.css" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Logos\natanael.jpg" />
     <Content Include="Logos\gabriel.jpg" />
     <Content Include="Logos\github.png" />
     <Content Include="Logos\juvencio.jpg" />
@@ -97,9 +101,7 @@
     <Content Include="Logos\Logo_da_empresa3.png" />
     <Content Include="Logos\mateus.jpg" />
     <Content Include="Logos\missão.png" />
-    <Content Include="Logos\pablo.jpg" />
     <Content Include="Logos\predo.jpg" />
-    <Content Include="Logos\rosto.jpg" />
     <Content Include="Logos\Valores.png" />
     <Content Include="Logos\Visão.png" />
     <Content Include="parallaxT2.png" />
@@ -108,8 +110,11 @@
     <Content Include="Sistema\Default.aspx" />
     <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\usuario.png" />
+    <Content Include="Sistema\js\atualizar.js" />
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
+    <Content Include="Sistema\Logout.aspx" />
+    <Content Include="Sistema\Perfil\Default.aspx" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -153,6 +158,20 @@
     <Compile Include="Sistema\getTemperatura.aspx.designer.cs">
       <DependentUpon>getTemperatura.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Perfil\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Perfil\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Sistema\Temperatura.cs" />
     <Compile Include="TelaCadastro\Cadastro.aspx.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -169,9 +188,12 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <Compile Include="Utilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\controlterm - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\controlterm - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\gabrielproc - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">

@@ -14,68 +14,29 @@
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 829px)" href="CSS/medium.css">
 	<link rel="stylesheet" type="text/css" media="screen and (min-width: 1350px)" href="CSS/index.css">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One|Raleway|Roboto+Slab|Slabo+27px|Tajawal" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-	<script>
-        (function () {
-            jQuery(document).ready(function ($) {
-                $(".scroll").click(function (event) {
-                    event.preventDefault();
-                    $('html,body').animate({ scrollTop: $(this.hash).offset().top - 90 }, 900);
-                });
-            });
-        }());
-	</script>
-	<script type="text/javascript">
-        var flag = true;
-        window.onscroll = function () {
-            scroll();
-        };
-        function scroll() {
-            var div = document.getElementById("menu");
-            if (document.body.scrollTop > 50 && flag) {
-                div.className = "Menu2";
-                flag = !flag;
-            } else if (document.body.scrollTop < 50 && !flag) {
-                div.className = "Menu1";
-                flag = !flag;
-            }
-        }
-	</script>
 </head>
 <body>
+
 <!--MENU-->
-			<div id ="menu" class="Menu1"> 
-				<img src="Logos/Logo_da_empresa2.png"/>
-				<ul>
-					<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
-					<a href="TelaLogin/Login.aspx"><li>Login</li></a>
-					<a class="scroll" href="#colaboradores"><li>Colaboradores</li></a>
-					<a class="scroll" href="#mvv"><li>M.V.V</li></a>
-					<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
-					<a class="scroll" href="#greetings"><li>Início</li></a>						
-				</ul>
-			</div>
-		
+
+    <header id ="menu" class="Menu1">
+	       <img src="Logos/Logo_da_empresa2.png"/>
+	       <ul>
+	       	<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
+	       	<a href="TelaLogin/Login.aspx"><li>Login</li></a>
+	       	<a class="scroll" href="#colaboradores"><li>Colaboradores</li></a>
+	       	<a class="scroll" href="#mvv"><li>M.V.V</li></a>
+	       	<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
+	       	<a class="scroll" href="#greetings"><li>Início</li></a>						
+	       </ul>
+    </header>
+	
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
 				<h1>Bem vindo a Control Term!</h1><br>
-				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores. Oferecendo serviços de qualidade e preço justo para nossos clientes, buscando alcançar mais supects, assim crescendo em varios apectos.</h2>
-			</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-        $('.parallax').each(function () {
-            var $obj = $(this);
-            $obj.css('background-position', '50% 0');
-            $obj.css('background-attachment', 'fixed');
-            $obj.css('background-size', '100%');
-            $(window).scroll(function () {
-                var offset = $obj.offset();
-                var yPos = -($(window).scrollTop() - offset.top) / 10;
-                var bgpos = '50% ' + yPos + 'px';
-                $obj.css('background-position', bgpos);
-            });
-        });
-	</script>
+
+				<h2> Uma empresa com soluções inovadoras e com foco em implantações de sensores.</h2> 
+             </div>
 
 <!--Institucional-->
 		<div id="sobre">			
@@ -91,9 +52,9 @@
 					estudar e conquistar, então tudo se iniciou”</i>.</p>
 			</div>			
 
-				<img class="Term" src="Logos/Logo_da_empresa.png" width="290px" height="200px"/>
+				<img class="Term" src="Logos/Logo_da_empresa.png" />
 
-				<img class="Cali" src="Logos/Logo.png" width="200px" height="200px"/>
+				<img class="Cali" src="Logos/Logo.png" />
 
 		</div>
 		
@@ -128,46 +89,46 @@
 		<div id="colaboradores">
 			<div class="j">
 				<img src="Logos/juvencio.jpg"/>
-				<p>Full Stack</p>
+				<p>Product Owner</p>
 				<h1>Juvencio</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="p">
 				<img src="Logos/predo.jpg"/>
-				<p>Full Stack ( ͡° ͜ʖ ͡°)</p>
+				<p>Developer Full Stack</p>
 				<h1>Pedro</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="g">
 				<img src="Logos/gabriel.jpg" width="200px" height="199px"/>
-				<p>Full Stack</p>
+				<p>Developer Full Stack</p>
 				<h1>Gabriel</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/ProcG/"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
 			<div class="m">
 				<img src="Logos/mateus.jpg"/>
-				<p>Full Stack</p>
-				<h1>Mito</h1>
+				<p>Scrum Master</p>
+				<h1>Mateus</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/mateuscovos"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
-			<div class="eu">
-				<img src="Logos/rosto.jpg"/>
-				<p>Full Stack</p>
-				<h1>Eu</h1>
+			<div class="n">
+				<img src="Logos/natanael.jpg"/>
+				<p>Developer Full Stack</p>
+				<h1>Natanael</h1>
 				<div class="contatos">
-					<img src="Logos/github.png" width="40px" height="40px" />
+					<a href="https://github.com/NatalNW"><img src="Logos/github.png" width="40px" height="40px"/></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -188,7 +149,51 @@
 				<!--<img src="Logos/Logo_da_empresa2.png"/>-->
 			</div>
 		</footer>
-
-      
 </body>
 </html>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script>
+        (function () {
+            jQuery(document).ready(function ($) {
+                $(".scroll").click(function (event) {
+                    event.preventDefault();
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top - 90 }, 900);
+                });
+            });
+        }());
+	</script>
+
+	<script type="text/javascript">
+        var flag = true;
+        window.onscroll = function () {
+            scroll();
+        };
+        function scroll() {
+            var div = document.getElementById("menu");
+          
+            if (document.body.scrollTop < 50 && flag) {
+                div.className = "Menu2";
+                flag = !flag;
+            } else if (document.body.scrollTop > 50 && !flag) {
+                div.className = "Menu1";
+                flag = !flag;
+            }
+        }
+	</script>
+
+
+<script type="text/javascript">
+        $('.parallax').each(function () {
+            var $obj = $(this);
+            $obj.css('background-position', '50% 0');
+            $obj.css('background-attachment', 'fixed');
+            $obj.css('background-size', '100%');
+            $(window).scroll(function () {
+                var offset = $obj.offset();
+                var yPos = -($(window).scrollTop() - offset.top) / 10;
+                var bgpos = '50% ' + yPos + 'px';
+                $obj.css('background-position', bgpos);
+            });
+        });
+	</script>
