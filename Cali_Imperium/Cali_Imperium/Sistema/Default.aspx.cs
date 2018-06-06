@@ -11,6 +11,8 @@ namespace Cali_Imperium.Sistema
     {
 
         Usuario user = new Usuario();
+        public static List<string> mediasTemperaturas = null;
+        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -60,5 +62,21 @@ namespace Cali_Imperium.Sistema
         {
             Response.Redirect("Perfil/Default.aspx");
         }
+
+
+        
+        protected static List<string> PegarMediasTemp()
+        {
+            mediasTemperaturas.Add("wdtgdw");
+            mediasTemperaturas.Add("ef");
+            mediasTemperaturas.Add("dasgas");
+            mediasTemperaturas.Add("asdgdsa");
+            mediasTemperaturas.Add("sdag");
+            mediasTemperaturas.Add("asdgsda");
+
+            return mediasTemperaturas;
+        }
+
+
     }
 }

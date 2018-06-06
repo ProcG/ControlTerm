@@ -183,7 +183,18 @@
 				            <p class="sub"> Ar Condicionado </p>
 				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal">
 				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
-                        </div>		
+                        </div>	
+                    
+                        <%
+                            List<string> a = ;
+                            foreach (string resultado in PegarMediasTemp())
+                            {
+                                %>
+                                    <p><% resultado.ToString(); %></p>
+                                <%
+                            }
+                        %>
+
 	             </div>
             </div>
 
