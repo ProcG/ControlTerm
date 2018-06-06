@@ -81,7 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sistema\css\relatorio.css" />
-    <Content Include="Sistema\Perfil\css\atualizar.css" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
@@ -115,7 +114,6 @@
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
-    <Content Include="Sistema\Perfil\Default.aspx" />
     <Content Include="Sistema\Relatorio\Default.aspx" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
@@ -166,13 +164,6 @@
     </Compile>
     <Compile Include="Sistema\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Sistema\Perfil\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sistema\Perfil\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Relatorio\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

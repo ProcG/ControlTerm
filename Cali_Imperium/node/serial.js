@@ -1,4 +1,4 @@
-const SerialPort = require('serialport');
+﻿const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 var temp = 0;
 
@@ -40,16 +40,18 @@ class ArduinoDataRead {
 				temperaturas.push(leitura_do_arduino[0]);
 				console.log(temperaturas.length);
 				
-				if(temperaturas.length == 60){
+				var tempo = 15; 
+
+				if(temperaturas.length == tempo){
 					
 					var temp_total_soma = 0;
-					for(var i = 0; i < 60; i++){
+					for(var i = 0; i < tempo; i++){
 						temp_total_soma += parseInt(temperaturas[i]);
 						//console.log(temp_total_soma+" - media");						
 					}
 					
 					
-					var media = temp_total_soma / 60; 
+					var media = temp_total_soma / tempo; 
 					
 					setTemperatura(media, leitura_do_arduino[1]);
 					
@@ -57,7 +59,7 @@ class ArduinoDataRead {
 					
 					temperaturas = new Array();
 					
-					console.log(media+" - "+a[1]);
+					console.log(media+" - "+leitura_do_arduino [1]);
 					console.clear();
 				
 					
