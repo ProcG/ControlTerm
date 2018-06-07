@@ -115,6 +115,8 @@
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
     <Content Include="Sistema\Relatorio\Default.aspx" />
+    <Content Include="Sistema\Relatorio\frm_relatorio.aspx" />
+    <Content Include="Sistema\Relatorio\Logo.png" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -171,6 +173,13 @@
     </Compile>
     <Compile Include="Sistema\Relatorio\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.cs">
+      <DependentUpon>frm_relatorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.designer.cs">
+      <DependentUpon>frm_relatorio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Relatorio\Relatorio.cs" />
     <Compile Include="Sistema\Temperatura.cs" />
