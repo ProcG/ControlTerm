@@ -213,3 +213,14 @@ function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
     div_fundo.className = "";
     div_fundo.className = "fundo_modal_arduino_off";
 }
+function getViewFaq() { // mesma coisa da getViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_on";
+}
+
+function removerViewFaq() {// mesma coisa da removerViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_off";
+}

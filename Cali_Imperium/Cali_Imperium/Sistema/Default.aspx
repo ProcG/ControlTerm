@@ -75,7 +75,7 @@
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Suporte"></asp:HyperLink>
                         </li>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Ajuda"></asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Ajuda" onclick="getViewFaq()"></asp:HyperLink>
                         </li>
                     </ul>
                     <ul class="sair_site">
@@ -173,6 +173,30 @@
                 <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
             </div>
             <%} %>
+        </div>
+
+        <div id="fundo_modal_faq" class="fundo_modal_faq_off">
+
+          
+            <div id='faq'>
+            <div class="fundo_faq">
+                <div class="abrir">
+                    <p class="pergunta">Como Cadastrar meu Arduino Uno?</p>
+                    <p class="resposta"> Olá Bem-Vindo ao FAQ ControlTerm!
+                        <br />
+                        Para cadastrar o Arduino Uno o senhor(a) deve seguir os seguintes passos:<br />
+                        1- Vá com o mouse em seu painel esquerdo e clique em "Adicionar Termômetro";<br />
+                        2- Clique em Adicionar Termômetro;<br />
+                        3- Adicione o Código do Arduino localizado na parte de baixo de sua caixa(Arduino);<br />
+                        4- Adicione temperatura Min e Max Desejada;<br />
+                        5- Cadastre.
+                        
+                    </p>
+                </div>
+            </div>
+             <a href='#' class='fechar' onclick='removerViewFaq()'>x</a>
+            </div>
+               
         </div>
 
 
