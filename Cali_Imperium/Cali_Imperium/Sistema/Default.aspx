@@ -179,12 +179,13 @@
 
           
             <div id='faq'>
+                <p class='titulo'>Olá Bem-Vindo ao FAQ ControlTerm!</p>
+                
             <div class="fundo_faq">
                 <div class="abrir">
                     <p class="pergunta">Como Cadastrar meu Arduino Uno?</p>
-                    <p class="resposta"> Olá Bem-Vindo ao FAQ ControlTerm!
-                        <br />
-                        Para cadastrar o Arduino Uno o senhor(a) deve seguir os seguintes passos:<br />
+                    <p class="resposta"> 
+                       Para cadastrar o Arduino Uno o senhor(a) deve seguir os seguintes passos:<br />
                         1- Vá com o mouse em seu painel esquerdo e clique em "Adicionar Termômetro";<br />
                         2- Clique em Adicionar Termômetro;<br />
                         3- Adicione o Código do Arduino localizado na parte de baixo de sua caixa(Arduino);<br />
