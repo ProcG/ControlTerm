@@ -75,7 +75,7 @@ namespace Cali_Imperium.Sistema.Relatorio
                         while (dr.Read())
                         {
                             relatorio = new ModalRelatorio();
-                            relatorio.Temperatura = dr["temperatura"].ToString();
+                            relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
                             relatorio.Data = dr["data"].ToString();
 
                             listaTemperaturas.Add(relatorio);
@@ -99,16 +99,125 @@ namespace Cali_Imperium.Sistema.Relatorio
             ScriptManager.RegisterStartupScript(control, control.GetType(), "showalert", $"alert('{texto}');", true);
         }
 
-        public static string ViewEntreData(List<ModalRelatorio> lista)
+        
+        public static string ViewEntreData(List<ModalRelatorio> lista, string email)
         {
-            string div = "<div class='modal_relatorio'>";
+
+            List<ModalRelatorio> lista2 = lista;
+
+            ModalRelatorio relat = new ModalRelatorio();
+
+            lista2.Sort((x, y) => x.Temperatura.CompareTo(y.Temperatura));
+
+            relat.Media = (int)lista2.Average((x) => x.Temperatura);
+            relat.Minima = lista2.Min((x) => x.Temperatura);
+            relat.Maxima = lista2.Max((x) => x.Temperatura);
+
+            DateTime dataEtemp = new DateTime();
+            string data = $"{dataEtemp.Day}/{dataEtemp.Month}/{dataEtemp.Year} - {dataEtemp.Hour}:{dataEtemp.Minute}";
+
+
+            /* string infos = $@"
+
+             <div class='pagina_relatorio'>
+         < div class='cabeca'>
+
+             <div class='dados'>
+                 <p>{data}</p>
+                 <p>Relatorio por periodo</p>
+                 <p class='email'>{email}</p>
+             </div>
+             <img src = 'logo.png' >
+
+         </ div >
+
+
+         < div class='infos'>
+             <table> 
+                 <tr> 
+                     <td>Menor temperatura</td>
+                     <td>Temperatura média</td>
+                     <td>Maior temperatura</td>
+                 </tr>
+                 <tr> 
+                     <td>{relat.Minima}</td>
+                     <td>{relat.Media}</td>
+                     <td>{relat.Maxima}</td>
+                 </tr>	
+             </table>
+
+                 <br> 
+                 <br> 
+                 <br> 
+
+             <table>		
+                 <tr> 
+                     <td>Data</td>
+                     <td>Temperatura</td>
+                 </tr>
+                ";
+             foreach (ModalRelatorio temp in lista)
+             {
+                 infos += $@"< tr> 
+                                 <td> {temp.Data} </ td >
+                                 <td> {temp.Temperatura} </td>
+                             </tr>";
+             }
+
+             infos += @"</table>
+         </div>
+
+     </div>"; */
+
+            string infos = $"<div class='pagina_relatorio'>" +
+            "< div class='cabeca'>" +
+            "<div class='dados'>" +
+                "<p>{data}</p>" +
+                "<p>Relatorio por periodo</p>" +
+                "<p class='email'>{email}</p>" +
+
+            "</div> " +
+            "< img src = 'logo.png' > " +
+
+        "</ div > " +
+
+
+        "< div class='infos'>" +
+            "<table> " +
+                "<tr> " +
+                    "<td>Menor temperatura</td>" +
+                    "<td>Temperatura média</td>" +
+                    "<td>Maior temperatura</td>" +
+                "</tr>" +
+                "<tr> " +
+                    "<td>{relat.Minima}</td>" +
+                    "<td>{relat.Media}</td>" +
+                    "<td>{relat.Maxima}</td>" +
+                "</tr>	" +
+            "</table>" +
+
+                "<br> " +
+                "<br> " +
+                "<br> " +
+            "<table>" +
+                "<tr> " +
+                    "<td>Data</td>" +
+                    "<td>Temperatura</td>" +
+                "</tr>";
             foreach (ModalRelatorio temp in lista)
             {
-                div += "<p class='numeros'>Temperatura: " + temp.Temperatura + " | Data: " + temp.Data + "</p>";
+                infos += $"< tr>"+
+                                "<td> {temp.Data} </ td > " +
+                                "< td> {temp.Temperatura} </td> " +
+                           " </tr>";
             }
-            div += "</div>";
 
-            return div;
+            infos += "</table>"+
+        "</div> " +
+
+    "</div>";
+
+            return infos;
 
         }
 
@@ -116,8 +225,11 @@ namespace Cali_Imperium.Sistema.Relatorio
 
     public class ModalRelatorio
     {
-        public string Temperatura { get; set; }
-        public string Data { get; set; }
+        public int Temperatura { get; set; }
+        public String Data { get; set; }
+        public int Minima { get; set; }
+        public int Media { get; set; }
+        public int Maxima { get; set; }
     }
 
 }

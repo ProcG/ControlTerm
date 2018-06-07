@@ -89,7 +89,6 @@
                             <a href="" class="opc_relat">Maxima por data</a>
                             <a href="" class="opc_relat">Minima por data</a>
                         </div>
-
                         
                         <asp:Calendar ID="data_minima" runat="server" CssClass="calendario" CellPadding="5"></asp:Calendar>
                         <asp:Calendar ID="data_maxima" runat="server" CssClass="calendario"></asp:Calendar>

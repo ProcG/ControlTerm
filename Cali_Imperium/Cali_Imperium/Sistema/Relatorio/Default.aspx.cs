@@ -31,7 +31,7 @@ namespace Cali_Imperium.Sistema.Relatorio
 
                 if (relatorio != null)
                 {
-                    Response.Write("<script>window.onload = function(){document.getElementById('ar').innerHTML = \"" + Relatorio.ViewEntreData(relatorio) + "\";}</script>");
+                    Response.Write("<script>window.onload = function(){document.getElementById('ar').innerHTML = \"" + Relatorio.ViewEntreData(relatorio,user.Email)+ "\";}</script>");
                 }
                 else
                 {
