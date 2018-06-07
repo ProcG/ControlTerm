@@ -317,10 +317,6 @@ div.sem_termometro{
 
 /*inicio CSS tela de temperaturas ideais*/
 
-body {
-    background-color: purple;
-}
-
 div.modal_off {
     display: none;
 }
@@ -398,6 +394,13 @@ div#tela_ideais {
 .sub {
     font-size: 30px;
     font-family: arial;
+    margin-top:30px;
+}
+.sub2 {
+    font-size: 30px;
+    font-family: arial;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .img_temperatura_ideal {
@@ -405,6 +408,26 @@ div#tela_ideais {
     height: 250px;
     float: left;
     margin: 10px;
+    border-radius: 10px;
+}
+
+.divmedias {
+    float: left;
+    height: 128px;
+    width: 46%;
+    margin: 10px;
+    text-align: center;
+    font-size: 30px;
+    border-color: black;
+    border-radius: 10px;
+    border: solid;
+    padding-top: 10px;
+}
+.numeros{
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 

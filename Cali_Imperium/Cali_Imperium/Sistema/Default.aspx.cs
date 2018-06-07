@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Cali_Imperium.Sistema
 {
@@ -35,6 +37,26 @@ namespace Cali_Imperium.Sistema
             }
         }
 
+
+
+        public string mediaminima()
+        {
+            using(SqlConnection cnx = new SqlConnection())
+            {
+                cnx.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT AVG (MINIMA) as 'minima' FROM ARDUINO"))
+                {
+                    using (SqlDataReader br = cmd.ExecuteReader())
+                    {
+                        if (br.Read() == true)
+                        {
+                            return br[]
+                        }
+                    }
+                }
+            }
+        }
+
         protected void btnAddArduino_Click(object sender, EventArgs e)
         {
             string nome = txtNomeArduino.Text;
@@ -63,20 +85,7 @@ namespace Cali_Imperium.Sistema
             Response.Redirect("Perfil/Default.aspx");
         }
 
-
         
-        protected static List<string> PegarMediasTemp()
-        {
-            mediasTemperaturas.Add("wdtgdw");
-            mediasTemperaturas.Add("ef");
-            mediasTemperaturas.Add("dasgas");
-            mediasTemperaturas.Add("asdgdsa");
-            mediasTemperaturas.Add("sdag");
-            mediasTemperaturas.Add("asdgsda");
-
-            return mediasTemperaturas;
-        }
-
 
     }
 }
