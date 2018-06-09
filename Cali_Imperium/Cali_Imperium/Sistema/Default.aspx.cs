@@ -34,6 +34,9 @@ namespace Cali_Imperium.Sistema
                     txtMsgNaoTem.Text = $"Prezado Sr(a). {user.Nome}, por favor cadastre seu arduino.";
                 }
 
+                mediamin.Text = mediaminima();
+                mediamax.Text = abc();
+
             }
         }
 
@@ -41,21 +44,47 @@ namespace Cali_Imperium.Sistema
 
         public string mediaminima()
         {
-            using(SqlConnection cnx = new SqlConnection())
+            using(SqlConnection cnx = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
             {
                 cnx.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT AVG (MINIMA) as 'minima' FROM ARDUINO"))
+                using (SqlCommand cmd = new SqlCommand("SELECT AVG (MINIMA) as 'minima' FROM ARDUINO", cnx))
                 {
                     using (SqlDataReader br = cmd.ExecuteReader())
                     {
                         if (br.Read() == true)
                         {
-                            return br[]
+                            return br["minima"].ToString();
+                        }
+                        else
+                        {
+                            return "";
                         }
                     }
                 }
             }
         }
+        public string abc()
+        {
+            using(SqlConnection cde = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+            {
+                cde.Open();
+                using(SqlCommand efg = new SqlCommand("SELECT AVG(maxima) AS 'maxima' FROM ARDUINO", cde))
+                {
+                    using (SqlDataReader ghi = efg.ExecuteReader())
+                    {
+                        if(ghi.Read() == true)
+                        {
+                            return ghi["maxima"].ToString();
+                        }
+                        else
+                        {
+                            return "";
+                        }
+                    }
+                }
+            }
+        }
+
 
         protected void btnAddArduino_Click(object sender, EventArgs e)
         {

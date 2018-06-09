@@ -188,10 +188,12 @@
                             
                             <p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
                             <div class="divmedias"> Mínima:
-                                <asp:Label runat="server" ID="mediamin" class="numeros"/>
+                                <asp:Label runat="server" ID="mediamin" CssClass="numeros"/>
+                                <p id="txtMini" class="numeros"></p>
                             </div>
                             <div class="divmedias"> Máxima:
-                                <p id="txtMAxi" class="numeros"/>
+                                <asp:Label runat="server" ID="mediamax" CssClass="numeros"/>
+                                <p id="txtMaxi" class="numeros"/>
                             </div>   
 
                         </div>   
