@@ -94,6 +94,48 @@ namespace Cali_Imperium.Sistema.Relatorio
 
         }
 
+        public List<ModalRelatorio> Todos(int codigo_usuario)
+        {
+            string codArduino = PegarCodigoArduino(codigo_usuario);
+
+            List<ModalRelatorio> listaTemperaturas = new List<ModalRelatorio>();
+
+            ModalRelatorio relatorio = null;
+
+            using (SqlConnection cnx = new SqlConnection(server))
+            {
+                cnx.Open();
+
+                string sql = "SELECT temperatura, convert(date,data_hora) as 'data' FROM temperatura WHERE codArduino = @arduino";
+
+                using (SqlCommand cmd = new SqlCommand(sql, cnx))
+                {
+                    cmd.Parameters.AddWithValue("@arduino", codArduino);
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            relatorio = new ModalRelatorio();
+                            relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
+                            relatorio.Data = dr["data"].ToString();
+
+                            listaTemperaturas.Add(relatorio);
+                        }
+
+                    }
+
+                }
+
+                if (relatorio != null)
+                {
+                    return listaTemperaturas;
+                }
+                return null;
+            }
+
+        }
+
         public static void alert(Control control, string texto)
         {
             ScriptManager.RegisterStartupScript(control, control.GetType(), "showalert", $"alert('{texto}');", true);

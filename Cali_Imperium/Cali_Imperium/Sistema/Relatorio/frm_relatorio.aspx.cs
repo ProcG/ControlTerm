@@ -17,6 +17,7 @@ namespace Cali_Imperium.Sistema.Relatorio
                 int codUser = int.Parse(Request.QueryString["codUser"]);
                 DateTime data_inicio = DateTime.Parse(Request.QueryString["data_inicio"]);
                 DateTime data_fim = DateTime.Parse(Request.QueryString["data_fim"]);
+                bool all = bool.Parse(Request.QueryString["all"]);
             }
             catch
             {

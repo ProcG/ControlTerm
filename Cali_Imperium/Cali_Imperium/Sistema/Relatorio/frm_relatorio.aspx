@@ -86,7 +86,15 @@
                  DateTime data_inicio = DateTime.Parse(Request.QueryString["data_inicio"]);
                  DateTime data_fim = DateTime.Parse(Request.QueryString["data_fim"]);
 
-                 List<Cali_Imperium.Sistema.Relatorio.ModalRelatorio> lista = new Cali_Imperium.Sistema.Relatorio.Relatorio().EntreDatas(codUser, data_inicio, data_fim);
+                 bool all = bool.Parse(Request.QueryString["all"]);
+                 List<Cali_Imperium.Sistema.Relatorio.ModalRelatorio> lista;
+                 if (all == false) {
+                     lista = new Cali_Imperium.Sistema.Relatorio.Relatorio().EntreDatas(codUser, data_inicio, data_fim);
+                 }
+                 else
+                 {
+                     lista = new Cali_Imperium.Sistema.Relatorio.Relatorio().Todos(codUser);
+                 }
                  DateTime dataEtemp = DateTime.Now;
                  string data = $"{dataEtemp.Day}/{dataEtemp.Month}/{dataEtemp.Year} - {dataEtemp.Hour}:{dataEtemp.Minute}";
 
@@ -105,13 +113,20 @@
                      maxima = 0;
                  }
 
+                 string[] data_inicio_split = data_inicio.ToString().Split(' ');
+                 string[] data_fim_split = data_fim.ToString().Split(' ');
+
 
             %>
 
 			<div class="dados">
-                <p><% Response.Write(data); %></p>
-				<p>Relatorio por periodo</p>
-				<p><% Response.Write(email); %></p>
+                <p>Relatório gerado em: <b><% Response.Write(data); %></b></p>
+                <%if(all == true){ %>
+				    <p>Relatório por período, de todas as datas</p>
+                <% } else {%>
+                    <p>Relatório por período, entre <b><% Response.Write(data_inicio_split[0]); %> à <% Response.Write(data_fim_split[0]); %></b></p>
+                   <% } %>
+				<p>E-mail do usuário: <b><% Response.Write(email); %></b></p>
 			</div>
 			<img src="logo.png">
 		</div>
@@ -125,13 +140,13 @@
 				</tr>
 				<tr> 
 					<td>
-                        <p><% Response.Write(minima); %></p>
+                        <p><% Response.Write(minima); %>ºc</p>
 					</td>
 					<td>
-                        <p><% Response.Write(media); %></p>
+                        <p><% Response.Write(media); %>ºc</p>
 					</td>
 					<td>
-                        <p><% Response.Write(maxima); %></p>
+                        <p><% Response.Write(maxima); %>ºc</p>
 					</td>
 				</tr>	
 			</table>
@@ -159,7 +174,7 @@
                         <p> <% Response.Write(data_split[0]); %></p>
 					</td>
 					<td>
-                        <p><% Response.Write(resul.Temperatura); %></p>
+                        <p><% Response.Write(resul.Temperatura); %>ºc</p>
 					</td>
 				</tr>
                 <%
