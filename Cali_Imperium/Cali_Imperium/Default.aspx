@@ -19,7 +19,7 @@
 
 <!--MENU-->
 
-    <header id ="menu" class="Menu1">
+    <header id ="menu" class="Menu2">
 	       <img src="Logos/Logo_da_empresa2.png"/>
 	       <ul>
 	       	<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
@@ -92,7 +92,7 @@
 				<p>Product Owner</p>
 				<h1>Juvencio</h1>
 				<div class="contatos">
-					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
+					<a href="https://github.com/JuvencioJose007" target="_blank"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 				<p>Developer Full Stack</p>
 				<h1>Pedro</h1>
 				<div class="contatos">
-					<a href=""><img src="Logos/github.png" width="40px" height="40px" /></a>
+					<a href="https://github.com/mendespedro" target="_blank"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -110,7 +110,7 @@
 				<p>Developer Full Stack</p>
 				<h1>Gabriel</h1>
 				<div class="contatos">
-					<a href="https://github.com/ProcG/"><img src="Logos/github.png" width="40px" height="40px" /></a>
+					<a href="https://github.com/ProcG/" target="_blank"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -119,7 +119,7 @@
 				<p>Scrum Master</p>
 				<h1>Mateus</h1>
 				<div class="contatos">
-					<a href="https://github.com/mateuscovos"><img src="Logos/github.png" width="40px" height="40px" /></a>
+					<a href="https://github.com/mateuscovos" target="_blank"><img src="Logos/github.png" width="40px" height="40px" /></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
@@ -128,7 +128,7 @@
 				<p>Developer Full Stack</p>
 				<h1>Natanael</h1>
 				<div class="contatos">
-					<a href="https://github.com/NatalNW"><img src="Logos/github.png" width="40px" height="40px"/></a>
+					<a href="https://github.com/NatalNW" target="_blank"><img src="Logos/github.png" width="40px" height="40px"/></a>
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>

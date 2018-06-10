@@ -46,6 +46,7 @@
 					<a href="#bg">Recuperação de senha</a><br /><br />                        
                     <a href="https://desk.zoho.com/portal/controlterm/home" target="_blank">Suporte</a>
 					</p>
+                    <img src="../Logos/PoweredBy.png" width="180px" height="75px" />
 
                     <div id="bg"></div>
 	

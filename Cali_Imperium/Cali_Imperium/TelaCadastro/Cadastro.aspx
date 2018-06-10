@@ -16,6 +16,7 @@
 				<a href="../TelaLogin/Login.aspx"><li>Login</li></a>
 				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
 			</ul>
+            <img src="../Logos/PoweredBy.png" class="power"/>
 		</div>
 	</header>
 	<div class="fundo">
@@ -65,7 +66,6 @@
                     <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Senha" ID="TextSenha" REQUIRED/>
                     <asp:TextBox runat="server" TextMode="Password" CssClass="senha" placeholder="Confirmar Senha" ID="TextConfSenha" REQUIRED/>
 				<!--  -->
-                <asp:Button Text="Voltar" runat="server" class="voltar" />
                 <asp:Button Text="Cadastrar" ID="btnCadastrar" runat="server" OnClick="btnCadastrar_Click" class="cadastrar" />
 				
 			</form>
