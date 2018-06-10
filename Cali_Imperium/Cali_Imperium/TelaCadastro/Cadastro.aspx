@@ -31,6 +31,7 @@
 				
                     <asp:dropdownlist runat="server" ID="TextEstado">
 					<asp:ListItem value= "null" Text="Selecione uma estado"></asp:ListItem>
+					<asp:ListItem value="AC" Text="Acre"></asp:ListItem>
 					<asp:ListItem value="AL" Text="Alagoas"></asp:ListItem>
 					<asp:ListItem value="AP" Text="Amapá"></asp:ListItem>
 					<asp:ListItem value="AM" Text="Amazonas"></asp:ListItem>
@@ -57,7 +58,6 @@
 					<asp:ListItem value="SP" Text="São Paulo"></asp:ListItem>
 					<asp:ListItem value="SE" Text="Sergipe"></asp:ListItem>
 					<asp:ListItem value="TO" Text="Tocantins"></asp:ListItem>
-					<asp:ListItem value="AC" Text="Acre"></asp:ListItem>
 
 				</asp:dropdownlist>     
 				</div>                      

@@ -27,7 +27,7 @@ namespace Cali_Imperium.Sistema
 
                 if (new Caliimperium.Temperatura().UsuarioTemArduino(user.ID) == false)
                 {
-                    txtMsgNaoTem.Text = $"Prezado Sr(a).{user.Nome}, por favor cadastre seu arduino.";
+                    txtMsgNaoTem.Text = $"Prezado Sr(a). {user.Nome}, por favor cadastre seu arduino.";
                 }
 
             }
