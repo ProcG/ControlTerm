@@ -27,10 +27,8 @@ namespace Cali_Imperium.Sistema.Relatorio
         {
             if(data_minima.SelectedDate <= data_maxima.SelectedDate && (data_minima.SelectedDate != DateTime.Parse("01 / 01 / 0001 00:00:00") && data_maxima.SelectedDate != DateTime.Parse("01 / 01 / 0001 00:00:00")))
             {
-                //List<ModalRelatorio> relatorio = new Relatorio().EntreDatas(user.ID, data_minima.SelectedDate, data_maxima.SelectedDate);
-
-                
-                    Response.Redirect($"frm_relatorio.aspx?codUser={user.ID}&data_inicio={data_minima.SelectedDate}&data_fim={data_maxima.SelectedDate}&email={user.Email}");
+                 
+                Response.Redirect($"frm_relatorio.aspx?codUser={user.ID}&data_inicio={data_minima.SelectedDate}&data_fim={data_maxima.SelectedDate}&email={user.Email}");
                 
             }
             else

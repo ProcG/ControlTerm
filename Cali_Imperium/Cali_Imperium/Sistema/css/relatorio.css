@@ -22,7 +22,7 @@ div.opcoes_relatorios {
     position: relative;
     width: 100%;
     height: 40px;
-    background-color: #f00;
+    background-color: #4332d4;
     padding: 10px;
     overflow: hidden;
 }
@@ -32,25 +32,63 @@ a.opc_relat {
     text-decoration: none;
     color: #fff;
     padding: 14px 5px;
-    background-color: #000;
+    /*background-color: #000;*/
+    font-family: 'Century Gothic', sans-serif;
 }
 
 table#data_minima.calendario, table#data_maxima.calendario {
     margin: 15px;
+    width: 260px;
+    height: 150px;
 }
 
-.calendario{
+.prox_mes {
+    transition: all 0.3s;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.prox_mes a {
+   text-decoration: none;
+   font-family: "Century Gothic";
+   padding-left: 14px;
+   padding-right: 14px;
+}
+
+.dia_selecionado {
+    background: #4332d4 !important;
+}
+
+.prox_mes:hover {
+    background: #4332d4;
+    transition: all 0.3s;
+}
+
+td a{
+    text-decoration: none;
+}
+
+.calendario {
     position: relative;
     background-color: #fff;
-    width: 100px;
-    height: 50px;
     font-family: "Century Gothic";
 }
 
-input.btn{
+.nome_dias {
+    background: #4332d4;
+    color: #fff;
+    padding: 5px;
+}
+
+.dias_do_mes {
+    background: #00ff68;
+}
+
+input.btn {
     width: 80%;
     height: 40px;
-    background: #56ca25;
+    background: #00dd31;
     border: none;
 }
 
