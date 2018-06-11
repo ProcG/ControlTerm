@@ -98,7 +98,6 @@
     <Content Include="Logos\Logo_da_empresa.png" />
     <Content Include="Logos\Logo_da_empresa2.png" />
     <Content Include="Logos\Logo_da_empresa3.png" />
-    <Content Include="Logos\mateus.jpg" />
     <Content Include="Logos\missão.png" />
     <Content Include="Logos\predo.jpg" />
     <Content Include="Logos\Valores.png" />
@@ -228,7 +227,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50470</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
