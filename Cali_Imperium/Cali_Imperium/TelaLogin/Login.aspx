@@ -15,6 +15,7 @@
 			<ul>
 				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
 			</ul>
+            <img src="../Logos/PoweredBy.png" class="power" />
 		</div>
 	</header>
 					
@@ -46,7 +47,6 @@
 					<a href="#bg">Recuperação de senha</a><br /><br />                        
                     <a href="https://desk.zoho.com/portal/controlterm/home" target="_blank">Suporte</a>
 					</p>
-                    <img src="../Logos/PoweredBy.png" width="180px" height="75px" />
 
                     <div id="bg"></div>
 	

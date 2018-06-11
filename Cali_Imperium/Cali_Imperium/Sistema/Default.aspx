@@ -242,5 +242,30 @@
         } catch (err) { console.log(err);}
     }, 5000);
 
+    function attMediasMaxMin() {
+
+        var ajax = new XMLHttpRequest;
+        ajax.open("GET", "PegarMediasMinMax.aspx", true);
+        
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+
+                var split = ajax.responseText.split('+');
+
+                document.getElementById().innerHTML = split[0];
+                document.getElementById().innerHTML = split[1];
+
+
+            }
+
+            ajax.send();
+        }
+    }
+    attMediasMaxMin();
+
+    setInterval(() => {
+        attMediasMaxMin();
+    },10000);
+
 
 </script>

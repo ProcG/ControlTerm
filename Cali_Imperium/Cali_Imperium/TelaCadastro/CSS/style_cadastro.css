@@ -28,7 +28,6 @@ ul {
 
 li {
     font-family: verdana;
-    background: linear-gradient(to right, orange, blue);
     color: gray;
     list-style: none;
     padding: 40px;
