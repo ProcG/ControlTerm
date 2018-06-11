@@ -82,7 +82,6 @@
   <ItemGroup>
     <Content Include="Sistema\img\ar_condicionado.jpg" />
     <Content Include="Sistema\img\corpo.jpg" />
-    <Content Include="Sistema\Perfil\css\atualizar.css" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
