@@ -316,20 +316,6 @@ div.sem_termometro{
 }
 
 div.fundo_modal_faq_on {
-
-
-/*inicio CSS tela de temperaturas ideais*/
-
-body {
-    background-color: purple;
-}
-
-div.modal_off {
-    display: none;
-}
-
-div.modal_on {
-
     transition: all 4.3s;
     position: fixed;
     width: 100%;
@@ -360,13 +346,13 @@ div#faq {
     /*border: solid 2px #000;*/
     /*z-index: 9 !important; */
 }
-   .fundo_faq {
-        position: relative;
-        width: 100%;
-        height: 90%;
-        overflow-x: hidden;
-        overflow-y: scroll;
-    }
+.fundo_faq {
+    position: relative;
+    width: 100%;
+    height: 90%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
 .abrir {
     position: relative;
     width: 615px;
@@ -382,13 +368,13 @@ div#faq {
     transition: all 0.5s;
 }
 
-    .abrir:hover .resposta {
+.abrir:hover .resposta {
         position: relative;
         width: 100%;
         height: auto;
         background: #fff;
         transition: all 0.5s;
-    }
+}
 .pergunta {
     position: relative;
     width: 400px;
@@ -408,6 +394,24 @@ div#faq {
     color: black;
     padding: 15px;
     transition: all 0.5s;
+}
+
+div.modal_off {
+    display: none;
+}
+
+div.modal_on {
+    transition: all 4.3s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(102,85,255,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5 !important;
 }
 
 
