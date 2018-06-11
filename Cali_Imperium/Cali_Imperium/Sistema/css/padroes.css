@@ -343,8 +343,6 @@ div#faq {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    /*border: solid 2px #000;*/
-    /*z-index: 9 !important; */
 }
 .fundo_faq {
     position: relative;
