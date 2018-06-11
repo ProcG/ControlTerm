@@ -113,9 +113,7 @@
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
-    <Content Include="Sistema\Relatorio\Default.aspx" />
-    <Content Include="Sistema\Relatorio\frm_relatorio.aspx" />
-    <Content Include="Sistema\Relatorio\Logo.png" />
+    <Content Include="Sistema\Perfil\Default.aspx" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -166,21 +164,13 @@
     <Compile Include="Sistema\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\Relatorio\Default.aspx.cs">
+    <Compile Include="Sistema\Perfil\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Sistema\Relatorio\Default.aspx.designer.cs">
+    <Compile Include="Sistema\Perfil\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.cs">
-      <DependentUpon>frm_relatorio.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.designer.cs">
-      <DependentUpon>frm_relatorio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Sistema\Relatorio\Relatorio.cs" />
     <Compile Include="Sistema\Temperatura.cs" />
     <Compile Include="TelaCadastro\Cadastro.aspx.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿const SerialPort = require('serialport');
+const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 var temp = 0;
 
@@ -32,34 +32,29 @@ class ArduinoDataRead {
             parser.on('data', (data) => {
                 
 				
-				var leitura_do_arduino = data.split("-");
-				//leitura do arduino segue o padrão [(temperatura)-(codigo do arduino)]
-				//leitura_do_arduino[0] = temperatura
-				//leitura_do_arduino[1] = codigo do arduino
+				var a = data.split("-");
 				
-				temperaturas.push(leitura_do_arduino[0]);
+				temperaturas.push(a[0]);
 				console.log(temperaturas.length);
 				
-				var tempo = 15; 
-
-				if(temperaturas.length == tempo){
+				if(temperaturas.length == 60){
 					
 					var temp_total_soma = 0;
-					for(var i = 0; i < tempo; i++){
+					for(var i = 0; i < 60; i++){
 						temp_total_soma += parseInt(temperaturas[i]);
-						//console.log(temp_total_soma+" - media");						
+						
+						//console.log(temp_total_soma+" - media");
+						
 					}
 					
 					
-					var media = temp_total_soma / tempo; 
+					var media = temp_total_soma / 60; 
 					
-					setTemperatura(media, leitura_do_arduino[1]);
-					
-				//	notificacao(media, leitura_do_arduino[1]);
-					
+					setTemperatura(media, a[1]);
+				
 					temperaturas = new Array();
 					
-					console.log(media+" - "+leitura_do_arduino [1]);
+					console.log(media+" - "+a[1]);
 					console.clear();
 				
 					
@@ -80,20 +75,6 @@ class ArduinoDataRead {
 
 	
 }
-
-function notificacao(temperatura, codArduino){
-	
-	var url = "https://notificacao-controlterm.azurewebsites.net/Default.aspx?cod="+codArduino+"&temperatura="+temperatura;
-						
-	var request = require('request');
-	request(url, function (error, response, body) {
-	  if (!error && response.statusCode == 200) {
-		return body;//retorna a mensagem do site (da url);
-	  }
-	});
-}
-
-
 const serial = new ArduinoDataRead();
 serial.SetConnection();
 
