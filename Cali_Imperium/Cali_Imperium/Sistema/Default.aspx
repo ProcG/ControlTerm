@@ -182,18 +182,16 @@
 				
 				            <p class="sub"> Ar Condicionado </p>
 				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal"/>
-				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
+				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa). Recomenda que a temperatura do ar condicionado fique em torno dos 23°C. Porque, segundo o órgão, ela é a mais confortável para o corpo, permitindo que o organismo fique em equilíbrio sem ter que dispender grande esforço, e a economia de energia pode chegar a 50%. </p>				
                             
                             
                             
                             <p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
                             <div class="divmedias"> Mínima:
                                 <asp:Label runat="server" ID="mediamin" CssClass="numeros"/>
-                                <p id="txtMini" class="numeros"></p>
                             </div>
                             <div class="divmedias"> Máxima:
                                 <asp:Label runat="server" ID="mediamax" CssClass="numeros"/>
-                                <p id="txtMaxi" class="numeros"/>
                             </div>   
 
                         </div>   
@@ -242,30 +240,5 @@
         } catch (err) { console.log(err);}
     }, 5000);
 
-    function attMediasMaxMin() {
-
-        var ajax = new XMLHttpRequest;
-        ajax.open("GET", "PegarMediasMinMax.aspx", true);
-        
-        ajax.onreadystatechange = function () {
-            if (ajax.readyState == 4 && ajax.status == 200) {
-
-                var split = ajax.responseText.split('+');
-
-                document.getElementById().innerHTML = split[0];
-                document.getElementById().innerHTML = split[1];
-
-
-            }
-
-            ajax.send();
-        }
-    }
-    attMediasMaxMin();
-
-    setInterval(() => {
-        attMediasMaxMin();
-    },10000);
-
-
+    
 </script>

@@ -416,12 +416,14 @@ div#tela_ideais {
     height: 128px;
     width: 46%;
     margin: 10px;
+    display: flex;
+    align-items: center;
     text-align: center;
     font-size: 30px;
     border-color: black;
     border-radius: 10px;
     border: solid;
-    padding-top: 10px;
+    padding-left: 15%;
 }
 .numeros{
     margin: 15px;

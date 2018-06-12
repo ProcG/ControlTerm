@@ -55,7 +55,7 @@ div.area_formulario {
     min-height: 550px;
     margin: 0 auto 0px;
     border-radius: 15px;
-    padding: 70px 50px 50px;
+    padding: 70px 50px 60px;
     display: block;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -213,6 +213,7 @@ input.cadastrar {
     cursor: pointer;
     transition: 0.3s;
     outline: none;
+    margin-top:20px;
 }
 
 

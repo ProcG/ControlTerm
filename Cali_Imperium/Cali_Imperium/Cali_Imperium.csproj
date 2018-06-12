@@ -84,7 +84,6 @@
     <Content Include="Logos\PoweredBy.png" />
     <Content Include="Sistema\img\ar_condicionado.jpg" />
     <Content Include="Sistema\img\corpo.jpg" />
-    <Content Include="Sistema\PegarMediasMinMax.aspx" />
     <Content Include="Sistema\Perfil\css\atualizar.css" />
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
@@ -167,13 +166,6 @@
     </Compile>
     <Compile Include="Sistema\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Sistema\PegarMediasMinMax.aspx.cs">
-      <DependentUpon>PegarMediasMinMax.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Sistema\PegarMediasMinMax.aspx.designer.cs">
-      <DependentUpon>PegarMediasMinMax.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sistema\Perfil\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
