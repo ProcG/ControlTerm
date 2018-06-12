@@ -1,20 +1,11 @@
-const SerialPort = require('serialport');
+﻿const SerialPort = require('serialport');
 const Readline = SerialPort.parsers.Readline;
 var temp = 0;
 
+var temperaturas = new Array();
 
 class ArduinoDataRead {
 
-    constructor(){
-        this.listData = [];
-    }
-
-    get List() {
-        return this.listData;
-
-    }
-
-	
     SetConnection(){
 
         SerialPort.list().then(listSerialDevices => {
@@ -40,12 +31,41 @@ class ArduinoDataRead {
             
             parser.on('data', (data) => {
                 
-				var a = data.split("-");//separa o dado que o arduino manda e coloca em um vetor
 				
-				console.log(a);
+				var leitura_do_arduino = data.split("-");
+				//leitura do arduino segue o padrão [(temperatura)-(codigo do arduino)]
+				//leitura_do_arduino[0] = temperatura
+				//leitura_do_arduino[1] = codigo do arduino
 				
-				setTemperatura(a[0], a[1]);//manda a temperatura e o codigo do arduino
+				temperaturas.push(leitura_do_arduino[0]);
+				console.log(temperaturas.length);
 				
+				var tempo = 15; 
+
+				if(temperaturas.length == tempo){
+					
+					var temp_total_soma = 0;
+					for(var i = 0; i < tempo; i++){
+						temp_total_soma += parseInt(temperaturas[i]);
+						//console.log(temp_total_soma+" - media");						
+					}
+					
+					
+					var media = temp_total_soma / tempo; 
+					
+					setTemperatura(media, leitura_do_arduino[1]);
+					
+				//	notificacao(media, leitura_do_arduino[1]);
+					
+					temperaturas = new Array();
+					
+					console.log(media+" - "+leitura_do_arduino [1]);
+					console.clear();
+				
+					
+				}
+				
+
 				
 				
 				//setTemperatura(parseFloat(data));
@@ -60,10 +80,24 @@ class ArduinoDataRead {
 
 	
 }
+
+function notificacao(temperatura, codArduino){
+	
+	var url = "https://notificacao-controlterm.azurewebsites.net/Default.aspx?cod="+codArduino+"&temperatura="+temperatura;
+						
+	var request = require('request');
+	request(url, function (error, response, body) {
+	  if (!error && response.statusCode == 200) {
+		return body;//retorna a mensagem do site (da url);
+	  }
+	});
+}
+
+
 const serial = new ArduinoDataRead();
 serial.SetConnection();
 
-		//conecta no banco
+
 		var Connection = require('tedious').Connection;  
 		var config = {  
         userName: 'Control',  
@@ -88,8 +122,6 @@ serial.SetConnection();
 		var Request = require('tedious').Request  
 		var TYPES = require('tedious').TYPES;  
 
-		
-		//função para cadastrar a temperatura e codigo do arduino no banco
 		function setTemperatura(temp, codigo) {  
 			request = new Request("INSERT Into Temperatura (temperatura, codArduino) VALUES (@temp,@cod);", function(err) {  
 			 if (err) {  

@@ -43,7 +43,9 @@
                     <asp:TextBox runat="server" placeholder="Senha" TextMode="Password" ID="txtSenha"/>
                     <asp:Button Text="Login" runat="server" ID="btnEnviar" OnClick="btnEnviar_Click" />
 					<p class="mensagem">Não é registrado ? <a href="../TelaCadastro/cadastro.aspx">Crie sua Conta.</a><br>
-					<a href="#bg">Recuperação de senha</a></p>
+					<a href="#bg">Recuperação de senha</a><br /><br />                        
+                    <a href="https://desk.zoho.com/portal/controlterm/home" target="_blank">Suporte</a>
+					</p>
 
                     <div id="bg"></div>
 	

@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width:divece-width">
 	<title>
-		Control Term | O coltrole que você merece!
+		Control Term | O controle que você merece!
 	</title>
 	<link rel="icon" href="Logos/Logo_da_empresa2.png" type="image/gif" sizes="100x100">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="CSS/device.css">
@@ -123,8 +123,8 @@
 					<img src="Logos/linkedin.png" width="50px" height="50px" />
 				</div>
 			</div>
-			<div class="eu">
-				<img src="Logos/eu.jpg"/>
+			<div class="n">
+				<img src="Logos/natanael.jpg"/>
 				<p>Developer Full Stack</p>
 				<h1>Natanael</h1>
 				<div class="contatos">

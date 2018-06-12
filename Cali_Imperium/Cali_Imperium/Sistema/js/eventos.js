@@ -203,13 +203,41 @@ function removerViewConfiguracoes() {// função para remover a tela de configur
 
 
 function getViewAddArduino() { // mesma coisa da getViewConfiguracoes
-    var div_fundo = document.getElementById("fundo_addArduino");
+    var div_fundo = document.getElementById("fundo_modal_arduino");
     div_fundo.className = "";
-    div_fundo.className = "fundo_addArduino_on";
+    div_fundo.className = "fundo_modal_arduino_on";
 }
 
 function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
-    var div_fundo = document.getElementById("fundo_addArduino");
+    var div_fundo = document.getElementById("fundo_modal_arduino");
     div_fundo.className = "";
-    div_fundo.className = "fundo_addArduino_off";
+    div_fundo.className = "fundo_modal_arduino_off";
 }
+
+function getViewFaq() { // mesma coisa da getViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_on";
+}
+
+function removerViewFaq() {// mesma coisa da removerViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_off";
+}
+
+
+/* abrir e fechar janela modal temperatura modal */
+function abrirmodal() {
+    var div_fundo = document.getElementById("modal");
+    div_fundo.className = "";
+    div_fundo.className = "modal_on";
+}
+
+function fecharmodal() {
+    var div_fundo = document.getElementById("modal");
+    div_fundo.className = "";
+    div_fundo.className = "modal_off";
+}
+/* fim janela modal temperaturA */
+
