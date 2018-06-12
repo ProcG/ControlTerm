@@ -53,7 +53,7 @@
                     </div>
                    
 
-                    <asp:Button Text="Cancelar" CssClass="Cancelar" ID="BtnCancelar" runat="server"/>
+                    <asp:Button Text="Cancelar" CssClass="Cancelar" ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click"/>
                     <asp:Button Text="Atualizar" CssClass="Alterar" ID="BtnAtualizar" runat="server" OnClick="BtnAtualizar_Click"/>
 
                    </div>

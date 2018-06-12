@@ -60,7 +60,7 @@ namespace Cali_Imperium.Sistema
 
         protected void btnAtualizarPerfil_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Perfil/Default.aspx");
+            Response.Redirect("Atualiza_perfil/Default.aspx");
         }
     }
 }

@@ -120,6 +120,10 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil
 
         }
 
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Sistema");
+        }
     }
 
 
