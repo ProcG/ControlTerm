@@ -1,4 +1,3 @@
-/*ATENÇÃO, VOCÊ NÃO ENTENDERA NADA DO QUE ESTÁ AQUI, POIS ATÉ EU QUE CRIEI NÃO SEI O PQ DE FUNCIONAR :C*/
 var temperatura_atual = 0, nova_temperatura = 0; // cria as variaveis que faram as "animações" com os numeros da temperatura
 var temperatura_minima = 0;
 var temperatura_maxima = 0;

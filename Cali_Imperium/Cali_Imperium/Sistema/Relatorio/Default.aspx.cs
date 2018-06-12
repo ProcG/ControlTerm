@@ -20,6 +20,7 @@ namespace Cali_Imperium.Sistema.Relatorio
             else
             {
                 user = (Usuario)Session["Usuario"];
+                NomeUsuario.Text = user.Nome;
             }
         }
 
@@ -41,6 +42,29 @@ namespace Cali_Imperium.Sistema.Relatorio
         {
             Response.Redirect("../Atualiza_perfil");
             
+        }
+
+        protected void btnAddArduino_Click(object sender, EventArgs e)
+        {
+            string nome = txtNomeArduino.Text;
+            string min = txtMinimaC.Text;
+            string max = txtMaximaC.Text;
+
+            if (new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID) == true)
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Código invalido!')</script>");
+            }
+
+
+        }
+
+        protected void btnEditArduino_Click(object sender, EventArgs e)
+        {
+            Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
         }
     }
 }

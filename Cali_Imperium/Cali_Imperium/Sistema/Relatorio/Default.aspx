@@ -21,7 +21,7 @@
         <div class="area" id="ar">
             <div class="menu">
                 <div class="confs_usuario">
-                    <img src="img/usuario.png" class="foto_usuario" />
+                    <img src="../img/usuario.png" class="foto_usuario" />
                     <div>
                         <p class="nome_usuario">
                             <asp:Label Text="" runat="server" ID="NomeUsuario" />
@@ -182,11 +182,11 @@
 			            <div id="tela_ideais">
 				            <p class="title">Temperaturas ideais</p>
 				            <p class="sub"> Corpo Humano </p>
-				            <img src="img/corpo.jpg" class="img_temperatura_ideal">
+				            <img src="../img/corpo.jpg" class="img_temperatura_ideal">
 				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>
 				
 				            <p class="sub"> Ar Condicionado </p>
-				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal">
+				            <img src="../img/ar_condicionado.jpg" class="img_temperatura_ideal">
 				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
                         </div>		
 	             </div>
@@ -197,3 +197,5 @@
 
 </body>
 </html>
+
+<script type="text/javascript" src="../js/eventos.js"></script>

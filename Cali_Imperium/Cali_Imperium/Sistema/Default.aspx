@@ -247,9 +247,7 @@
                     atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
                     Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
 
-                    var now = new Date();
-                    now.format("dd/MM/yyyy HH:mm:ss");
-                    alert(now);
+
                 }
             }
         }
