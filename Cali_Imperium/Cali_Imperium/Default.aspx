@@ -19,7 +19,7 @@
 
 <!--MENU-->
 
-    <header id ="menu" class="Menu1">
+    <div id ="menu" class="Menu1">
 	       <img src="Logos/Logo_da_empresa2.png"/>
 	       <ul>
 	       	<a  href="TelaCadastro/cadastro.aspx"><li>Cadastre-se</li></a>
@@ -29,7 +29,7 @@
 	       	<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
 	       	<a class="scroll" href="#greetings"><li>Início</li></a>						
 	       </ul>
-    </header>
+    </div>
 	
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
