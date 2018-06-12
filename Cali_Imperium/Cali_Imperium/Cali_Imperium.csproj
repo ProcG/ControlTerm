@@ -80,12 +80,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="Sistema\img\ar_condicionado.jpg" />
+    <Content Include="Sistema\img\corpo.jpg" />
+
     <Content Include="CSS\device.css" />
     <Content Include="CSS\index.css" />
     <Content Include="CSS\medium.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Logos\eu.jpg" />
+    <Content Include="Logos\natanael.jpg" />
     <Content Include="Logos\gabriel.jpg" />
     <Content Include="Logos\github.png" />
     <Content Include="Logos\juvencio.jpg" />
@@ -96,11 +100,8 @@
     <Content Include="Logos\Logo_da_empresa.png" />
     <Content Include="Logos\Logo_da_empresa2.png" />
     <Content Include="Logos\Logo_da_empresa3.png" />
-    <Content Include="Logos\mateus.jpg" />
     <Content Include="Logos\missão.png" />
-    <Content Include="Logos\pablo.jpg" />
     <Content Include="Logos\predo.jpg" />
-    <Content Include="Logos\rosto.jpg" />
     <Content Include="Logos\Valores.png" />
     <Content Include="Logos\Visão.png" />
     <Content Include="parallaxT2.png" />
@@ -115,6 +116,11 @@
     <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
     <Content Include="Sistema\Logout.aspx" />
+
+    <Content Include="Sistema\Relatorio\Default.aspx" />
+    <Content Include="Sistema\Relatorio\frm_relatorio.aspx" />
+    <Content Include="Sistema\Relatorio\Logo.png" />
+
     <Content Include="TelaCadastro\Cadastro.aspx" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
@@ -172,6 +178,23 @@
     <Compile Include="Sistema\Logout.aspx.designer.cs">
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
+
+    <Compile Include="Sistema\Relatorio\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.cs">
+      <DependentUpon>frm_relatorio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\frm_relatorio.aspx.designer.cs">
+      <DependentUpon>frm_relatorio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\Relatorio\Relatorio.cs" />
+
     <Compile Include="Sistema\Temperatura.cs" />
     <Compile Include="TelaCadastro\Cadastro.aspx.cs">
       <DependentUpon>Cadastro.aspx</DependentUpon>
@@ -188,7 +211,7 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <Compile Include="Ultilitarios.cs" />
+    <Compile Include="Utilitarios.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -219,7 +242,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50470</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

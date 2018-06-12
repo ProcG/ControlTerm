@@ -7,26 +7,75 @@ using System.Data.SqlClient;
 
 namespace Caliimperium
 {
-    
+
     public class Temperatura//isso é uma classe
     {
-
-        public void CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
+        public bool verifica_CodArduino(string codigo)
         {
-            using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            using (SqlConnection verifica = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
-                conn.Open();
-                using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino (codArduino, codUsuario, minima, maxima) VALUES(@cod,@id,@min,@max)", conn))
+                verifica.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT disponivel FROM arduinoDisponivel WHERE codArduino = @cod",verifica))
                 {
-                    cmd.Parameters.AddWithValue("@cod",codigo);
-                    cmd.Parameters.AddWithValue("@id", idUsuario);
-                    cmd.Parameters.AddWithValue("@min", tempMinima);
-                    cmd.Parameters.AddWithValue("@max", tempMaxima);
-                    
-                    cmd.ExecuteNonQuery();
-                    
+                    cmd.Parameters.AddWithValue("@cod", codigo);
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read())
+                        {
+
+                            if (int.Parse(dr["disponivel"].ToString()) == 1)
+                            {
+                                return true;
+                            }
+                        }    
+                    }  
+                }
+                return false;
+            }
+        }
+
+        public bool atualiza_disponivel(string codigo)
+        {
+            using (SqlConnection verifica = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                verifica.Open();
+                using (SqlCommand cmd = new SqlCommand("UPDATE arduinoDisponivel set disponivel = 0 WHERE codArduino = @cod", verifica))
+                {
+                    cmd.Parameters.AddWithValue("@cod", codigo);
+
+                    if (cmd.ExecuteNonQuery() > 0) { return true; }
+
+                }
+                return false;
+            }
+        }
+
+        public bool CadastrarArduino(string codigo, string tempMinima, string tempMaxima, int idUsuario)
+        {
+            if (verifica_CodArduino(codigo) == true)
+            {
+
+
+                using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("INSERT INTO Arduino (codArduino, codUsuario, minima, maxima) VALUES(@cod,@id,@min,@max)", conn))
+                    {
+                        cmd.Parameters.AddWithValue("@cod", codigo);
+                        cmd.Parameters.AddWithValue("@id", idUsuario);
+                        cmd.Parameters.AddWithValue("@min", tempMinima);
+                        cmd.Parameters.AddWithValue("@max", tempMaxima);
+
+                        if(cmd.ExecuteNonQuery()>0)//retornar um INT
+                        {
+                            if(atualiza_disponivel(codigo) == true) { return true;  }
+                        }                        
+
+                    }
                 }
             }
+            return false;            
+            
         }
 
         public bool UsuarioTemArduino(int id)
@@ -47,7 +96,7 @@ namespace Caliimperium
                     }
                 }
             }
-            return false;        
+            return false;
         }
 
 
@@ -57,7 +106,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT temperatura FROM Temperatura WHERE codTemperatura = (SELECT MAX(codTemperatura) FROM Temperatura) AND codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("select top 1 temperatura from temperatura where codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id) order by codTemperatura desc", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", codUsuario);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -68,7 +117,7 @@ namespace Caliimperium
                         }
                         else
                         {
-                            return -100; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return 1000; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 
@@ -101,24 +150,24 @@ namespace Caliimperium
             }
         }
 
-        public int Pegar2Quartil(int id)
+        public int Pegar1Quartil(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.25) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '2q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.25) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '1q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return int.Parse(dr["2q"].ToString()); // retorna a temperatura que esta no banco
+                            return int.Parse(dr["1q"].ToString()); // retorna a temperatura que esta no banco
                         }
                         else
                         {
-                            return 0; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
+                            return 0; ; // se não existir nenhuma temperatura no banco ele retornar 0 (****pode ser qualquer numero aqui)
                         }
                     }
 
@@ -134,7 +183,7 @@ namespace Caliimperium
 
                 using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.5) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as 'mediana' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
-                    cmd.Parameters.AddWithValue("@id",id);
+                    cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
@@ -201,7 +250,7 @@ namespace Caliimperium
             }
         }
 
-        public static int PegarMinima(int id)
+        public int PegarMinima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
@@ -227,7 +276,7 @@ namespace Caliimperium
         }
 
 
-        public static int PegarMaxima(int id)
+        public int PegarMaxima(int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
             {
@@ -267,6 +316,35 @@ namespace Caliimperium
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        public static string GetNumeros(int cod)
+        {
+            string text = "";
+
+            text += new Caliimperium.Temperatura().PegarTemperatura(cod)+"+";
+            text += new Caliimperium.Temperatura().PegarTempMinima(cod) + "+";
+            text += new Caliimperium.Temperatura().Pegar1Quartil(cod) + "+";
+            text += new Caliimperium.Temperatura().PegarMediana(cod) + "+";
+            text += new Caliimperium.Temperatura().Pegar3Quartil(cod) + "+";
+            text += new Caliimperium.Temperatura().PegarTempMaxima(cod) + "+";
+            text += new Temperatura().PegarMinima(cod) + "+";
+            text += new Temperatura().PegarMaxima(cod);
+
+            string[] textSplit = text.Split('+');
+
+            int c = 0;
+            while (c < textSplit.Length)
+            {
+                if (textSplit[c] == "")
+                {
+                    return "";
+                }
+                c++;
+            }
+
+
+            return text;
         }
 
 
