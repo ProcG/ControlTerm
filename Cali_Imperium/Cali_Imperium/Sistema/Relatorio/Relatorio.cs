@@ -76,7 +76,13 @@ namespace Cali_Imperium.Sistema.Relatorio
                         {
                             relatorio = new ModalRelatorio();
                             relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
-                            relatorio.Data = dr["data"].ToString();
+                            
+                            DateTime data = DateTime.Parse(dr["data"].ToString());
+                            
+                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
+
+                            relatorio.Data = dataFinal;
+
 
                             listaTemperaturas.Add(relatorio);
                         }
@@ -118,7 +124,14 @@ namespace Cali_Imperium.Sistema.Relatorio
                         {
                             relatorio = new ModalRelatorio();
                             relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
-                            relatorio.Data = dr["data"].ToString();
+
+
+                            DateTime data = DateTime.Parse(dr["data"].ToString());
+
+                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
+
+                            relatorio.Data = dataFinal;
+
 
                             listaTemperaturas.Add(relatorio);
                         }

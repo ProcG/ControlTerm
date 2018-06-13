@@ -49,12 +49,12 @@ table#data_minima.calendario, table#data_maxima.calendario {
     cursor: pointer;
 }
 
-.prox_mes a {
-   text-decoration: none;
-   font-family: "Century Gothic";
-   padding-left: 14px;
-   padding-right: 14px;
-}
+    .prox_mes a {
+        text-decoration: none;
+        font-family: "Century Gothic";
+        padding-left: 14px;
+        padding-right: 14px;
+    }
 
 .dia_selecionado {
     background: #4332d4 !important;
@@ -65,7 +65,7 @@ table#data_minima.calendario, table#data_maxima.calendario {
     transition: all 0.3s;
 }
 
-td a{
+td a {
     text-decoration: none;
 }
 
@@ -103,6 +103,6 @@ div.modal_relatorio {
     flex-wrap: wrap;
     overflow: scroll;
 }
-p.numeros{
-    
+
+p.numeros {
 }
