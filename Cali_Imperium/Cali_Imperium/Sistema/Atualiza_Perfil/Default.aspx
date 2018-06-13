@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Atualização de Cadastro</title>
     <link rel="stylesheet" href="atualizar.css">
+   	<link rel="icon" href="img/Logo2.png" type="image/png" sizes="55x55">
+
 </head>
     <body>
      <form name="form1" method="post" id="formulario" runat="server">
@@ -53,7 +55,7 @@
                     </div>
                    
 
-                    <asp:Button Text="Cancelar" CssClass="Cancelar" ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click"/>
+                    <asp:Button Text="Voltar" CssClass="Cancelar" ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click"/>
                     <asp:Button Text="Atualizar" CssClass="Alterar" ID="BtnAtualizar" runat="server" OnClick="BtnAtualizar_Click"/>
 
                    </div>

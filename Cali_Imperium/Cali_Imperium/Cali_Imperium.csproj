@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logos\mateus.jpg" />
+    <Content Include="Sistema\Atualiza_Perfil\img\Logo2.png" />
     <Content Include="Sistema\css\relatorio.css" />
     <Content Include="Sistema\img\ar_condicionado.jpg" />
     <Content Include="Sistema\img\corpo.jpg" />
@@ -112,6 +113,7 @@
     <Content Include="Sistema\Default.aspx" />
     <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\engre.png" />
+    <Content Include="Sistema\img\Logo2.png" />
     <Content Include="Sistema\img\usuario.png" />
     <Content Include="Sistema\js\atualizar.js" />
     <Content Include="Sistema\js\bythesword.mp3" />
