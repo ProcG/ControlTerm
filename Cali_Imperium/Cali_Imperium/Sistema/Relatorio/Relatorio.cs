@@ -78,10 +78,8 @@ namespace Cali_Imperium.Sistema.Relatorio
                             relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
                             
                             DateTime data = DateTime.Parse(dr["data"].ToString());
-                            
-                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
 
-                            relatorio.Data = dataFinal;
+                            string dataFinal = $"{data.Day}/{data.Month}/{data.Year} - {data.Hour}:{data.Minute}";                         relatorio.Data = dataFinal;
 
 
                             listaTemperaturas.Add(relatorio);
@@ -128,7 +126,7 @@ namespace Cali_Imperium.Sistema.Relatorio
 
                             DateTime data = DateTime.Parse(dr["data"].ToString());
 
-                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
+                            string dataFinal = $"{data.Day}/{data.Month}/{data.Year} - {data.Hour}:{data.Minute}";
 
                             relatorio.Data = dataFinal;
 

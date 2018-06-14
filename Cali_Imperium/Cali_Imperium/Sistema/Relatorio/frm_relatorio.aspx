@@ -113,9 +113,9 @@
                      maxima = 0;
                  }
 
-                 string[] data_inicio_split = data_inicio.ToString().Split(' ');
-                 string[] data_fim_split = data_fim.ToString().Split(' ');
-
+                 string data_inicio_split = $"{data_inicio.Day}/{data_inicio.Month}/{data_inicio.Year}";
+                 string data_fim_split = $"{data_fim.Day}/{data_fim.Month}/{data_fim.Year}";
+                 
 
             %>
 
@@ -124,7 +124,7 @@
                 <%if(all == true){ %>
 				    <p>Relatório por período, de todas as datas</p>
                 <% } else {%>
-                    <p>Relatório por período, entre <b><% Response.Write(data_inicio_split[0]); %> à <% Response.Write(data_fim_split[0]); %></b></p>
+                    <p>Relatório por período, entre <b><% Response.Write(data_inicio_split); %> à <% Response.Write(data_fim_split); %></b></p>
                    <% } %>
 				<p>E-mail do usuário: <b><% Response.Write(email); %></b></p>
 			</div>
