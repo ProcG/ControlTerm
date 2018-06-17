@@ -139,7 +139,6 @@ function contadorMaxima() {
 
 }
 
-
 function Analytics(minima, n2q, mediana, n3q, maxima) {
     att_minima(minima);
     att_2Q(n2q);

@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>TermometrOnline</title>
+    <title>Início | Cali Imperium</title>
     <link rel="stylesheet" type="text/css" href="css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="css/padroes.css" />
-
+    <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
@@ -100,6 +100,9 @@
                     <div id="circ" class="termometro" onclick="att()">
                         <p class="temperatura" id="txt_temperatura">0</p>
                         <p class="ultima_att" id="ult_att"></p>
+                        
+                        <div class="mini_circ" id="desvPadrao">0.000000</div>
+
                     </div>
                     <div id="textos">
                         <canvas id="chart"></canvas>
@@ -247,6 +250,7 @@
                     atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
                     Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
 
+                    document.getElementById("desvPadrao").innerHTML = numeros[8];
 
                 }
             }

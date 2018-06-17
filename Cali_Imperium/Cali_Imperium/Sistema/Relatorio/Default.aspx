@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="../css/padroes.css" />
     <link rel="stylesheet" type="text/css" href="../css/relatorio.css" />
-
+    <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
 
 </head>
 

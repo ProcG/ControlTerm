@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
     <title>Relatorio</title>
     	<style type="text/css">
 		*{
@@ -96,7 +97,7 @@
                      lista = new Cali_Imperium.Sistema.Relatorio.Relatorio().Todos(codUser);
                  }
                  DateTime dataEtemp = DateTime.Now;
-                 string data = $"{dataEtemp.Day}/{dataEtemp.Month}/{dataEtemp.Year} - {dataEtemp.Hour}:{dataEtemp.Minute}";
+                 string data = $"{dataEtemp.Day:00}/{dataEtemp.Month:00}/{dataEtemp.Year:0000} - {dataEtemp.Hour:00}:{dataEtemp.Minute:00}";
 
                  int minima;
                  int media;
@@ -113,8 +114,8 @@
                      maxima = 0;
                  }
 
-                 string data_inicio_split = $"{data_inicio.Day}/{data_inicio.Month}/{data_inicio.Year}";
-                 string data_fim_split = $"{data_fim.Day}/{data_fim.Month}/{data_fim.Year}";
+                 string data_inicio_split = $"{data_inicio.Day:00}/{data_inicio.Month:00}/{data_inicio.Year:0000}";
+                 string data_fim_split = $"{data_fim.Day:00}/{data_fim.Month:00}/{data_fim.Year:0000}";
                  
 
             %>
@@ -163,15 +164,14 @@
 				</tr>
 
                <%
-    try
-    {
-        foreach (Cali_Imperium.Sistema.Relatorio.ModalRelatorio resul in lista)
-        {
-            string[] data_split = resul.Data.Split(' ');
-                %>
+                   try
+                   {
+                       foreach (Cali_Imperium.Sistema.Relatorio.ModalRelatorio resul in lista)
+                       {
+                            %>
 				<tr> 
 					<td>
-                        <p> <% Response.Write(data_split[0]); %></p>
+                        <p> <% Response.Write(resul.Data); %></p>
 					</td>
 					<td>
                         <p><% Response.Write(resul.Temperatura); %>ºc</p>
