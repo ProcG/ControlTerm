@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>TermometrOnline</title>
+    <link rel="stylesheet" type="text/css" href="css/inicio.css" />
+    <link rel="stylesheet" type="text/css" href="css/padroes.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+
+    <style>
+        canvas {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <form id="form1" runat="server">
+        <div class="area" id="ar">
+            <div class="menu">
+                <div class="confs_usuario">
+                    <img src="img/usuario.png" class="foto_usuario" />
+                    <div>
+                        <p class="nome_usuario">
+                            João Silva
+                        </p>
+                        <p class="funcao_usuario">Usuário</p>
+                    </div>
+				</div>	
+				<div class="sub_menus">
+					<ul>
+						<li>
+							<a href="#" class="links">Início</a>
+						<li>
+							<a href="relatorio/index.html" class="links">Relatórios de Temperatura</a>
+						</li>
+
+						<li>
+							<a href="#" class="links" onclick="getViewAddArduino()">Editar Termometro</a>
+						</li>
+						
+						<li>
+							<a href="https://desk.zoho.com/portal/controlterm/home" class="links" target="_blank">Suporte</a>
+						</li>
+						<li>
+							<a href="#" class="links" onclick="getViewFaq()">Ajuda</a>
+						</li>
+					</ul>
+					<ul class="sair_site">
+						<li>
+							<a href="../login/index.html" class="links" onclick="getViewFaq()">Sair</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+            <div class="pos_area_termo" id="pisca">
+                <div id="area_termometro">
+                    <div id="circ" class="termometro" onclick="att()">
+                        <p class="temperatura" id="txt_temperatura">0</p>
+                        <p class="ultima_att" id="ult_att"></p>
+                    </div>
+                    <div id="textos">
+                        <canvas id="chart"></canvas>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics">
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMinima">0</p>
+                    <p class="desc_temp">Minima</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt2Q">0</p>
+                    <p class="desc_temp">1º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMediana">0</p>
+                    <p class="desc_temp">Mediana</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txt3Q">0</p>
+                    <p class="desc_temp">3º Quartil</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMaxima">0</p>
+                    <p class="desc_temp">Maxima</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <audio id="alerta" loop>
+            <source src="js/bythesword.mp3" type="audio/mp3" />
+        </audio>
+
+
+        <div id="fundo_modal_arduino" class="fundo_modal_arduino_off">
+
+            <div id='conf_arduino'>
+                <p class='titulo'>Editar Termometro</p>
+                <input type='text' name='' class='term_input' id="temperatura_minima" placeholder='Temperatura Minima'>
+                <input type='text' name='' class='term_input' id="temperatura_maxima" placeholder='Temperatura Maxima'>
+				
+				<input type='submit' name='' class='cnl' value="Cancelar"><!-- ARRUMAR AQUI -->
+				<input type='submit' name='' class='adc' value="Editar" onclick="atualiza_limite_alarme(document.getElementById('temperatura_minima').innerHTML,document.getElementById('temperatura_maxim').innerHTML)"><!-- ARRUMAR AQUI -->	
+				
+                <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
+            </div>
+            
+        </div>
+
+        <div id="fundo_modal_faq" class="fundo_modal_faq_off">
+
+          
+            <div id='faq'>
+                <p class='titulo'>Olá Bem-Vindo ao FAQ ControlTerm!</p>
+                
+            <div class="fundo_faq">
+                <div class="abrir">
+                    <p class="pergunta">Como Cadastrar meu Arduino Uno?</p>
+                    <p class="resposta"> 
+                       Para cadastrar o Arduino Uno o senhor(a) deve seguir os seguintes passos:<br />
+                        1- Vá com o mouse em seu painel esquerdo e clique em "Adicionar Termômetro";<br />
+                        2- Clique em Adicionar Termômetro;<br />
+                        3- Adicione o Código do Arduino localizado na parte de baixo de sua caixa(Arduino);<br />
+                        4- Adicione temperatura Min e Max Desejada;<br />
+                        5- Cadastre.
+                        
+                    </p>
+                </div>
+            </div>
+
+             <a href='#' class='fechar' onclick='removerViewFaq()'>x</a>
+            </div>
+               
+        </div>
+
+
+        
+            <div id="modal" class="modal_off">
+	            <div class="fundo">
+		            <a class="btn_fechar" onclick="fecharmodal()">x</a>
+			            <div id="tela_ideais">
+				            <p class="title">Temperaturas ideais</p>
+				            <p class="sub"> Corpo Humano </p>
+				            <img src="img/corpo.jpg" class="img_temperatura_ideal">
+				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>
+				
+				            <p class="sub"> Ar Condicionado </p>
+				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal">
+				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
+                        </div>		
+	             </div>
+            </div>
+
+
+    </form>
+
+</body>
+</html>
+<script type="text/javascript" src="js/eventos.js"></script>
+<script type="text/javascript" src="js/atualizar.js"></script>
+<script type="text/javascript" src="js/controle-temperatura.js"></script>
+
