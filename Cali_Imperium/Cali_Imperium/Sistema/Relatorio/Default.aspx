@@ -1,26 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Sistema.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Sistema.Relatorio.Default" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <title>Início | Cali Imperium</title>
-    <link rel="stylesheet" type="text/css" href="css/inicio.css" />
-    <link rel="stylesheet" type="text/css" href="css/padroes.css" />
-    <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
-    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-
-
-    <style>
-        canvas {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-        }
-    </style>
+    <title>Relatórios | Cali Imperium</title>
+    <link rel="stylesheet" type="text/css" href="../css/inicio.css" />
+    <link rel="stylesheet" type="text/css" href="../css/padroes.css" />
+    <link rel="stylesheet" type="text/css" href="../css/relatorio.css" />
+    <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
 
 </head>
 
@@ -32,7 +21,7 @@
         <div class="area" id="ar">
             <div class="menu">
                 <div class="confs_usuario">
-                    <img src="img/usuario.png" class="foto_usuario" />
+                    <img src="../img/usuario.png" class="foto_usuario" />
                     <div>
                         <p class="nome_usuario">
                             <asp:Label Text="" runat="server" ID="NomeUsuario" />
@@ -44,9 +33,9 @@
                 <div class="sub_menus">
                     <ul>
                         <li>
-                            <asp:HyperLink NavigateUrl="Default.aspx" runat="server" CssClass="links" Text="Início"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="../Default.aspx" runat="server" CssClass="links" Text="Início"></asp:HyperLink></li>
                         <li>
-                            <asp:HyperLink NavigateUrl="Relatorio/Default.aspx" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="Default.aspx" runat="server" CssClass="links" Text="Relatórios de Temperatura"></asp:HyperLink></li>
                         <li>
 
                             <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" onclick="abrirmodal()" Text="Temperaturas Ideais"></asp:HyperLink></li>
@@ -91,48 +80,26 @@
             <%
 
 
-                if (t.UsuarioTemArduino(u.ID) == true)
-                {
+                  if (t.UsuarioTemArduino(u.ID) == true)
+                  {
             %>
+            <div class="area_relatorios">
 
-            <div class="pos_area_termo" id="pisca">
-                <div id="area_termometro">
-                    <div id="circ" class="termometro" onclick="att()">
-                        <p class="temperatura" id="txt_temperatura">0</p>
-                        <p class="ultima_att" id="ult_att"></p>
-                        
-                        <div class="mini_circ" id="desvPadrao">0.000000</div>
-
+                <div class="relatorios">
+                    <div class="opcoes_relatorios">
+                        <a href="" class="opc_relat">Por data</a>
+                        <%--<a href="" class="opc_relat">Media por data</a>
+                        <a href="" class="opc_relat">Maxima por data</a>
+                        <a href="" class="opc_relat">Minima por data</a>--%>
                     </div>
-                    <div id="textos">
-                        <canvas id="chart"></canvas>
 
-                    </div>
+                    <asp:Calendar ID="data_minima" runat="server" CssClass="calendario" CellPadding="5" DayStyle-CssClass="dias_do_mes" OtherMonthDayStyle-CssClass="test" DayHeaderStyle-CssClass="nome_dias" NextPrevStyle-CssClass="prox_mes" SelectedDayStyle-CssClass="dia_selecionado"></asp:Calendar>
+                    <asp:Calendar ID="data_maxima" runat="server" CssClass="calendario" CellPadding="5" DayStyle-CssClass="dias_do_mes" OtherMonthDayStyle-CssClass="test" DayHeaderStyle-CssClass="nome_dias" NextPrevStyle-CssClass="prox_mes" SelectedDayStyle-CssClass="dia_selecionado"></asp:Calendar>
+                    <asp:Button Text="Gerar" runat="server" ID="btnGerarPorData" OnClick="btnGerarPorData_Click" CssClass="btn" />
+
                 </div>
             </div>
 
-            <div class="analytics">
-                <div class="medias">
-                    <p class="temperatura_medias" id="txtMinima">0</p>
-                    <p class="desc_temp">Minima</p>
-                </div>
-                <div class="medias">
-                    <p class="temperatura_medias" id="txt2Q">0</p>
-                    <p class="desc_temp">1º Quartil</p>
-                </div>
-                <div class="medias">
-                    <p class="temperatura_medias" id="txtMediana">0</p>
-                    <p class="desc_temp">Mediana</p>
-                </div>
-                <div class="medias">
-                    <p class="temperatura_medias" id="txt3Q">0</p>
-                    <p class="desc_temp">3º Quartil</p>
-                </div>
-                <div class="medias">
-                    <p class="temperatura_medias" id="txtMaxima">0</p>
-                    <p class="desc_temp">Maxima</p>
-                </div>
-            </div>
             <% }// FIM ID
                 else
                 {
@@ -215,24 +182,13 @@
 			            <div id="tela_ideais">
 				            <p class="title">Temperaturas ideais</p>
 				            <p class="sub"> Corpo Humano </p>
-				            <img src="img/corpo.jpg" class="img_temperatura_ideal"/>
+				            <img src="../img/corpo.jpg" class="img_temperatura_ideal">
 				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>
 				
 				            <p class="sub"> Ar Condicionado </p>
-				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal"/>
-				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa). Recomenda que a temperatura do ar condicionado fique em torno dos 23°C. Porque, segundo o órgão, ela é a mais confortável para o corpo, permitindo que o organismo fique em equilíbrio sem ter que dispender grande esforço, e a economia de energia pode chegar a 50%. </p>				
-                            
-                            
-                            
-                            <p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
-                            <div class="divmedias"> Mínima:
-                                <asp:Label runat="server" ID="mediamin" CssClass="numeros"/>
-                            </div>
-                            <div class="divmedias"> Máxima:
-                                <asp:Label runat="server" ID="mediamax" CssClass="numeros"/>
-                            </div>   
-
-                        </div>   
+				            <img src="../img/ar_condicionado.jpg" class="img_temperatura_ideal">
+				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
+                        </div>		
 	             </div>
             </div>
 
@@ -241,46 +197,5 @@
 
 </body>
 </html>
-<script type="text/javascript" src="js/eventos.js"></script>
-<script type="text/javascript" src="js/atualizar.js"></script>
-<script>
-    var numeros = new Array();
 
-    function att() {
-        //°c
-        var xhttp = new XMLHttpRequest();
-
-        xhttp.open("GET", "getTemperatura.aspx", true);
-        xhttp.onreadystatechange = function () {
-            if (xhttp.readyState === xhttp.DONE && xhttp.status === 200) {
-
-                numeros = xhttp.responseText.split("+");
-
-                if (numeros[0] != "") {
-
-                    atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
-                    Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
-
-                    document.getElementById("desvPadrao").innerHTML = numeros[8];
-
-                }
-            }
-        }
-
-        xhttp.send();
-
-
-
-    }
-
-    att();
-    
-    setInterval(() => {
-        try {
-            att();
-        } catch (err) { console.log(err); }
-    }, 15000);
-
-    
-</script>
-
+<script type="text/javascript" src="../js/eventos.js"></script>

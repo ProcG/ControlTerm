@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width:divece-width">
 	<title>
-		Control Term | O coltrole que você merece!
+		Control Term | O controle que você merece!
 	</title>
 	<link rel="icon" href="Logos/Logo_da_empresa2.png" type="image/gif" sizes="100x100">
     <link rel="stylesheet" type="text/css" media="screen and (min-width: 0px)" href="CSS/device.css">

@@ -1,4 +1,3 @@
-/*ATENÇÃO, VOCÊ NÃO ENTENDERA NADA DO QUE ESTÁ AQUI, POIS ATÉ EU QUE CRIEI NÃO SEI O PQ DE FUNCIONAR :C*/
 var temperatura_atual = 0, nova_temperatura = 0; // cria as variaveis que faram as "animações" com os numeros da temperatura
 var temperatura_minima = 0;
 var temperatura_maxima = 0;
@@ -214,6 +213,19 @@ function removerViewAddArduino() {// mesma coisa da removerViewConfiguracoes
     div_fundo.className = "fundo_modal_arduino_off";
 }
 
+function getViewFaq() { // mesma coisa da getViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_on";
+}
+
+function removerViewFaq() {// mesma coisa da removerViewConfiguracoes
+    var div_fundo = document.getElementById("fundo_modal_faq");
+    div_fundo.className = "";
+    div_fundo.className = "fundo_modal_faq_off";
+}
+
+
 /* abrir e fechar janela modal temperatura modal */
 function abrirmodal() {
     var div_fundo = document.getElementById("modal");
@@ -227,3 +239,4 @@ function fecharmodal() {
     div_fundo.className = "modal_off";
 }
 /* fim janela modal temperaturA */
+

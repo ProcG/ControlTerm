@@ -12,13 +12,15 @@ namespace Cali_Imperium.Sistema
     public partial class Default : System.Web.UI.Page
     {
 
+
         Usuario user = new Usuario();
         public static List<string> mediasTemperaturas = null;
         
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (Session["Usuario"] == null)
             {
                 Response.Redirect("../TelaLogin/Login.aspx");
@@ -111,10 +113,8 @@ namespace Cali_Imperium.Sistema
 
         protected void btnAtualizarPerfil_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Perfil/Default.aspx");
+            Response.Redirect("Atualiza_perfil/Default.aspx");
         }
-
-        
 
     }
 }
