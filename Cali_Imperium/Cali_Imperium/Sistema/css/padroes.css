@@ -330,6 +330,7 @@ div.fundo_modal_faq_on {
     z-index: 5 !important;
 }
 
+
 div.fundo_modal_faq_off {
     display: none;
 }
@@ -474,6 +475,13 @@ div#tela_ideais {
 .sub {
     font-size: 30px;
     font-family: arial;
+    margin-top:30px;
+}
+.sub2 {
+    font-size: 30px;
+    font-family: arial;
+    text-align: center;
+    margin-top: 30px;
 }
 
 .img_temperatura_ideal {
@@ -481,6 +489,28 @@ div#tela_ideais {
     height: 250px;
     float: left;
     margin: 10px;
+    border-radius: 10px;
+}
+
+.divmedias {
+    float: left;
+    height: 128px;
+    width: 46%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    border-color: black;
+    border-radius: 10px;
+    border: solid;
+    padding-left: 15%;
+}
+.numeros{
+    margin: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 35px;
 }
 
 

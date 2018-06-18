@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,8 +81,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+
+    <Content Include="Logos\PoweredBy.png" />
+
     <Content Include="Logos\mateus.jpg" />
     <Content Include="Sistema\css\relatorio.css" />
+
     <Content Include="Sistema\img\ar_condicionado.jpg" />
     <Content Include="Sistema\img\corpo.jpg" />
     <Content Include="CSS\device.css" />

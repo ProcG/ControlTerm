@@ -215,13 +215,24 @@
 			            <div id="tela_ideais">
 				            <p class="title">Temperaturas ideais</p>
 				            <p class="sub"> Corpo Humano </p>
-				            <img src="img/corpo.jpg" class="img_temperatura_ideal">
+				            <img src="img/corpo.jpg" class="img_temperatura_ideal"/>
 				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>
 				
 				            <p class="sub"> Ar Condicionado </p>
-				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal">
-				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa)  com a polêmica. A recomendação do órgão é que a temperatura ar condicionado fique em torno dos 23°C.  </p>				
-                        </div>		
+				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal"/>
+				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa). Recomenda que a temperatura do ar condicionado fique em torno dos 23°C. Porque, segundo o órgão, ela é a mais confortável para o corpo, permitindo que o organismo fique em equilíbrio sem ter que dispender grande esforço, e a economia de energia pode chegar a 50%. </p>				
+                            
+                            
+                            
+                            <p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
+                            <div class="divmedias"> Mínima:
+                                <asp:Label runat="server" ID="mediamin" CssClass="numeros"/>
+                            </div>
+                            <div class="divmedias"> Máxima:
+                                <asp:Label runat="server" ID="mediamax" CssClass="numeros"/>
+                            </div>   
+
+                        </div>   
 	             </div>
             </div>
 
@@ -270,5 +281,6 @@
         } catch (err) { console.log(err); }
     }, 15000);
 
-
+    
 </script>
+

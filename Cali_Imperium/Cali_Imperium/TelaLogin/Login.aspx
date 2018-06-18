@@ -15,6 +15,7 @@
 			<ul>
 				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
 			</ul>
+            <img src="../Logos/PoweredBy.png" class="power" />
 		</div>
 	</header>
 					
