@@ -34,7 +34,7 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil
             string estado = DdlEstado.Text;
             string senha = TxtAtualizarSenha.Text;
             string telefone = TxtTelefone.Text;
-
+                        
             if (TxtUsuario.Text == "")
             {
                 nome = user.Nome;
@@ -43,19 +43,20 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil
             {
                 email = user.Email;
             }
-            if (DdlEstado.Text == "null")
-            {
-                estado = user.Estado;
-            }
             if (TxtAtualizarSenha.Text == "")
             {
                 senha = user.Senha;
             }
+            if (DdlEstado.Text == "null")
+            {
+                estado = user.Estado;
+            }                      
             if (TxtTelefone.Text == "")
             {
                 telefone = user.Telefone;
             }
 
+           
 
             using (SqlConnection cnx = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; "))
             {
@@ -120,7 +121,7 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil
 
         }
 
-        protected void BtnCancelar_Click(object sender, EventArgs e)
+        protected void BtnVoltar_Click(object sender, EventArgs e)
         {
             Response.Redirect("../../Sistema");
         }

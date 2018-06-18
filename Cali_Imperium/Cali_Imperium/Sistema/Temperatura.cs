@@ -248,7 +248,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.25) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '1q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT PERCENTILE_CONT(0.25) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '1q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -276,7 +276,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.5) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as 'mediana' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT PERCENTILE_CONT(0.5) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as 'mediana' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -301,7 +301,7 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT DISTINCT PERCENTILE_CONT(0.75) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '3q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT PERCENTILE_CONT(0.75) WITHIN GROUP(ORDER BY temperatura) OVER(PARTITION BY 1) as '3q' from temperatura where codArduino = (SELECT codArduino FROM Arduino where codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -352,14 +352,16 @@ namespace Caliimperium
             {
                 conn.Open();
 
-                using (SqlCommand cmd = new SqlCommand("SELECT STDEV(distinct temperatura) as 'desvio' FROM temperatura where codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conn))
+                using (SqlCommand cmd = new SqlCommand("SELECT STDEV(temperatura) as 'desvio' FROM temperatura where codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conn))
                 {
                     cmd.Parameters.AddWithValue("@id", id);
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         if (dr.Read() == true)
                         {
-                            return float.Parse(dr["desvio"].ToString());
+
+                            string temp = $"{float.Parse(dr["desvio"].ToString()):0.000}";
+                            return float.Parse(temp);
                         }
                         else
                         {
@@ -423,6 +425,31 @@ namespace Caliimperium
             }
         }
 
+        public int PegarMedia(int id)
+        {
+            using (SqlConnection conec = new SqlConnection ("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
+            {
+                conec.Open();
+                using(SqlCommand cmd = new SqlCommand("SELECT AVG(temperatura) as 'media' FROM temperatura where codArduino = (SELECT codArduino FROM Arduino WHERE codUsuario = @id)", conec))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    using(SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        if (dr.Read() == true)
+                        {
+                            return (int)float.Parse(dr["media"].ToString());
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+
+                }
+            }
+        }
+
+
         public static void SetarMinimaEMaxima(int minima, int maxima, int id)
         {
             using (SqlConnection conn = new SqlConnection("Server=tcp:controlterm.database.windows.net,1433;Initial Catalog=ControlTerm;Persist Security Info=False;User ID=Control;Password=Term2k18;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"))
@@ -452,7 +479,8 @@ namespace Caliimperium
             text += new Temperatura().PegarTempMaxima(cod) + "+";
             text += new Temperatura().PegarMinima(cod) + "+";
             text += new Temperatura().PegarMaxima(cod) + "+";
-            text += new Temperatura().PegarDesvioPadrao(cod);
+            text += new Temperatura().PegarDesvioPadrao(cod) + "+";
+            text += new Temperatura().PegarMedia(cod);
 
             string[] textSplit = text.Split('+');
 

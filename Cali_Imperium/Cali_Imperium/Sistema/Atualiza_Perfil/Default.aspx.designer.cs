@@ -67,13 +67,13 @@ namespace Cali_Imperium.Sistema.Atualiza_Perfil {
         protected global::System.Web.UI.WebControls.TextBox TxtAtualizarSenha;
         
         /// <summary>
-        /// Controle BtnCancelar.
+        /// Controle BtnVoltar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnCancelar;
+        protected global::System.Web.UI.WebControls.Button BtnVoltar;
         
         /// <summary>
         /// Controle BtnAtualizar.

@@ -80,7 +80,7 @@
                             <asp:HyperLink NavigateUrl="https://desk.zoho.com/portal/controlterm/home" runat="server" CssClass="links" Text="Suporte" Target="_blank"></asp:HyperLink>
                         </li>
                         <li>
-                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="Ajuda" onclick="getViewFaq()"></asp:HyperLink>
+                            <asp:HyperLink NavigateUrl="#" runat="server" CssClass="links" Text="F.A.Q" onclick="getViewFaq()"></asp:HyperLink>
                         </li>
                     </ul>
                     <ul class="sair_site">
@@ -104,8 +104,6 @@
                         <p class="temperatura" id="txt_temperatura">0</p>
                         <p class="ultima_att" id="ult_att"></p>
                         
-                        <div class="mini_circ" id="desvPadrao">0.000000</div>
-
                     </div>
                     <div id="textos">
                         <canvas id="chart"></canvas>
@@ -121,20 +119,29 @@
                     <p class="desc_temp">Minima</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txt2Q">0</p>
-                    <p class="desc_temp">1º Quartil</p>
+                    <p class="temperatura_medias" id="txtMaxima">0</p>
+                    <p class="desc_temp">Maxima</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txtMediana">0</p>
-                    <p class="desc_temp">Mediana</p>
+                    <p class="temperatura_medias" id="txt2Q">0</p>
+                    <p class="desc_temp">1º Quartil</p>
                 </div>
                 <div class="medias">
                     <p class="temperatura_medias" id="txt3Q">0</p>
                     <p class="desc_temp">3º Quartil</p>
                 </div>
                 <div class="medias">
-                    <p class="temperatura_medias" id="txtMaxima">0</p>
-                    <p class="desc_temp">Maxima</p>
+                    <p class="temperatura_medias" id="txtMedia">0</p>
+                    <p class="desc_temp">Média</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="txtMediana">0</p>
+                    <p class="desc_temp">Mediana</p>
+                </div>
+                <div class="medias">
+                    <p class="temperatura_medias" id="desvPadrao">0</p>
+                    <p class="desc_temp">Desvio Padrão</p>
+
                 </div>
             </div>
             <% }// FIM ID
@@ -150,7 +157,7 @@
         </div>
 
         <audio id="alerta" loop>
-            <source src="js/bythesword.mp3" type="audio/mp3" />
+            <source src="js/alarme.mp3" type="audio/mp3" />
         </audio>
 
 
@@ -226,16 +233,15 @@
 				            <img src="img/ar_condicionado.jpg" class="img_temperatura_ideal"/>
 				            <p class="text"> A Agência Nacional de Vigilância Sanitária (Anvisa). Recomenda que a temperatura do ar condicionado fique em torno dos 23°C. Porque, segundo o órgão, ela é a mais confortável para o corpo, permitindo que o organismo fique em equilíbrio sem ter que dispender grande esforço, e a economia de energia pode chegar a 50%. </p>				
                             
-                            
-                            
-                            <p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
+                                                        
+                            <%--<p class="sub2" >A média da temperatura que nossos usuário utilizam:</p>
                             <div class="divmedias"> Mínima:
                                 <asp:Label runat="server" ID="mediamin" CssClass="numeros"/>
                             </div>
                             <div class="divmedias"> Máxima:
                                 <asp:Label runat="server" ID="mediamax" CssClass="numeros"/>
-                            </div>   
-
+                            </div> --%>  
+                            
                         </div>   
 	             </div>
             </div>
@@ -264,9 +270,11 @@
                 if (numeros[0] != "") {
 
                     atualiza_numeros(document.getElementById('txt_temperatura').innerHTML.replace('°c', ''), Math.floor(numeros[0]), Math.floor(numeros[6]), Math.floor(numeros[7]));//numeros[0] == Última temperatura registrada, numeros[6] == Temperatura minima aceitavel, numeros[7] == Temperatura maxima aceitavel
-                    Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5]);
+                    Analytics(numeros[1], numeros[2], numeros[3], numeros[4], numeros[5], numeros[9]);
 
                     document.getElementById("desvPadrao").innerHTML = numeros[8];
+                  //  document.getElementById("txtMedia").innerHTML = numeros[9];
+
 
                 }
             }

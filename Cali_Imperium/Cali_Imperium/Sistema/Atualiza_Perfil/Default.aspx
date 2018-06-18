@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Atualização de Cadastro</title>
     <link rel="stylesheet" href="atualizar.css">
+    <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
 </head>
     <body>
      <form name="form1" method="post" id="formulario" runat="server">
@@ -18,7 +19,7 @@
                     
                         <asp:DropDownList runat="server" ID="DdlEstado">
                             
-                            <asp:ListItem value="null" Text="--Selecione uma estado--"></asp:ListItem>
+                            <asp:ListItem value="null" Text="--Selecione um estado--"></asp:ListItem>
                             <asp:ListItem value="AC" Text="Acre"></asp:ListItem>
                             <asp:ListItem value="AL" Text="Alagoas"></asp:ListItem>
                             <asp:ListItem value="AP" Text="Amapá"></asp:ListItem>
@@ -49,11 +50,11 @@
                        </asp:DropDownList>                  
                         <asp:TextBox runat="server" TextMode="Email" CssClass="atual" ID="TxtAtualizarEmail" placeholder="Digite seu Email"/>
                         <asp:TextBox runat="server" TextMode="Password" CssClass="atual" ID="TxtAtualizarSenha" placeholder="Senha"/>
-                        
+                                                
                     </div>
                    
 
-                    <asp:Button Text="Cancelar" CssClass="Cancelar" ID="BtnCancelar" runat="server" OnClick="BtnCancelar_Click"/>
+                    <asp:Button Text="Voltar" CssClass="Cancelar" ID="BtnVoltar" runat="server" OnClick="BtnVoltar_Click"/>
                     <asp:Button Text="Atualizar" CssClass="Alterar" ID="BtnAtualizar" runat="server" OnClick="BtnAtualizar_Click"/>
 
                    </div>
