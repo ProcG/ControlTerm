@@ -157,9 +157,19 @@ div.analytics {
     background-color: #1c91d2;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     flex-wrap: wrap;
 }
+
+    div.analytics > p.titulo_quadro {
+        width: 100%;
+        text-align: center;
+        font-family: Helvetica, sans-serif;
+        font-size: 30px;
+        color: #fff;
+        padding: 40px;
+        max-height: 100px;
+    }
 
 div.medias{
     position: relative;

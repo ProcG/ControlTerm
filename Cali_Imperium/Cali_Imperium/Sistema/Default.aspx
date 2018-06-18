@@ -5,9 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início | Cali Imperium</title>
     <link rel="stylesheet" type="text/css" href="css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="css/padroes.css" />
+    <link rel="stylesheet" type="text/css" href="css/padrao_responsivo.css" />
     <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
@@ -30,7 +32,8 @@
 
     <form id="form1" runat="server">
         <div class="area" id="ar">
-            <div class="menu">
+            <div class="abrir_menu" id="open_menu"></div>
+            <div class="menu menuOff" id="menu">
                 <div class="confs_usuario">
                     <img src="img/usuario.png" class="foto_usuario" />
                     <div>
@@ -112,6 +115,7 @@
             </div>
 
             <div class="analytics">
+                <p class="titulo_quadro">Analytics</p>
                 <div class="medias">
                     <p class="temperatura_medias" id="txtMinima">0</p>
                     <p class="desc_temp">Minima</p>
@@ -243,6 +247,7 @@
 </html>
 <script type="text/javascript" src="js/eventos.js"></script>
 <script type="text/javascript" src="js/atualizar.js"></script>
+<script type="text/javascript" src="js/mobile.js"></script>
 <script>
     var numeros = new Array();
 

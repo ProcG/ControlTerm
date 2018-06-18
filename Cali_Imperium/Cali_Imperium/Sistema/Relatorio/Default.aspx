@@ -5,10 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios | Cali Imperium</title>
     <link rel="stylesheet" type="text/css" href="../css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="../css/padroes.css" />
     <link rel="stylesheet" type="text/css" href="../css/relatorio.css" />
+    <link rel="stylesheet" type="text/css" href="../css/padrao_responsivo.css" />
     <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
 
 </head>
@@ -19,7 +21,8 @@
 
     <form id="form1" runat="server">
         <div class="area" id="ar">
-            <div class="menu">
+            <div class="abrir_menu" id="open_menu"></div>
+            <div class="menu menuOff" id="menu">
                 <div class="confs_usuario">
                     <img src="../img/usuario.png" class="foto_usuario" />
                     <div>
@@ -87,7 +90,7 @@
 
                 <div class="relatorios">
                     <div class="opcoes_relatorios">
-                        <a href="" class="opc_relat">Por data</a>
+                        <a href="" class="opc_relat">Relatório</a>
                         <%--<a href="" class="opc_relat">Media por data</a>
                         <a href="" class="opc_relat">Maxima por data</a>
                         <a href="" class="opc_relat">Minima por data</a>--%>
@@ -199,3 +202,4 @@
 </html>
 
 <script type="text/javascript" src="../js/eventos.js"></script>
+<script type="text/javascript" src="../js/mobile.js"></script>
