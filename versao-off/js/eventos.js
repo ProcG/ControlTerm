@@ -8,8 +8,6 @@ var temperatura_maxima = 0;
 // ex: function MinhaFuncao(numero) o parametro no caso é o 'numero', em 'MinhaFuncaio'
 //voce pasara um 'numero' que será responsavel por fazer algo no codgio
 
-window.onload = function(){
-
     var ctx = document.getElementById("chart").getContext("2d");
     ctx.canvas.width = 1000;
     ctx.canvas.height = 600;
@@ -67,7 +65,7 @@ window.onload = function(){
         }
     });
 
-}
+
 
 function addTemp(temp) {
     if (myChart.data.datasets[0].data.length == 6) {

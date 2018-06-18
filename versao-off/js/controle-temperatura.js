@@ -14,12 +14,13 @@ function get_data(){
     if (obj.data.length == 0){
         return;
     }else{
-		return obj;
+		return obj.data;
 	}
 }
 
 function get_temperatura_atual(array){	
-	return array[array.length - 1];	
+	return Math.floor(array[array.length - 1]);	
+	
 }
 function get_temperatura_maxima(array){
 	
@@ -30,7 +31,9 @@ function get_temperatura_maxima(array){
 		}
 	}
 	
-	return max;
+	
+	
+	return Math.floor(max);
 	
 }
 
@@ -43,45 +46,61 @@ function get_temperatura_minima(array){
 		}
 	}
 	
-	return min;
+	
+	return Math.floor(min);
 	
 }
 
 function get_primerio_quartil(array){
 	
 	array.sort();
-	var n1quartil = Math.floor(array.length * 0.25);
 	
-	return array[n1quartil];	
+	var mediana = array.length / 2.0;
+	var n1q = mediana / 2.0;
+	
+	
+	return Math.floor(array[n1q]);	
+		
 	
 }
 
 function get_terceiro_quartil(array){
 	
 	array.sort();
-	var n3quartil = Math.floor(array.length * 0.75);
 	
-	return array[n3quartil];	
+	var mediana = array.length / 2.0;
+	var n1q = mediana / 2.0;
+	
+	var terceiro = mediana + n1q;
+	
+	
+	return Math.floor(array[terceiro]);	
 	
 }
 
 function get_mediana(array){
 	
 	array.sort();
-	var mediana = Math.floor(array.length * 0.5);
+	var mediana = Math.floor(array.length / 2.0);
 	
-	return array[mediana];	
+	return Math.floor(array[mediana]);	
 	
 }
 
 function refresh(){
 	
-	var array = get_data();
+	var array = new Array();
+	array = get_data();
 	
-	var antes = document.getElementById("txt_temperatura");
+	var antes = document.getElementById("txt_temperatura").innerHTML.replace("°c","");
 	
-	atualiza_numeros(antes,get_temperatura_atual(array),min,max);
 	Analytics(get_temperatura_minima(array),get_primerio_quartil(array),get_mediana(array),get_terceiro_quartil(array),get_temperatura_maxima(array))
+
+	atualiza_numeros(antes,get_temperatura_atual(array),min,max);
+	
+
+	console.log(array[0]);
+	
 }
 
 refresh();
