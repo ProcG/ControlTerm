@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Cali_Imperium.Sistema
 {
@@ -12,6 +14,8 @@ namespace Cali_Imperium.Sistema
 
 
         Usuario user = new Usuario();
+        public static List<string> mediasTemperaturas = null;
+        
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -32,8 +36,58 @@ namespace Cali_Imperium.Sistema
                     txtMsgNaoTem.Text = $"Prezado Sr(a). {user.Nome}, por favor cadastre seu arduino.";
                 }
 
+                //mediamin.Text = mediaminima();
+                //mediamax.Text = abc();
+
             }
         }
+
+
+        #region
+        //public string mediaminima()
+        //{
+        //    using(SqlConnection cnx = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+        //    {
+        //        cnx.Open();
+        //        using (SqlCommand cmd = new SqlCommand("SELECT AVG (MINIMA) as 'minima' FROM ARDUINO", cnx))
+        //        {
+        //            using (SqlDataReader br = cmd.ExecuteReader())
+        //            {
+        //                if (br.Read() == true)
+        //                {
+        //                    return br["minima"].ToString();
+        //                }
+        //                else
+        //                {
+        //                    return "";
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+        //public string abc()
+        //{
+        //    using(SqlConnection cde = new SqlConnection("Server = tcp:controlterm.database.windows.net,1433; Initial Catalog = ControlTerm; Persist Security Info = False; User ID = Control; Password = Term2k18; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;"))
+        //    {
+        //        cde.Open();
+        //        using(SqlCommand efg = new SqlCommand("SELECT AVG(maxima) AS 'maxima' FROM ARDUINO", cde))
+        //        {
+        //            using (SqlDataReader ghi = efg.ExecuteReader())
+        //            {
+        //                if(ghi.Read() == true)
+        //                {
+        //                    return ghi["maxima"].ToString();
+        //                }
+        //                else
+        //                {
+        //                    return "";
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+#endregion
+
 
         protected void btnAddArduino_Click(object sender, EventArgs e)
         {

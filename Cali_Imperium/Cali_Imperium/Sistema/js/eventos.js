@@ -98,7 +98,7 @@ function atualiza_termometro() { // declara uma função com o nome de 'atualiza
 
         setTimeout(atualiza_termometro, 100); // setTimeuot é uma função que da um delay na execução do codigo, nele é preciso passar dois parametros, 1º => a função que voce quer q tenha delay, e o tempo de delay em MS
         atualiza_fundo_termometro(temperatura_atual); // executa a funçãp para alterar a cor da div do fundo do termometro
-        alerta(temperatura_atual); // executa a função que gera o alerta com som
+        alerta(nova_temperatura); // executa a função que gera o alerta com som
 
         // infos_temperatura(temperatura_atual); // executa a função que mostra na tela os textos sobre a temperatura    
 

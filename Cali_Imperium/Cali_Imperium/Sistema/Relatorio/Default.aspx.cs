@@ -30,7 +30,7 @@ namespace Cali_Imperium.Sistema.Relatorio
             {
                  
                 Response.Redirect($"frm_relatorio.aspx?codUser={user.ID}&data_inicio={data_minima.SelectedDate}&data_fim={data_maxima.SelectedDate}&email={user.Email}&all=false");
-                
+               
             }
             else
             {

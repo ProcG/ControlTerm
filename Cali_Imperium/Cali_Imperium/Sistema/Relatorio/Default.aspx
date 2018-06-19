@@ -5,11 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatórios | Cali Imperium</title>
     <link rel="stylesheet" type="text/css" href="../css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="../css/padroes.css" />
     <link rel="stylesheet" type="text/css" href="../css/relatorio.css" />
-
+    <link rel="stylesheet" type="text/css" href="../css/padrao_responsivo.css" />
+    <link rel="icon" href="../../Logos/Logo2.png" type="image/png" sizes="55x55">
 
 </head>
 
@@ -19,7 +21,8 @@
 
     <form id="form1" runat="server">
         <div class="area" id="ar">
-            <div class="menu">
+            <div class="abrir_menu" id="open_menu"></div>
+            <div class="menu menuOff" id="menu">
                 <div class="confs_usuario">
                     <img src="../img/usuario.png" class="foto_usuario" />
                     <div>
@@ -87,7 +90,7 @@
 
                 <div class="relatorios">
                     <div class="opcoes_relatorios">
-                        <a href="" class="opc_relat">Por data</a>
+                        <a href="" class="opc_relat">Relatório</a>
                         <%--<a href="" class="opc_relat">Media por data</a>
                         <a href="" class="opc_relat">Maxima por data</a>
                         <a href="" class="opc_relat">Minima por data</a>--%>
@@ -95,7 +98,7 @@
 
                     <asp:Calendar ID="data_minima" runat="server" CssClass="calendario" CellPadding="5" DayStyle-CssClass="dias_do_mes" OtherMonthDayStyle-CssClass="test" DayHeaderStyle-CssClass="nome_dias" NextPrevStyle-CssClass="prox_mes" SelectedDayStyle-CssClass="dia_selecionado"></asp:Calendar>
                     <asp:Calendar ID="data_maxima" runat="server" CssClass="calendario" CellPadding="5" DayStyle-CssClass="dias_do_mes" OtherMonthDayStyle-CssClass="test" DayHeaderStyle-CssClass="nome_dias" NextPrevStyle-CssClass="prox_mes" SelectedDayStyle-CssClass="dia_selecionado"></asp:Calendar>
-                    <asp:Button Text="Gerar" runat="server" ID="btnGerarPorData" OnClick="btnGerarPorData_Click" CssClass="btn" />
+                    <asp:Button Text="Gerar" runat="server" ID="btnGerarPorData" OnClick="btnGerarPorData_Click" CssClass="btn"/>
 
                 </div>
             </div>
@@ -113,7 +116,7 @@
         </div>
 
         <audio id="alerta" loop>
-            <source src="js/bythesword.mp3" type="audio/mp3" />
+            <source src="js/alarme.mp3" type="audio/mp3" />
         </audio>
 
 
@@ -199,3 +202,4 @@
 </html>
 
 <script type="text/javascript" src="../js/eventos.js"></script>
+<script type="text/javascript" src="../js/mobile.js"></script>

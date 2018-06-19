@@ -23,6 +23,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -80,8 +81,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Logos\PoweredBy.png" />
     <Content Include="Logos\mateus.jpg" />
-    <Content Include="Sistema\Atualiza_Perfil\img\Logo2.png" />
+    <Content Include="Sistema\css\padrao_responsivo.css" />
     <Content Include="Sistema\css\relatorio.css" />
     <Content Include="Sistema\img\ar_condicionado.jpg" />
     <Content Include="Sistema\img\corpo.jpg" />
@@ -113,11 +115,12 @@
     <Content Include="Sistema\Default.aspx" />
     <Content Include="Sistema\getTemperatura.aspx" />
     <Content Include="Sistema\img\engre.png" />
-    <Content Include="Sistema\img\Logo2.png" />
+    <Content Include="Sistema\img\menu.png" />
     <Content Include="Sistema\img\usuario.png" />
+    <Content Include="Sistema\js\alarme.mp3" />
     <Content Include="Sistema\js\atualizar.js" />
-    <Content Include="Sistema\js\bythesword.mp3" />
     <Content Include="Sistema\js\eventos.js" />
+    <Content Include="Sistema\js\mobile.js" />
     <Content Include="Sistema\Logout.aspx" />
     <Content Include="Sistema\Relatorio\Default.aspx" />
     <Content Include="Sistema\Relatorio\frm_relatorio.aspx" />
@@ -226,8 +229,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
+    <Folder Include="App_Data\Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>

@@ -55,7 +55,7 @@ div.area_formulario {
     min-height: 550px;
     margin: 0 auto 0px;
     border-radius: 15px;
-    padding: 70px 50px 50px;
+    padding: 70px 50px 60px;
     display: block;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -180,7 +180,7 @@ select {
     outline: none;
 }
 
-input.voltar {
+/*.voltar {
     width: 160px;
     height: 35px;
     background-color: #d20;
@@ -194,10 +194,15 @@ input.voltar {
     cursor: pointer;
     transition: 0.3s;
     outline: none;
-}
+}*/
+/*button.voltar:hover {
+    transition: 0.3s;
+    background-color: #b00;
+}*/
+
 input.cadastrar {
-    width: 160px;
-    height: 35px;
+    width: 230px;
+    height: 40px;
     background-color: #2d2;
     color: #fff;
     margin-right: 15px;
@@ -208,16 +213,13 @@ input.cadastrar {
     cursor: pointer;
     transition: 0.3s;
     outline: none;
+    margin-top:20px;
 }
 
-button.voltar:hover {
-    transition: 0.3s;
-    background-color: #b00;
-}
 
 button.cadastrar:hover {
     transition: 0.3s;
-    background-color: #0b0;
+    background-color: #0f0;
 }
 
 select {
@@ -238,4 +240,11 @@ a.btn {
     padding: 10px 63px;
     color: #fff;
     text-decoration: none;
+}
+.power {
+    float: right;
+    width: 200px;
+    height: 80px;
+    margin: 12px;
+
 }

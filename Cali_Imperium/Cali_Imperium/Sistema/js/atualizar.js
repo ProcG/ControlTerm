@@ -140,11 +140,41 @@ function contadorMaxima() {
 }
 
 
-function Analytics(minima, n2q, mediana, n3q, maxima) {
+var antes_MediaM = 0, depois_MediaM = 0;
+
+function att_MediaM(depoisMediaM) {
+    antes_MediaM = document.getElementById("txtMedia").innerHTML.replace("°c", "");
+    depois_MediaM = depoisMediaM;
+
+
+    contadorMediaM();
+}
+
+function contadorMediaM() {
+
+
+    if (antes_MediaM != depois_MediaM) {
+        setTimeout(contadorMediaM, 100);
+    }
+
+    document.getElementById("txtMedia").innerHTML = antes_MediaM + "°c";
+
+    if (antes_MediaM >= depois_MediaM) {
+        antes_MediaM--;
+    }
+    else if (antes_MediaM <= depois_MediaM) {
+        antes_MediaM++;
+    }
+
+}
+
+
+function Analytics(minima, n2q, mediana, n3q, maxima, mediaM) {
     att_minima(minima);
     att_2Q(n2q);
     att_Mediana(mediana);
     att_3Q(n3q);
     att_Maxima(maxima);
+    att_MediaM(mediaM);
 }
 

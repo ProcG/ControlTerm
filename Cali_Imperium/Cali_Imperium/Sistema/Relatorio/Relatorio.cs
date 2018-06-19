@@ -62,7 +62,7 @@ namespace Cali_Imperium.Sistema.Relatorio
             {
                 cnx.Open();
 
-                string sql = "SELECT temperatura, convert(date,data_hora) as 'data' FROM temperatura WHERE convert(date,data_hora) BETWEEN @data_inicio and @data_fim AND codArduino = @arduino";
+                string sql = "SELECT temperatura, data_hora as 'data' FROM temperatura WHERE convert(date,data_hora) BETWEEN @data_inicio and @data_fim AND codArduino = @arduino";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cnx))
                 {
@@ -78,10 +78,8 @@ namespace Cali_Imperium.Sistema.Relatorio
                             relatorio.Temperatura = int.Parse(dr["temperatura"].ToString());
                             
                             DateTime data = DateTime.Parse(dr["data"].ToString());
-                            
-                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
 
-                            relatorio.Data = dataFinal;
+                            string dataFinal = $"{data.Day:00}/{data.Month:00}/{data.Year:0000} - {data.Hour:00}:{data.Minute:00}";                         relatorio.Data = dataFinal;
 
 
                             listaTemperaturas.Add(relatorio);
@@ -112,7 +110,7 @@ namespace Cali_Imperium.Sistema.Relatorio
             {
                 cnx.Open();
 
-                string sql = "SELECT temperatura, convert(date,data_hora) as 'data' FROM temperatura WHERE codArduino = @arduino";
+                string sql = "SELECT temperatura, data_hora as 'data' FROM temperatura WHERE codArduino = @arduino";
 
                 using (SqlCommand cmd = new SqlCommand(sql, cnx))
                 {
@@ -128,7 +126,7 @@ namespace Cali_Imperium.Sistema.Relatorio
 
                             DateTime data = DateTime.Parse(dr["data"].ToString());
 
-                            string dataFinal = data.Day + "/" + data.Month + "/" + data.Year;
+                            string dataFinal = $"{data.Day:00}/{data.Month:00}/{data.Year:0000} - {data.Hour:00}:{data.Minute:00}";
 
                             relatorio.Data = dataFinal;
 
@@ -155,126 +153,6 @@ namespace Cali_Imperium.Sistema.Relatorio
         }
 
         
-        public static string ViewEntreData(List<ModalRelatorio> lista, string email)
-        {
-
-            List<ModalRelatorio> lista2 = lista;
-
-            ModalRelatorio relat = new ModalRelatorio();
-
-            lista2.Sort((x, y) => x.Temperatura.CompareTo(y.Temperatura));
-
-            relat.Media = (int)lista2.Average((x) => x.Temperatura);
-            relat.Minima = lista2.Min((x) => x.Temperatura);
-            relat.Maxima = lista2.Max((x) => x.Temperatura);
-
-            DateTime dataEtemp = new DateTime();
-            string data = $"{dataEtemp.Day}/{dataEtemp.Month}/{dataEtemp.Year} - {dataEtemp.Hour}:{dataEtemp.Minute}";
-
-
-            /* string infos = $@"
-
-             <div class='pagina_relatorio'>
-         < div class='cabeca'>
-
-             <div class='dados'>
-                 <p>{data}</p>
-                 <p>Relatorio por periodo</p>
-                 <p class='email'>{email}</p>
-             </div>
-             <img src = 'logo.png' >
-
-         </ div >
-
-
-         < div class='infos'>
-             <table> 
-                 <tr> 
-                     <td>Menor temperatura</td>
-                     <td>Temperatura média</td>
-                     <td>Maior temperatura</td>
-                 </tr>
-                 <tr> 
-                     <td>{relat.Minima}</td>
-                     <td>{relat.Media}</td>
-                     <td>{relat.Maxima}</td>
-                 </tr>	
-             </table>
-
-                 <br> 
-                 <br> 
-                 <br> 
-
-             <table>		
-                 <tr> 
-                     <td>Data</td>
-                     <td>Temperatura</td>
-                 </tr>
-                ";
-             foreach (ModalRelatorio temp in lista)
-             {
-                 infos += $@"< tr> 
-                                 <td> {temp.Data} </ td >
-                                 <td> {temp.Temperatura} </td>
-                             </tr>";
-             }
-
-             infos += @"</table>
-         </div>
-
-     </div>"; */
-
-            string infos = $"<div class='pagina_relatorio'>" +
-            "< div class='cabeca'>" +
-            "<div class='dados'>" +
-                "<p>{data}</p>" +
-                "<p>Relatorio por periodo</p>" +
-                "<p class='email'>{email}</p>" +
-
-            "</div> " +
-            "< img src = 'logo.png' > " +
-
-        "</ div > " +
-
-
-        "< div class='infos'>" +
-            "<table> " +
-                "<tr> " +
-                    "<td>Menor temperatura</td>" +
-                    "<td>Temperatura média</td>" +
-                    "<td>Maior temperatura</td>" +
-                "</tr>" +
-                "<tr> " +
-                    "<td>{relat.Minima}</td>" +
-                    "<td>{relat.Media}</td>" +
-                    "<td>{relat.Maxima}</td>" +
-                "</tr>	" +
-            "</table>" +
-
-                "<br> " +
-                "<br> " +
-                "<br> " +
-            "<table>" +
-                "<tr> " +
-                    "<td>Data</td>" +
-                    "<td>Temperatura</td>" +
-                "</tr>";
-            foreach (ModalRelatorio temp in lista)
-            {
-                infos += $"< tr>"+
-                                "<td> {temp.Data} </ td > " +
-                                "< td> {temp.Temperatura} </td> " +
-                           " </tr>";
-            }
-
-            infos += "</table>"+
-        "</div> " +
-
-    "</div>";
-
-            return infos;
-
-        }
 
     }
 

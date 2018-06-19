@@ -4,4 +4,4 @@
 
 <% try{ %>
 <%=Caliimperium.Temperatura.GetNumeros(a.ID)%>
-<% }catch{ Response.Write(""); } %>
+<% }catch(Exception ex){ Response.Write(ex); } %>

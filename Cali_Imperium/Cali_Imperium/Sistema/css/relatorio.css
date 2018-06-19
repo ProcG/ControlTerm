@@ -25,6 +25,7 @@ div.opcoes_relatorios {
     background-color: #4332d4;
     padding: 10px;
     overflow: hidden;
+    text-align: center;
 }
 
 a.opc_relat {
@@ -76,13 +77,13 @@ td a {
 }
 
 .nome_dias {
-    background: #4332d4;
+    background: #0000cd;
     color: #fff;
     padding: 5px;
 }
 
 .dias_do_mes {
-    background: #00ff68;
+    background: #a0a0a0;
 }
 
 input.btn {

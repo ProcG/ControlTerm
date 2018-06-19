@@ -17,11 +17,11 @@ form, input, select {
 div.logar {
     background: #f4f7f9;
     position: relative;
-    top: 50px;
+    top: 38px;
     border: 1px solid #f4f7f9;
     width: 40%;
     margin: 0 auto;
-    padding: 10%;
+    padding: 7%;
     border-radius: 10px;
 }
 
