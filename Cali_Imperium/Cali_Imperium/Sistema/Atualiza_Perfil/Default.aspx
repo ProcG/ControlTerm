@@ -55,6 +55,7 @@
                    
 
                     <asp:Button Text="Voltar" CssClass="Cancelar" ID="BtnVoltar" runat="server" OnClick="BtnVoltar_Click"/>
+
                     <asp:Button Text="Atualizar" CssClass="Alterar" ID="BtnAtualizar" runat="server" OnClick="BtnAtualizar_Click"/>
 
                    </div>

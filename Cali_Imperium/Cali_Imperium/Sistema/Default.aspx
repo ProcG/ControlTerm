@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/padroes.css" />
     <link rel="stylesheet" type="text/css" href="css/padrao_responsivo.css" />
     <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
