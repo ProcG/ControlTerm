@@ -175,7 +175,7 @@
     div#area_termometro {
         position: relative;
         width: 80%;
-        min-width: 400px;
+        min-width: 98%;
         min-height: 600px;
         transition: all 0.3s;
         display: flex;
@@ -183,7 +183,7 @@
         padding: 30px;
         justify-content: center;
         flex-wrap: wrap;
-        border-radius: 20px;
+        border-radius: 15px;
     }
 
     div.gelado {

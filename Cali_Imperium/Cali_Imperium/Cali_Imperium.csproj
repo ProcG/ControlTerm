@@ -126,6 +126,7 @@
     <Content Include="Sistema\Relatorio\frm_relatorio.aspx" />
     <Content Include="Sistema\Relatorio\Logo.png" />
     <Content Include="TelaCadastro\Cadastro.aspx" />
+    <Content Include="TelaCadastro\CSS\cadastro_responsivo.css" />
     <Content Include="TelaCadastro\CSS\style_cadastro.css" />
     <Content Include="TelaCadastro\Logos\data.png" />
     <Content Include="TelaCadastro\Logos\emaill.png" />
