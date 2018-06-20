@@ -75,7 +75,7 @@
                     <ul class="sair_site">
 
                         <li>
-                            <asp:HyperLink NavigateUrl="Logout.aspx" runat="server" CssClass="links" Text="Sair" ID="btnSair"></asp:HyperLink></li>
+                            <asp:HyperLink NavigateUrl="../Logout.aspx" runat="server" CssClass="links" Text="Sair" ID="btnSair"></asp:HyperLink></li>
                     </ul>
                 </div>
             </div>

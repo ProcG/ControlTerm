@@ -852,13 +852,13 @@
     }
 
     .nome_dias {
-        background: #4332d4;
+        background: #0000cd;
         color: #fff;
         padding: 5px;
     }
 
     .dias_do_mes {
-        background: #00ff68;
+        background: #a0a0a0;
     }
 
     input.btn {
@@ -890,4 +890,39 @@
 
 
 }
+
+@media only screen and (max-width: 800px) {
+
+    div.menu {
+        
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    div.sub_menus {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    ul.sair_site {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 59px;
+        top: 0px;
+    }
+
+    ul {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+
 
