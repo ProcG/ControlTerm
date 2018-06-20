@@ -6,15 +6,17 @@
 <head runat="server">
 <title>Cadastre - se | Cali Imperium</title>
 	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55"/>
 	<link rel="stylesheet" type="text/css" href="CSS/style_cadastro.css"/>
+	<link rel="stylesheet" type="text/css" href="CSS/cadastro_responsivo.css"/>
 </head>
 <body>
     <header>
 		<div class="Menu"> 
 			<ul>
 				<a href="../TelaLogin/Login.aspx"><li>Login</li></a>
-				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
+				<a href="../Default.aspx"><li>Inicial</li></a>		
 			</ul>
             <img src="../Logos/PoweredBy.png" class="power"/>
 		</div>

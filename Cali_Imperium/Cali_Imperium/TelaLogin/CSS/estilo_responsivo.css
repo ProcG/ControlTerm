@@ -1,0 +1,234 @@
+﻿@media only screen and (max-width: 500px) {
+    * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+
+    div.Menu {
+        background-color: #fff;
+        border-bottom: #DCDCDC solid 0px;
+        width: 100%;
+        min-height: 8%;
+        height: 55px;
+        position: static;
+    }
+
+        div.Menu a {
+            float: right;
+            color: white;
+            text-decoration: none;
+        }
+
+    header {
+        display: block;
+    }
+
+    ul {
+        display: inline-block;
+        float: left;
+    }
+
+    li {
+        font-family: verdana;
+        color: gray;
+        list-style: none;
+        padding: 16px;
+        font-size: 20px;
+        transition: all 0.40s;
+    }
+
+        li:hover {
+            color: #fff;
+            background: #0171bb;
+            transition: all 0.50s;
+        }
+
+    div.login {
+        margin: auto;
+        padding: 0px;
+    }
+
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        margin: 0 auto;
+        width: 100%;
+        padding: 60px 50px 50px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0), 0 5px 5px 0 rgba(0, 0, 0, 0);
+        display: block;
+        min-height: 450px;
+        border-radius: 0px;
+    }
+
+    div.form > img {
+        margin-bottom: 40px;
+    }
+
+    .form input {
+        position: relative;
+        font-family: sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 13px;
+        padding: 12px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    input[type=submit] {
+        font-family: sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #0000cc;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: ease 0.3s;
+        transition: all 0.3 ease;
+        cursor: pointer;
+    }
+
+    .form .mensagem {
+        margin: 13px;
+        color: #b3b3b3;
+        font-size: 13px;
+    }
+
+        .form .mensagem a {
+            color: #007fff;
+            text-decoration: none;
+        }
+
+    .form .register-form {
+        display: none;
+    }
+
+    body {
+        background: #0171bb;
+    }
+
+
+    #bg {
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        background-color: rgba(0,0,0,0.8);
+        position: fixed;
+        display: none;
+        z-index: 8;
+    }
+
+        #bg:target {
+            display: block;
+        }
+
+            #bg:target ~ .box {
+                top: 150px;
+                transition: all .3s;
+                transition-delay: .2s;
+                position: fixed;
+            }
+
+    .box {
+        position: relative;
+        width: 100%;
+        height: 360px;
+        position: fixed;
+        margin-left: calc( 100% / 2 * -1);
+        left: 50%;
+        top: -500px;
+        background-color: #fff;
+        border-radius: 10px;
+        padding-top: 5px;
+        z-index: 9;
+    }
+
+        .box img {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+        }
+
+    #close {
+        color: #fff;
+        font-family: 'Arial';
+        text-decoration: none;
+        font-size: 35px;
+        position: absolute;
+        background-color: #000;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        right: 0px;
+        top: 0px;
+    }
+
+        #close:hover {
+            opacity: .6;
+        }
+
+    p.txtsenha {
+        font-family: "Arial";
+        font-style: italic;
+        font-size: 40px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    p.txt {
+        position: relative;
+        margin-top: 50px;
+        width: 100%;
+        margin-left: 76px;
+        text-align: left;
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
+
+    input.cxemail {
+        position: relative;
+        margin-bottom: 50px;
+        font-family: sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        border: 0;
+        margin: 0 0px 50px;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    input.enviar {
+        position: relative;
+        width: 230px;
+        border-radius: 10px;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: #0000cc;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: ease 0.3s;
+        transition: ease 0.3s;
+        cursor: pointer;
+    }
+
+    .power {
+        float: right;
+        width: 131px;
+        height: auto;
+        margin: 0px;
+    }
+
+}

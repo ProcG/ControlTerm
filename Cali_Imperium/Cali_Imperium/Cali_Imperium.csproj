@@ -136,6 +136,7 @@
     <Content Include="TelaCadastro\Logos\telefonee.png" />
     <Content Include="TelaCadastro\Logos\usuario.jpg" />
     <Content Include="TelaLogin\CSS\estilo.css" />
+    <Content Include="TelaLogin\CSS\estilo_responsivo.css" />
     <Content Include="TelaLogin\Login.aspx" />
     <Content Include="TelaLogin\Logos\Logo2.png" />
     <Content Include="TelaLogin\Logos\Logo_Cali1.png" />

@@ -5,16 +5,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 	<meta charset="utf-8">
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Login | Cali Imperium</title>
 	<link rel="icon" href="Logos/Logo2.png" type="image/png" sizes="55x55">
 	<link rel="stylesheet" type="text/css" href="CSS/estilo.css">
+	<link rel="stylesheet" type="text/css" href="CSS/estilo_responsivo.css">
 </head>
 <body>
 	<header>
 		<div class="Menu"> 
 			<ul>
-				<a href="../Default.aspx"><li>Pagina Inicial</li></a>		
+				<a href="../Default.aspx"><li>Início</li></a>		
 			</ul>
             <img src="../Logos/PoweredBy.png" class="power" />
 		</div>
