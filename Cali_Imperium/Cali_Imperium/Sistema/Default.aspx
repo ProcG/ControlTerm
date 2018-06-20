@@ -225,7 +225,7 @@
 	            <div class="fundo">
 		            <a class="btn_fechar" onclick="fecharmodal()">x</a>
 			            <div id="tela_ideais">
-				            <p class="title">Temperaturas ideais</p>
+				            <p class="titulo">Temperaturas ideais</p>
 				            <p class="sub"> Corpo Humano </p>
 				            <img src="img/corpo.jpg" class="img_temperatura_ideal"/>
 				            <p class="text">A temperatura normal do corpo varia entre 36,1ºC e 37,2ºC, com oscilações ao longo do dia que normalmente não ultrapassam os 0.6ºC. A temperatura corporal é mais baixa pela manhã, depois aumenta durante o dia e atinge o valor máximo no início da noite.</p>

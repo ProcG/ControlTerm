@@ -1,5 +1,5 @@
 ﻿
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
     /*MENU-------------------------------------MENU*/
 
     .abrir_menu {
@@ -663,9 +663,9 @@
 
 
     div#tela_ideais {
-        position: fixed;
-        width: 75%;
-        height: 80%;
+        position: relative;
+        width: 100%;
+        height: 100%;
         background-color: #fff;
         justify-content: center;
         flex-wrap: wrap;
@@ -678,10 +678,9 @@
         background-color: white;
         width: 76.5%;
         height: 85.8%;
-        padding-bottom: 20px;
-        padding-left: 20px;
+        padding: 0px;
         padding-top: 20px;
-        border-radius: 20px;
+        border-radius: 0px;
     }
 
     .btn_fechar {
@@ -712,16 +711,21 @@
     }
 
     .text {
-        font-size: 25px;
-        font-family: times new roman;
-        padding: 10px;
-        height: 270px;
+        font-size: 13px;
+        font-family: "Century Gothic";
+        text-align: justify;
+        height: auto;
+       
     }
 
     .sub {
-        font-size: 30px;
-        font-family: arial;
-        margin-top: 30px;
+        width: 100%;
+        color: #000;
+        font-size: 20px;
+        font-family: "Century Gothic", sans-serif;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 
     .sub2 {
@@ -732,11 +736,11 @@
     }
 
     .img_temperatura_ideal {
-        width: 250px;
-        height: 250px;
+        width: 120px;
+        height: 120px;
         float: left;
         margin: 10px;
-        border-radius: 10px;
+        border-radius: 100%;
     }
 
     .divmedias {
