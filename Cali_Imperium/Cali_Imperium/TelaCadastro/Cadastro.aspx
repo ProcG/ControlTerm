@@ -16,7 +16,7 @@
 		<div class="Menu"> 
 			<ul>
 				<a href="../TelaLogin/Login.aspx"><li>Login</li></a>
-				<a href="../Default.aspx"><li>Inicial</li></a>		
+				<a href="../Default.aspx"><li>Início</li></a>		
 			</ul>
             <img src="../Logos/PoweredBy.png" class="power"/>
 		</div>
