@@ -30,7 +30,7 @@
 	       	<a class="scroll" href="#sobre"><li>Sobre Nós</li></a>
 	       	<a class="scroll" href="#greetings"><li>Início</li></a>						
 	       </ul>
-    </div>
+    </header>
 	
 <!--PARALLAX-->
 			<div id="greetings" class="parallax">
