@@ -50,7 +50,7 @@
                        </asp:DropDownList>                  
                         <asp:TextBox runat="server" TextMode="Email" CssClass="atual" ID="TxtAtualizarEmail" placeholder="Digite seu Email"/>
                         <asp:TextBox runat="server" TextMode="Password" CssClass="atual" ID="TxtAtualizarSenha" placeholder="Senha"/>
-                                                
+                                          
                     </div>
                    
 
