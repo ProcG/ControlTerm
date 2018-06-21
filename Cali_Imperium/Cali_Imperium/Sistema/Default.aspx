@@ -1,16 +1,16 @@
-﻿-<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Sistema.Default" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Cali_Imperium.Sistema.Default" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Início | Cali Imperium</title>
     <link rel="stylesheet" type="text/css" href="css/inicio.css" />
     <link rel="stylesheet" type="text/css" href="css/padroes.css" />
     <link rel="stylesheet" type="text/css" href="css/padrao_responsivo.css" />
-    <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55">
+    <link rel="icon" href="../Logos/Logo2.png" type="image/png" sizes="55x55"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
@@ -172,8 +172,8 @@
                 <p class='titulo'>Editar Termometro</p>
                 <%--<input type='text' name='' class='input_padrao' placeholder='Código do termometro'>
                     <input type='text' name='' class='input_padrao' placeholder='Nome de Exibição do Termometro'>--%>
-                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2" TextMode="Number" required></asp:TextBox>
-                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2" TextMode="Number" required></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtTempMinima" MaxLength="2" TextMode="Number"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtTempMaxima" MaxLength="2" TextMode="Number"></asp:TextBox>
                 <asp:Button Text="Cancelar" CssClass="cnl" ID="Button1" runat="server" />
                 <asp:Button Text="Adicionar" CssClass="adc" ID="btnEditArduino" runat="server" OnClick="btnEditArduino_Click" />
                 <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>
@@ -183,9 +183,9 @@
             { %>
             <div id='conf_arduino'>
                 <p class='titulo'>Adicionar Termometro</p>
-                <asp:TextBox runat="server" CssClass='input_padrao' placeholder='Código do termometro' ID="txtNomeArduino" TextMode="Number" required></asp:TextBox>
-                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtMinimaC" MaxLength="2" TextMode="Number" required></asp:TextBox>
-                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtMaximaC" MaxLength="2" TextMode="Number" required></asp:TextBox>
+                <asp:TextBox runat="server" CssClass='input_padrao' placeholder='Código do termometro' ID="txtNomeArduino" TextMode="Number"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Minima' ID="txtMinimaC" MaxLength="2" TextMode="Number"></asp:TextBox>
+                <asp:TextBox runat="server" CssClass="term_input" placeholder='Temperatura Maxima' ID="txtMaximaC" MaxLength="2" TextMode="Number"></asp:TextBox>
                 <asp:Button Text="Cancelar" CssClass="cnl" ID="Button2" runat="server" />
                 <asp:Button Text="Adicionar" CssClass="adc" ID="btnAddArduino" runat="server" OnClick="btnAddArduino_Click" />
                 <a href='#' class='fechar' onclick='removerViewAddArduino()'>x</a>

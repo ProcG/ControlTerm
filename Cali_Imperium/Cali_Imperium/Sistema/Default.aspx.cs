@@ -94,22 +94,34 @@ namespace Cali_Imperium.Sistema
             string nome = txtNomeArduino.Text;
             string min = txtMinimaC.Text;
             string max = txtMaximaC.Text;
-
-            if(new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID) == true)
+            if (txtMinimaC.Text != "" && txtMaximaC.Text != "" && txtNomeArduino.Text != "")
             {
-                Response.Redirect("Default.aspx");
+                if (new Caliimperium.Temperatura().CadastrarArduino(txtNomeArduino.Text, txtMinimaC.Text, txtMaximaC.Text, user.ID) == true)
+                {
+                    Response.Redirect("Default.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Código invalido!')</script>");
+                }
             }
             else
             {
-                Response.Write("<script>alert('Código invalido!')</script>");
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showalert", "alert('preencha todos os campos!')", true);
             }
-
 
         }
 
         protected void btnEditArduino_Click(object sender, EventArgs e)
         {
-            Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
+            if (txtTempMinima.Text != "" && txtTempMaxima.Text != "")
+            {
+                Caliimperium.Temperatura.SetarMinimaEMaxima(int.Parse(txtTempMinima.Text), int.Parse(txtTempMaxima.Text), user.ID);
+            }
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "showalert", "alert('preencha todos os campos!')", true);
+            }
         }
 
         protected void btnAtualizarPerfil_Click(object sender, EventArgs e)
